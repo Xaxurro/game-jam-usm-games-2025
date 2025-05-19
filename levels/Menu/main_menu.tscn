@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://q1fideuiytwd"]
+[gd_scene load_steps=5 format=3 uid="uid://q1fideuiytwd"]
 
 [ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/Menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="1_achs6"]
+[ext_resource type="Script" uid="uid://bypdsy1oxr0t7" path="res://levels/Menu/main_menu.gd" id="1_l70i3"]
+[ext_resource type="Texture2D" uid="uid://cxkjbkmqc6v1x" path="res://levels/Menu/kadin-hatch-7bUWr7baztE-unsplash.jpg" id="2_ewnip"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewuw1"]
+texture = ExtResource("2_ewnip")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,6 +18,7 @@ offset_right = 3.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l70i3")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -32,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -45.0
-offset_right = 188.0
-offset_bottom = 43.0
+offset_left = 170.0
+offset_top = -198.0
+offset_right = 546.0
+offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_achs6")
@@ -49,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = 53.0
-offset_right = 149.0
-offset_bottom = 121.0
+offset_left = 213.0
+offset_top = -97.0
+offset_right = 506.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_achs6")
@@ -66,13 +70,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.0
-offset_top = 131.0
-offset_right = 117.0
-offset_bottom = 179.0
+offset_left = 246.0
+offset_top = -10.0
+offset_right = 474.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_achs6")
 theme_override_font_sizes/font_size = 40
 text = "Exit
 "
+
+[connection signal="pressed" from="Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
