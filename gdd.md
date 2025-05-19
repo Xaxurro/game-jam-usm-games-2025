@@ -45,10 +45,16 @@ Hacen daño en area
 #### Cerveza
 Cura al Redneck
 
+### DESPUES DE CADA NIVEL VA A UN WALMART
+### TIPO MEGAMAN
+
 
 # Enemigos
-Cualquier pais que odie estados unidos, idealmente maquinas hechas por esos paises (China, Rusia, NorCorea)
+Cualquier pais que odie estados unidos, idealmente maquinas hechas por esos paises (Union Anti-Americanos, Alien?, Hippies?)
 Plot Twitst, el enemigo final es Robo-Trump
 Cada pais enemigo es un nivel
 
 ## Bossrush
+
+# Plot
+
