@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://p8njfcvtwu1e"
+path="res://.godot/imported/pixil-frame-0.png-715dbe865346ccb126a9448424be1d92.res"
+
+[deps]
+
+source_file="res://levels/map-selector/assets/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-715dbe865346ccb126a9448424be1d92.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
