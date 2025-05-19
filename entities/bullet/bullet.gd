@@ -7,10 +7,11 @@ enum Targets {
 }
 
 @export var speed: int
+var direction: Vector2
 
-func _init() -> void:
-	self.speed = speed
+func _ready() -> void:
+	velocity = rotation * speed
 
 func _process(delta: float) -> void:
-
+	position += velocity * delta
 	pass

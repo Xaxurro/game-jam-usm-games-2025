@@ -37,7 +37,7 @@ func _aim() -> float:
 func _shoot(weapon_rotation: float) -> void:
 	var bulletNode: Node = bulletScene.instantiate()
 	bulletNode.rotation = weapon_rotation
-	#bulletNode.rotation = weapon_rotation
+	bulletNode.position = self.position
 	add_child(bulletNode)
 
 func _process(delta: float) -> void:
