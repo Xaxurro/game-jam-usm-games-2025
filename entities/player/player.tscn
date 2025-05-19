@@ -10,10 +10,13 @@ size = Vector2(22, 26)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_sglur")
 
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
 [node name="CharacterSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_abrql")
 
-[node name="CurrentWeapon" type="Sprite2D" parent="CharacterSprite"]
+[node name="CurrentWeaponSprite" type="Sprite2D" parent="CharacterSprite"]
 texture = ExtResource("2_sglur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

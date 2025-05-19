@@ -6,3 +6,5 @@
 
 [node name="Player" parent="." instance=ExtResource("1_m0vhf")]
 movement_speed = 100
+
+[node name="StageSprite" type="Sprite2D" parent="."]
