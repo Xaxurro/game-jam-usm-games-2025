@@ -1,6 +1,7 @@
 class_name EntityPlayer
 extends CharacterBody2D
 
+const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.tscn")
 @export var movement_speed: int = 10
 
 func _movement(delta: float) -> void:
@@ -13,7 +14,7 @@ func _movement(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		position.x += movement_speed * delta
 
-func _aim() -> void:
+func _aim() -> float:
 	var character_sprite = $CharacterSprite
 	var weapon_sprite = $CharacterSprite/CurrentWeaponSprite
 	var mouse_position = get_global_mouse_position()
@@ -31,7 +32,16 @@ func _aim() -> void:
 		weapon_sprite.scale.x = 1
 		weapon_sprite.scale.y = 1
 		weapon_sprite.rotation = angle_rad
+	return weapon_sprite.rotation
+
+func _shoot(weapon_rotation: float) -> void:
+	var bulletNode: Node = bulletScene.instantiate()
+	bulletNode.rotation = weapon_rotation
+	#bulletNode.rotation = weapon_rotation
+	add_child(bulletNode)
 
 func _process(delta: float) -> void:
 	_movement(delta)
-	_aim()
+	var weapon_rotation: float = _aim()
+	if Input.is_action_pressed("shoot_secondary_weapon"):
+		_shoot(weapon_rotation)
