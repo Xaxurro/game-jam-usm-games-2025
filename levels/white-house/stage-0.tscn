@@ -5,3 +5,4 @@
 [node name="Stage" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_m0vhf")]
+movement_speed = 100
