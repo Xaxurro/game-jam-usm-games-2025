@@ -1,15 +1,15 @@
 # Nombre
-American Freedom
+- American Freedom
 
 # Tema
-Libertad
+- Libertad
 
 # Motor
-godot 4.4.1-stable
+- godot 4.4.1-stable
 
 # Inspiraciones
-Metal Gear Rising: Revengance
-Bro Force
+- Metal Gear Rising: Revengance
+- Bro Force
 
 # Idea general
 - Tenemos al redneck que quiere defender a EEUU de los paises enemigos
@@ -19,42 +19,59 @@ Bro Force
 - Top-Down
 
 # Personaje
-Redneck con escopeta
+## Descripcion Fisica
+- American Patriotist (John Freedom) con escopeta
+- Musculoso
+- Pelirrojo
+- Mostacho
+- Sin Barba
+- Camisa a cuadros sin mangas, sin Polera sin botones
+- Cargo Pants Militares / Camuflaje
 
 ## Referencias Visuales
-Shaw de "Open Season"
+- Shaw de "Open Season"
 
 ## Habilidades
 ### Armas
 #### M-60 (Click Izquierda) 
-Poco daño sin knockback
+- Poco daño sin knockback
 
 #### Escopeta  (Click Derecho)
-Alto daño y siempre lo empuja hacia atras
+- Alto daño y siempre lo empuja hacia atras
 
 ### Camioneta de Petroleo
-Para Dashear
+- Para Dashear
 
 ### Activas
-Fuegos Artificiales
+- Fuegos Artificiales
 
 ### Consumible
 #### Granadas
-Hacen daño en area
+- Hacen daño en area
 
 #### Cerveza
-Cura al Redneck
-
-### DESPUES DE CADA NIVEL VA A UN WALMART
-### TIPO MEGAMAN
-
+- Cura al American Patriotist
 
 # Enemigos
-Cualquier pais que odie estados unidos, idealmente maquinas hechas por esos paises (Union Anti-Americanos, Alien?, Hippies?)
-Plot Twitst, el enemigo final es Robo-Trump
-Cada pais enemigo es un nivel
+- Cualquier pais que odie estados unidos, idealmente maquinas hechas por esos paises (Union Anti-Americanos, Alien?, Hippies?)
+- Plot Twitst, el enemigo final es Robo-Trump
+- Cada pais enemigo es un nivel
 
 ## Bossrush
 
-# Plot
+# Niveles
+- Separados por state, y cada uno tiene 3 - 4 stages
+- Despues de cada Stage el jugador pasa a un Walmart 
+- Volver al menu, y seleccionar state
 
+## Area 51
+### Jefe Final
+- UFO
+### Enemigos
+- Alien
+
+## Washington
+### Jefe Final
+- Robo-President
+### Enemigos
+- Robots
