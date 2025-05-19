@@ -4,6 +4,10 @@ extends CharacterBody2D
 const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.tscn")
 @export var movement_speed: int = 10
 
+
+@onready var character_sprite = $CharacterSprite
+@onready var weapon_sprite = $CharacterSprite/CurrentWeaponSprite
+
 func _movement(delta: float) -> void:
 	if Input.is_action_pressed("move_up"):
 		position.y -= movement_speed * delta
@@ -15,8 +19,6 @@ func _movement(delta: float) -> void:
 		position.x += movement_speed * delta
 
 func _aim() -> float:
-	var character_sprite = $CharacterSprite
-	var weapon_sprite = $CharacterSprite/CurrentWeaponSprite
 	var mouse_position = get_global_mouse_position()
 	var texture_position = global_position
 	var direction: Vector2 = mouse_position - texture_position
@@ -34,14 +36,19 @@ func _aim() -> float:
 		weapon_sprite.rotation = angle_rad
 	return weapon_sprite.rotation
 
-func _shoot(weapon_rotation: float) -> void:
+func _shoot(delta: float) -> void:
 	var bulletNode: Node = bulletScene.instantiate()
-	bulletNode.rotation = weapon_rotation
-	bulletNode.position = self.position
+	bulletNode.direction = position.direction_to(get_global_mouse_position()).normalized()
+	bulletNode.position = character_sprite.position
+	if character_sprite.scale.x == -1:
+		bulletNode.rotation = -weapon_sprite.rotation
+	if character_sprite.scale.x == 1:
+		bulletNode.rotation = weapon_sprite.rotation
+
 	add_child(bulletNode)
 
 func _process(delta: float) -> void:
 	_movement(delta)
-	var weapon_rotation: float = _aim()
-	if Input.is_action_pressed("shoot_secondary_weapon"):
-		_shoot(weapon_rotation)
+	_aim()
+	if Input.is_action_just_pressed("shoot_secondary_weapon"):
+		_shoot(delta)
