@@ -37,18 +37,20 @@ func _aim() -> float:
 	return weapon_sprite.rotation
 
 func _shoot(delta: float) -> void:
+	if not Input.is_action_just_pressed("shoot_secondary_weapon"): return
+	if $ShootTimer.time_left != 0: return
 	var bulletNode: Node = bulletScene.instantiate()
 	bulletNode.direction = position.direction_to(get_global_mouse_position()).normalized()
-	bulletNode.position = character_sprite.position
+	bulletNode.position = character_sprite.position + (bulletNode.direction * bulletNode.speed * delta)
 	if character_sprite.scale.x == -1:
 		bulletNode.rotation = -weapon_sprite.rotation
 	if character_sprite.scale.x == 1:
 		bulletNode.rotation = weapon_sprite.rotation
 
 	add_child(bulletNode)
+	$ShootTimer.start()
 
 func _process(delta: float) -> void:
 	_movement(delta)
 	_aim()
-	if Input.is_action_just_pressed("shoot_secondary_weapon"):
-		_shoot(delta)
+	_shoot(delta)
