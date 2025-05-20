@@ -1,11 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqmv8pqxkpm0c"]
+[gd_scene load_steps=13 format=3 uid="uid://bqmv8pqxkpm0c"]
 
 [ext_resource type="Texture2D" uid="uid://c3wtfspglexjo" path="res://entities/player/assets/player_idle_0.png" id="1_abrql"]
 [ext_resource type="Script" uid="uid://b2wberq425aji" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Texture2D" uid="uid://bx46wlpha4ca5" path="res://entities/player/assets/player_secondary_weapon.png" id="2_sglur"]
+[ext_resource type="Texture2D" uid="uid://b1wh071qoqfxl" path="res://entities/player/assets/player_idle_1.png" id="3_wvtmh"]
+[ext_resource type="Texture2D" uid="uid://dnoxk7rj4qhs3" path="res://entities/player/assets/player_idle_2.png" id="4_7thud"]
+[ext_resource type="Texture2D" uid="uid://cc851o8stwiuw" path="res://entities/player/assets/player_idle_3.png" id="5_a1qjk"]
+[ext_resource type="Texture2D" uid="uid://ta407mp5whlf" path="res://entities/player/assets/player_idle_4.png" id="6_j3ovn"]
+[ext_resource type="Texture2D" uid="uid://cwho7kui4ha01" path="res://entities/player/assets/player_idle_5.png" id="7_afbqv"]
+[ext_resource type="Texture2D" uid="uid://teorck1lt5d" path="res://entities/player/assets/player_running_0.png" id="8_gx6sm"]
+[ext_resource type="Texture2D" uid="uid://bq3qr3wxs56mu" path="res://entities/player/assets/player_running_1.png" id="9_yqrof"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wlsy"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("1_abrql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wvtmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7thud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a1qjk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_j3ovn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_afbqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("8_gx6sm")
+}, {
+"duration": 0.2,
+"texture": ExtResource("9_yqrof")
+}],
+"loop": true,
+"name": &"running",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bls4j"]
-size = Vector2(22, 26)
+size = Vector2(22, 32)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_sglur")
@@ -13,8 +57,11 @@ script = ExtResource("1_sglur")
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="CharacterSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_abrql")
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3wlsy")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.769307
 
 [node name="CurrentWeaponSprite" type="Sprite2D" parent="CharacterSprite"]
 texture = ExtResource("2_sglur")

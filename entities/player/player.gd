@@ -5,19 +5,26 @@ const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.ts
 @export var movement_speed: int = 10
 
 
-@onready var character_sprite = $CharacterSprite
+@onready var character_sprite: AnimatedSprite2D = $CharacterSprite
 @onready var weapon_sprite = $CharacterSprite/CurrentWeaponSprite
 @onready var shoot_cooldown: Timer = $ShootCooldown
 
 func _movement(delta: float) -> void:
+	var new_direction: Vector2 = Vector2.ZERO
+
 	if Input.is_action_pressed("move_up"):
-		position.y -= movement_speed * delta
+		new_direction.y = movement_speed * delta * -1
 	if Input.is_action_pressed("move_down"):
-		position.y += movement_speed * delta
+		new_direction.y = movement_speed * delta
 	if Input.is_action_pressed("move_left"):
-		position.x -= movement_speed * delta
+		new_direction.x = movement_speed * delta * -1
 	if Input.is_action_pressed("move_right"):
-		position.x += movement_speed * delta
+		new_direction.x = movement_speed * delta
+	
+	if new_direction == Vector2.ZERO:
+		character_sprite.play("idle")
+	else:
+		character_sprite.play("running")
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> void:
