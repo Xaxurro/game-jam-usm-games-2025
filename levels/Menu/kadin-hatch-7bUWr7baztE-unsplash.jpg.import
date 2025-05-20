@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxkjbkmqc6v1x"
-path="res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-dc11a515cdda53b8d8c1f526acab71e3.ctex"
+path="res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Menu/kadin-hatch-7bUWr7baztE-unsplash.jpg"
-dest_files=["res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-dc11a515cdda53b8d8c1f526acab71e3.ctex"]
+source_file="res://levels/menu/kadin-hatch-7bUWr7baztE-unsplash.jpg"
+dest_files=["res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"]
 
 [params]
 
