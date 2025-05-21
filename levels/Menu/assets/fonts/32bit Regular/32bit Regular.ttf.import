@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://by1eih4wtjini"
-path="res://.godot/imported/32bit Regular.ttf-9c217dc84218d8f2bdab0b20e7a49e91.fontdata"
+path="res://.godot/imported/32bit Regular.ttf-716f14e334955654f6b8ee594d2ebcd4.fontdata"
 
 [deps]
 
-source_file="res://levels/Menu/assets/fonts/32bit Regular/32bit Regular.ttf"
-dest_files=["res://.godot/imported/32bit Regular.ttf-9c217dc84218d8f2bdab0b20e7a49e91.fontdata"]
+source_file="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf"
+dest_files=["res://.godot/imported/32bit Regular.ttf-716f14e334955654f6b8ee594d2ebcd4.fontdata"]
 
 [params]
 

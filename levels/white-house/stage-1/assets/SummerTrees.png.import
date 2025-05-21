@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkjbkmqc6v1x"
-path="res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"
+uid="uid://1anvsd1a161g"
+path="res://.godot/imported/SummerTrees.png-d3688685c50ef66745bf36d4c17d4501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/menu/kadin-hatch-7bUWr7baztE-unsplash.jpg"
-dest_files=["res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"]
+source_file="res://levels/white-house/stage-1/assets/SummerTrees.png"
+dest_files=["res://.godot/imported/SummerTrees.png-d3688685c50ef66745bf36d4c17d4501.ctex"]
 
 [params]
 

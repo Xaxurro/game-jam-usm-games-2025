@@ -33,4 +33,3 @@
 - Make Sprites for Stages 2 - 3 - 4
 
 ## Sound (.ogg files)
-

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmlv56dlr4821"
-path="res://.godot/imported/WashintongStage1-concept.png-b9d3f6789bd2f64b32e5f262d609152f.ctex"
+uid="uid://dr2qbjd6j6g8n"
+path="res://.godot/imported/crashed-truck.png-4eec0ffb78a6b35cddb5dfa7227e4d37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/white-house/stage-1/assets/WashintongStage1-concept.png"
-dest_files=["res://.godot/imported/WashintongStage1-concept.png-b9d3f6789bd2f64b32e5f262d609152f.ctex"]
+source_file="res://levels/white-house/stage-1/assets/crashed-truck.png"
+dest_files=["res://.godot/imported/crashed-truck.png-4eec0ffb78a6b35cddb5dfa7227e4d37.ctex"]
 
 [params]
 

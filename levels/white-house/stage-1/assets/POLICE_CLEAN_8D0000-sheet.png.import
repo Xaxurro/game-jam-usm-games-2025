@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkjbkmqc6v1x"
-path="res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"
+uid="uid://c4w7lmn520ie3"
+path="res://.godot/imported/POLICE_CLEAN_8D0000-sheet.png-70d2dc392f73ca293658d7dcc9681041.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/menu/kadin-hatch-7bUWr7baztE-unsplash.jpg"
-dest_files=["res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"]
+source_file="res://levels/white-house/stage-1/assets/POLICE_CLEAN_8D0000-sheet.png"
+dest_files=["res://.godot/imported/POLICE_CLEAN_8D0000-sheet.png-70d2dc392f73ca293658d7dcc9681041.ctex"]
 
 [params]
 
