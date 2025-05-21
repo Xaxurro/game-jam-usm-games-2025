@@ -1,7 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpruki11oem18"]
+[gd_scene load_steps=5 format=3 uid="uid://bpruki11oem18"]
 
-[ext_resource type="Texture2D" uid="uid://bx46wlpha4ca5" path="res://entities/player/assets/player_secondary_weapon.png" id="1_mky6i"]
-[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://entities/weapons/assets/audio/shotgun-shoot.ogg" id="2_der65"]
 [ext_resource type="Script" uid="uid://cvj0e5stg6whj" path="res://entities/weapons/weapon.gd" id="2_l8a67"]
 
 [sub_resource type="Animation" id="Animation_2pbsc"]
@@ -45,11 +43,9 @@ _data = {
 script = ExtResource("2_l8a67")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_mky6i")
 hframes = 5
 
 [node name="Muzzle" type="Marker2D" parent="Sprite"]
-position = Vector2(11, -2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -58,9 +54,5 @@ libraries = {
 }
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 0.15
-one_shot = true
 
-[node name="SoundEffect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_der65")
-volume_db = -5.0
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]

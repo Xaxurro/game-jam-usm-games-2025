@@ -7,6 +7,7 @@ enum Targets {
 }
 
 @export var speed: int = 1000
+@export var damage: int = 10
 @export var lifespan_in_seconds: float = 5.0
 var direction: Vector2
 
