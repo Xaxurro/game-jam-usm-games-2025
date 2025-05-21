@@ -5,9 +5,10 @@ const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.ts
 @export var movement_speed: int = 10
 
 
-@onready var character_sprite: AnimatedSprite2D = $CharacterSprite
-@onready var weapon_sprite = $CharacterSprite/CurrentWeaponSprite
-@onready var shoot_cooldown: Timer = $ShootCooldown
+@onready var character_sprite: Sprite2D = $CharacterSprite
+@onready var shotgun: Sprite2D = $Shotgun
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var shoot_cooldown: Timer = $Shotgun/Cooldown
 
 func _movement(delta: float) -> void:
 	var new_direction: Vector2 = Vector2.ZERO
@@ -22,9 +23,9 @@ func _movement(delta: float) -> void:
 		new_direction.x = movement_speed * delta
 	
 	if new_direction == Vector2.ZERO:
-		character_sprite.play("idle")
+		_animation_player.play("idle")
 	else:
-		character_sprite.play("running")
+		_animation_player.play("running")
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> void:
@@ -36,20 +37,20 @@ func _aim() -> void:
 	# Aim left
 	if direction.x < -THRESHOLD:
 		character_sprite.scale.x = -1
-		weapon_sprite.scale.x = -1
-		weapon_sprite.scale.y = -1
-		weapon_sprite.rotation = -angle_rad
+		shotgun.scale.y = -1
 	# Aim right
 	else:
 		character_sprite.scale.x = 1
-		weapon_sprite.scale.x = 1
-		weapon_sprite.scale.y = 1
-		weapon_sprite.rotation = angle_rad
+		shotgun.scale.y = 1
+
+	shotgun.rotation = angle_rad
 
 func _shoot(delta: float) -> void:
 	# Execute code only when pressed right click and is not on cooldown
 	if not Input.is_action_just_pressed("shoot_secondary_weapon"): return
 	if shoot_cooldown.time_left != 0: return
+
+	#$Shotgun
 
 	var bulletNode: Bullet = bulletScene.instantiate()
 
@@ -58,16 +59,16 @@ func _shoot(delta: float) -> void:
 	# Spawn the bullet at the front of the barrel of the shotgun
 	bulletNode.position = character_sprite.position + (bulletNode.direction * bulletNode.speed * delta)
 	if character_sprite.scale.x == -1:
-		bulletNode.rotation = -weapon_sprite.rotation
+		bulletNode.rotation = -shotgun.rotation
 	if character_sprite.scale.x == 1:
-		bulletNode.rotation = weapon_sprite.rotation
+		bulletNode.rotation = shotgun.rotation
 
 	add_child(bulletNode)
 	shoot_cooldown.start()
 
 func _update_recoil() -> void:
 	if shoot_cooldown.paused or shoot_cooldown.wait_time <= 0:
-		weapon_sprite.position = character_sprite.position
+		shotgun.position = character_sprite.position
 		return
 
 	var max_recoil_offset: float = 15.0
@@ -79,7 +80,7 @@ func _update_recoil() -> void:
 	var recoil_vector_local: Vector2 = recoil_direction_local * max_recoil_offset * recoil_factor
 
 	# Apply recoil at local position
-	weapon_sprite.position = character_sprite.position + weapon_sprite.transform.basis_xform(recoil_vector_local)
+	shotgun.position = character_sprite.position + shotgun.transform.basis_xform(recoil_vector_local)
 
 func _process(delta: float) -> void:
 	_movement(delta)
