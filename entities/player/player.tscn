@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2wberq425aji" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Texture2D" uid="uid://byuwd6c5cbe28" path="res://entities/player/assets/player.png" id="2_bls4j"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://entities/player/weapon.tscn" id="4_bls4j"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://entities/weapons/weapon.tscn" id="4_bls4j"]
 
 [sub_resource type="Animation" id="Animation_8fjmc"]
 length = 0.001
