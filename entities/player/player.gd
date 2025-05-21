@@ -26,6 +26,8 @@ func _movement(delta: float) -> void:
 		_animation_player.play("idle")
 	else:
 		_animation_player.play("running")
+	
+	position += new_direction
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> void:
