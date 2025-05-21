@@ -17,6 +17,7 @@
 - Cada pais siendo el antagonista de cada nivel
 - Va a ser un Bullet Hell
 - Top-Down
+- Al final se suicida para dejarlo a interpretasion del jugador
 
 # Personaje
 ## Descripcion Fisica
