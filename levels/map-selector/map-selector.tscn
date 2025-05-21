@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7b2m8ir8pwou"]
+[gd_scene load_steps=4 format=3 uid="uid://c7b2m8ir8pwou"]
 
 [ext_resource type="Script" uid="uid://ck54ngyu4ke1o" path="res://levels/map-selector/map_selector.gd" id="1_b1vr8"]
+[ext_resource type="Texture2D" uid="uid://ork5gln8k0t6" path="res://levels/map-selector/assets/UnitedStates.png" id="2_8u85p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olo0e"]
+texture = ExtResource("2_8u85p")
 region_rect = Rect2(22, 181, 995, 650)
 
 [node name="Map-selector" type="Control"]
@@ -18,10 +20,10 @@ script = ExtResource("1_b1vr8")
 
 [node name="Map" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 407.0
-offset_top = 98.0
-offset_right = 1127.0
-offset_bottom = 532.0
+offset_left = 414.0
+offset_top = 155.0
+offset_right = 1134.0
+offset_bottom = 589.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_olo0e")
 
 [node name="Back" type="Button" parent="."]
@@ -55,13 +57,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = -196.0
-offset_right = -31.0
-offset_bottom = -156.0
+offset_left = -103.0
+offset_top = -141.0
+offset_right = -24.0
+offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Test_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_washington_pressed"]

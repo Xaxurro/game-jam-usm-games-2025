@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://xxsbk32evtdl"]
+
+[ext_resource type="Script" uid="uid://dxpyev6xm1gm7" path="res://entities/enemies/fbi-agents/stage-1/fbi_stage_1.gd" id="1_aep5q"]
+[ext_resource type="Texture2D" uid="uid://82ex5uo210e8" path="res://entities/enemies/fbi-agents/assets/sprites/Secrete Service 1 stage.png" id="1_aj4eq"]
+[ext_resource type="PackedScene" uid="uid://c3yoxd22ehu6h" path="res://entities/bullet/player/bullet.tscn" id="2_hy04b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aep5q"]
+radius = 7.0
+height = 28.0
+
+[node name="fbi-stage1" type="CharacterBody2D"]
+script = ExtResource("1_aep5q")
+bullet_scene = ExtResource("2_hy04b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aj4eq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_aep5q")

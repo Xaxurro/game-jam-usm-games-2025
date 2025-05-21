@@ -27,7 +27,11 @@ func _movement(delta: float) -> void:
 	else:
 		_animation_player.play("running")
 	
+	
 	position += new_direction
+	
+	##Handle Collition
+	move_and_slide()
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> void:
