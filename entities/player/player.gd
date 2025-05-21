@@ -26,6 +26,8 @@ func _movement(delta: float) -> void:
 		_animation_player.play("idle")
 	else:
 		_animation_player.play("running")
+	
+	position += new_direction
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> void:
@@ -33,24 +35,26 @@ func _aim() -> void:
 	var texture_position = global_position
 	var direction: Vector2 = mouse_position - texture_position
 	var angle_rad = atan2(direction.y, direction.x)
+	shotgun.rotation = angle_rad
+
 	const THRESHOLD: float = 0.1
 	# Aim left
 	if direction.x < -THRESHOLD:
 		character_sprite.scale.x = -1
-		shotgun.scale.y = -1
+		shotgun.scale.y = -1			#Without this the shotgun looks inverted
 	# Aim right
 	else:
 		character_sprite.scale.x = 1
 		shotgun.scale.y = 1
 
-	shotgun.rotation = angle_rad
 
 func _shoot(delta: float) -> void:
 	# Execute code only when pressed right click and is not on cooldown
 	if not Input.is_action_just_pressed("shoot_secondary_weapon"): return
 	if shoot_cooldown.time_left != 0: return
 
-	#$Shotgun
+	$Shotgun/AnimationPlayer.play("shoot")
+	$Shotgun/SoundEffect.play()
 
 	var bulletNode: Bullet = bulletScene.instantiate()
 
@@ -58,15 +62,13 @@ func _shoot(delta: float) -> void:
 
 	# Spawn the bullet at the front of the barrel of the shotgun
 	bulletNode.position = character_sprite.position + (bulletNode.direction * bulletNode.speed * delta)
-	if character_sprite.scale.x == -1:
-		bulletNode.rotation = -shotgun.rotation
-	if character_sprite.scale.x == 1:
-		bulletNode.rotation = shotgun.rotation
+	bulletNode.rotation = shotgun.rotation 
 
 	add_child(bulletNode)
 	shoot_cooldown.start()
 
 func _update_recoil() -> void:
+	# Set to original position
 	if shoot_cooldown.paused or shoot_cooldown.wait_time <= 0:
 		shotgun.position = character_sprite.position
 		return
@@ -76,7 +78,7 @@ func _update_recoil() -> void:
 
 	# Backwards direction
 	var recoil_direction_local: Vector2 = Vector2(-1, 0)
-	# transform it into a Vector2
+	# Apply recoil offset and factor
 	var recoil_vector_local: Vector2 = recoil_direction_local * max_recoil_offset * recoil_factor
 
 	# Apply recoil at local position
