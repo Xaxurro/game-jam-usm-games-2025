@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkjbkmqc6v1x"
-path="res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"
+uid="uid://dw8i4t0j8gsbq"
+path="res://.godot/imported/background.png-2080211d7bbe0c84f15719eba7f797b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/menu/kadin-hatch-7bUWr7baztE-unsplash.jpg"
-dest_files=["res://.godot/imported/kadin-hatch-7bUWr7baztE-unsplash.jpg-ea037497bc2c4e002888f10312b2bde0.ctex"]
+source_file="res://levels/white-house/stage-1/assets/background.png"
+dest_files=["res://.godot/imported/background.png-2080211d7bbe0c84f15719eba7f797b7.ctex"]
 
 [params]
 

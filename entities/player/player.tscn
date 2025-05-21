@@ -82,7 +82,7 @@ script = ExtResource("1_sglur")
 movement_speed = 50
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CharacterSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_bls4j")

@@ -1,90 +1,174 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=13 format=3 uid="uid://bqjalplvqjepi"]
 
-[ext_resource type="Texture2D" uid="uid://dmlv56dlr4821" path="res://levels/white-house/stage-1/assets/WashintongStage1-concept.png" id="1_lxmmg"]
+[ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
-[ext_resource type="Script" uid="uid://dqrumi0s5vb7u" path="res://levels/white-house/stage-1/next_level.gd" id="3_2o78u"]
+[ext_resource type="PackedScene" uid="uid://btwfhm618xw17" path="res://levels/border-template.tscn" id="2_lxmmg"]
+[ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
+[ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]
+[ext_resource type="Texture2D" uid="uid://c4w7lmn520ie3" path="res://levels/white-house/stage-1/assets/POLICE_CLEAN_8D0000-sheet.png" id="5_xngfr"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2o78u"]
-texture = ExtResource("1_lxmmg")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82x6i"]
+texture = ExtResource("1_2o78u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxmmg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4p5x"]
+atlas = ExtResource("2_pucyt")
+region = Rect2(64, 0, 32, 89)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxmmg"]
-size = Vector2(20, 1503)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqug8"]
+atlas = ExtResource("2_pucyt")
+region = Rect2(96, 0, 32, 89)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o78u"]
-size = Vector2(3965, 20)
+[sub_resource type="SpriteFrames" id="SpriteFrames_nq2ak"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4p5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqug8")
+}],
+"loop": true,
+"name": &"Smoke",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82x6i"]
-size = Vector2(3957, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pucyt"]
+radius = 6.61078
+height = 20.9342
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xngfr"]
-size = Vector2(43, 1510)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_82x6i"]
-radius = 119.004
+[sub_resource type="CircleShape2D" id="CircleShape2D_xngfr"]
+radius = 82.0061
 
 [node name="Stage1" type="Node2D"]
 position = Vector2(0, -1)
 
-[node name="BackGround" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -212.0
-offset_top = -1004.0
-offset_right = 4277.0
-offset_bottom = 910.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_2o78u")
+[node name="BorderTempalte" parent="." instance=ExtResource("2_lxmmg")]
+position = Vector2(-0.03125, 1.01563)
+metadata/_edit_lock_ = true
 
-[node name="BorderManager" type="Panel" parent="."]
-offset_left = 1.0
-offset_top = -367.0
-offset_right = 3957.0
-offset_bottom = 735.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_lxmmg")
+[node name="Panel" type="Panel" parent="."]
+offset_left = -2007.0
+offset_top = -705.0
+offset_right = 1993.0
+offset_bottom = 705.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_82x6i")
+metadata/_edit_lock_ = true
 
-[node name="LeftBorder" type="StaticBody2D" parent="BorderManager"]
-position = Vector2(-2, 1)
+[node name="CrashedCar" type="Sprite2D" parent="Panel"]
+position = Vector2(140, 703)
+scale = Vector2(1.44318, 1.44318)
+texture = ExtResource("2_pucyt")
+region_enabled = true
+region_rect = Rect2(0, 24, 62, 44)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderManager/LeftBorder"]
-position = Vector2(-8, 344.5)
-shape = SubResource("RectangleShape2D_lxmmg")
+[node name="Tree" type="Sprite2D" parent="Panel"]
+position = Vector2(186, 684)
+scale = Vector2(1.69022, 1.69022)
+texture = ExtResource("4_82x6i")
+region_enabled = true
+region_rect = Rect2(66, 17, 46, 63)
 
-[node name="TopBorder" type="StaticBody2D" parent="BorderManager"]
-position = Vector2(253, -13)
+[node name="Smoke" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(177, 670)
+scale = Vector2(1.29545, 1.29545)
+sprite_frames = SubResource("SpriteFrames_nq2ak")
+animation = &"Smoke"
+autoplay = "Smoke"
+frame_progress = 0.530558
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderManager/TopBorder"]
-position = Vector2(1729, -404)
-shape = SubResource("RectangleShape2D_2o78u")
+[node name="PoliceCar" type="Sprite2D" parent="Panel"]
+position = Vector2(3395, 252)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(109, 16, 81, 73)
 
-[node name="BottomBorder" type="StaticBody2D" parent="BorderManager"]
-position = Vector2(9, 709)
+[node name="Tree2" type="Sprite2D" parent="Panel"]
+position = Vector2(461, 352)
+scale = Vector2(1.81522, 1.81522)
+texture = ExtResource("4_82x6i")
+region_enabled = true
+region_rect = Rect2(66, 17, 46, 63)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderManager/BottomBorder"]
-position = Vector2(1970, 398)
-shape = SubResource("RectangleShape2D_82x6i")
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel/Tree2"]
+position = Vector2(0, 20.9341)
 
-[node name="RightBorder" type="StaticBody2D" parent="BorderManager"]
-position = Vector2(4000, 331)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Tree2/StaticBody2D"]
+position = Vector2(-0.550898, -0.550898)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pucyt")
+one_way_collision_margin = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderManager/RightBorder"]
-position = Vector2(-23.5, 20)
-shape = SubResource("RectangleShape2D_xngfr")
+[node name="PoliceCar2" type="Sprite2D" parent="Panel"]
+position = Vector2(3613, 312)
+rotation = 0.165806
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(112, 14, 82, 78)
 
-[node name="NextLevel" type="Area2D" parent="BorderManager"]
-position = Vector2(-1, 367)
-script = ExtResource("3_2o78u")
+[node name="PoliceCar3" type="Sprite2D" parent="Panel"]
+position = Vector2(3579, 534)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(222, 16, 58, 80)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderManager/NextLevel"]
-position = Vector2(3950, 0)
-shape = SubResource("CircleShape2D_82x6i")
+[node name="PoliceCar4" type="Sprite2D" parent="Panel"]
+position = Vector2(3524, 736)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(11, 111, 80, 84)
+
+[node name="PoliceCar5" type="Sprite2D" parent="Panel"]
+position = Vector2(3506, 796)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(210, 115, 81, 77)
+
+[node name="PoliceCar6" type="Sprite2D" parent="Panel"]
+position = Vector2(3495, 1210)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(109, 214, 81, 77)
+
+[node name="PoliceCar7" type="Sprite2D" parent="Panel"]
+position = Vector2(3462, 1050)
+rotation = -0.16057
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(109, 214, 81, 77)
+
+[node name="PoliceCar8" type="Sprite2D" parent="Panel"]
+position = Vector2(3674.25, 930)
+scale = Vector2(1.41138, 1.50649)
+texture = ExtResource("5_xngfr")
+region_enabled = true
+region_rect = Rect2(23, 213, 55, 78)
+
+[node name="crashedCar" type="Sprite2D" parent="Panel"]
+
+[node name="Smoke2" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(3495, 721)
+scale = Vector2(1.52661, 1.52661)
+sprite_frames = SubResource("SpriteFrames_nq2ak")
+animation = &"Smoke"
+autoplay = "Smoke"
+frame_progress = 0.955138
 
 [node name="Player" parent="." instance=ExtResource("2_2o78u")]
-position = Vector2(46, -3)
+position = Vector2(-1755, -2)
 movement_speed = 400
 
-[connection signal="body_entered" from="BorderManager/NextLevel" to="BorderManager/NextLevel" method="_on_body_entered"]
-[connection signal="body_exited" from="BorderManager/NextLevel" to="BorderManager/NextLevel" method="_on_body_exited"]
+[node name="NextLevel" type="Area2D" parent="."]
+position = Vector2(-5, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
+position = Vector2(1820, -35)
+shape = SubResource("CircleShape2D_xngfr")
+metadata/_edit_lock_ = true
