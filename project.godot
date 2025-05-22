@@ -23,6 +23,7 @@ menu_music="*res://levels/assets/music/menu-music.tscn"
 
 player=""
 menu_music=""
+walls=""
 
 [input]
 
