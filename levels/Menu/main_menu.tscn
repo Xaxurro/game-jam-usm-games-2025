@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://q1fideuiytwd"]
+[gd_scene load_steps=8 format=3 uid="uid://q1fideuiytwd"]
 
 [ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="1_achs6"]
 [ext_resource type="Script" uid="uid://bypdsy1oxr0t7" path="res://levels/menu/main_menu.gd" id="1_l70i3"]
@@ -6,6 +6,33 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewuw1"]
 texture = ExtResource("2_ewnip")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lhkd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2442u"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oucxi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +52,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ewuw1")
@@ -36,14 +67,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 170.0
-offset_top = -198.0
-offset_right = 546.0
-offset_bottom = -110.0
+offset_left = 212.0
+offset_top = -196.0
+offset_right = 503.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_achs6")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_4lhkd")
 text = "Start Game"
 
 [node name="Options" type="Button" parent="."]
@@ -54,13 +87,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 213.0
-offset_top = -97.0
-offset_right = 506.0
-offset_bottom = -29.0
+offset_top = -117.0
+offset_right = 503.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_achs6")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_2442u")
 text = "Options"
 
 [node name="Exit" type="Button" parent="."]
@@ -70,16 +105,90 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 246.0
-offset_top = -10.0
-offset_right = 474.0
-offset_bottom = 38.0
+offset_left = 215.0
+offset_top = -38.0
+offset_right = 504.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_achs6")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_oucxi")
 text = "Exit
 "
+
+[node name="American" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 45.0
+offset_right = 547.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "American"
+horizontal_alignment = 1
+
+[node name="Freedom" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 117.0
+offset_right = 622.0
+offset_bottom = 317.0
+
+[node name="Fr" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0117647, 0.176471, 0.380392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "Fr"
+
+[node name="e" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.705882, 0.0705882, 0.25098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "e"
+
+[node name="e2" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "e"
+
+[node name="d" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.705882, 0.0705882, 0.25098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "d"
+
+[node name="o" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "o"
+
+[node name="m" type="Label" parent="Freedom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.705882, 0.0705882, 0.25098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_achs6")
+theme_override_font_sizes/font_size = 200
+text = "m"
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
