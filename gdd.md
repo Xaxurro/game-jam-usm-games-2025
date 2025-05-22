@@ -17,6 +17,8 @@ American Freedom
 	- [2.6. Jugar con el entorno](#26-jugar-con-el-entorno)
 	- [2.7. Comprar en el Walmart](#27-comprar-en-el-walmart)
 	- [2.8. Coleccionables](#28-coleccionables)
+	- [2.9. Enemigos](#29-enemigos)
+	- [2.10. Mini-Jefes](#29-mini-jefes)
 
 - [3. Historia](#3-historia)
 	- [3.1. Ambiente](#31-ambiente)
@@ -113,6 +115,25 @@ Cada nivel tiene al menos una tienda, donde el jugador podria comprar diferentes
 ## 2.8. Coleccionables
 En cada nivel hay una cantidad de civiles que hay que liberar de la "Anti-Estados Unidos"
 
+## 2.9. Enemigos
+Aparecen en todos los stages, deben ser faciles de derrotar por si solos
+
+### Enemigo Basico
+Simplemente apunta siempre al jugador y dispara contra este, manteniendo una distancia prudente
+
+## 2.10. Mini-Jefes
+Aparecen en mitad de los niveles, usan distintas variedades de armas
+
+### R.O.B.O.T.
+Maquina de guerra que tiene 2 ataques:
+- Correr hacia el jugador y hacerle bastante daño
+- Hacer tres disparos simultaneos en contra del jugador
+
+### U.F.O.
+Transporte alienigena
+- Dispara una rafaga de balas hacia el jugador
+-
+
 # 3. Historia
 EEUU esta siendo invadido por la alianza "Anti-Estados Unidos", nuestro protagonista John Freedom no puede quedarse quieto como destruyen a su pais, asi que decide embarcarse en una clasica epica aventura estadounidense para vencer a la "Anti-Estados Unidos" y salvar la libertad de su amado pais
 
@@ -122,7 +143,6 @@ La historia ocurre en la epoca actual, con una exageracion absurda de lo bueno q
 #TODO: Decidir si habran dialogos o cinematicas
 
 ## 3.2. Insipiraciones
-- Metal Gear Rising: Revengance
 - Bro Force
 
 ## 3.3. Protagonista
