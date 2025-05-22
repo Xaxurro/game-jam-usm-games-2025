@@ -1,25 +1,39 @@
 class_name Bullet
-extends CharacterBody2D
+extends RigidBody2D
 
-enum Targets {
+enum TARGETS {
 	PLAYER,
 	ENEMY
 }
 
-@export var speed: int = 1000
+@export var speed: float = 1000
 @export var damage: int = 10
-@export var lifespan_in_seconds: float = 5.0
-var direction: Vector2
+@export var lifespan_seconds: float = 5.0
+@export var target: TARGETS = TARGETS.ENEMY
+
+@onready var timer: Timer = $Timer
+var initial_direction: Vector2
 
 func _ready() -> void:
-	velocity = direction * speed
+	linear_velocity = initial_direction * speed
+	timer.wait_time = lifespan_seconds
+	timer.timeout.connect(queue_free)
 
-func move(delta: float) -> void:
+func move(_delta: float) -> void:
+	pass
 	# Delete the bullet if got past lifespan
-	lifespan_in_seconds -= delta
-	if lifespan_in_seconds < 0:
-		queue_free()
-	position += velocity * delta
+	#position += velocity * delta
 
 func _process(delta: float) -> void:
 	move(delta)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if target == TARGETS.PLAYER and body.is_in_group("player"):
+		#body.call("take_damage", damage)
+		queue_free()
+	if target == TARGETS.ENEMY and body.is_in_group("enemies"):
+		queue_free()
+	if body.is_in_group("walls"):
+		queue_free()
+	pass

@@ -33,7 +33,7 @@ func shoot_at(target_direction: Vector2) -> void:
 	_sound_effect_player.play()
 
 	var bulletNode: Bullet = bulletScene.instantiate()
-	bulletNode.direction = target_direction
+	bulletNode.initial_direction = target_direction
 	bulletNode.damage = damage
 
 	# Spawn the bullet at the front of the barrel of the shotgun

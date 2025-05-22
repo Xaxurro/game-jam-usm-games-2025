@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
-[ext_resource type="Script" uid="uid://ctrmk6445dii0" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
+[ext_resource type="Script" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
 [ext_resource type="PackedScene" uid="uid://btwfhm618xw17" path="res://levels/assets/border-template.tscn" id="2_lxmmg"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
@@ -43,7 +43,7 @@ height = 20.9342
 position = Vector2(0, -1)
 script = ExtResource("1_yqug8")
 
-[node name="BorderTempalte" parent="." instance=ExtResource("2_lxmmg")]
+[node name="BorderTempalte" parent="." groups=["walls"] instance=ExtResource("2_lxmmg")]
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -2007.0
@@ -89,7 +89,7 @@ texture = ExtResource("4_82x6i")
 region_enabled = true
 region_rect = Rect2(66, 17, 46, 63)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Panel/Tree2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel/Tree2" groups=["walls"]]
 position = Vector2(0, 20.9341)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Tree2/StaticBody2D"]

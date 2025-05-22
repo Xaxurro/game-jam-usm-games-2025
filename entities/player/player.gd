@@ -1,4 +1,4 @@
-class_name EntityPlayer
+class_name Player
 extends CharacterBody2D
 
 @export var movement_speed: int = 10
