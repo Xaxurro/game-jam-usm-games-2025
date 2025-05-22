@@ -1,13 +1,19 @@
 class_name Player
 extends CharacterBody2D
 
+@export var health_max: int = 100
+@export var health_current: int = 100
 @export var movement_speed: int = 10
+@export var money: int = 0
 
 
 @onready var character_sprite: Sprite2D = $CharacterSprite
 @onready var primary_weapon: Weapon = $M60
 @onready var secondary_weapon: Weapon = $Shotgun
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
+
+var consumable_inventory: Array[Consumable] = []
+var consumable_active: Consumable
 
 func _ready() -> void:
 	secondary_weapon.visible = false
@@ -73,6 +79,23 @@ func _shoot_at(target_direction:Vector2) -> void:
 		primary_weapon.visible = false
 		secondary_weapon.visible = true
 		secondary_weapon.shoot_at(target_direction)
+
+func pay(price: int) -> bool:
+	if price > money: return false
+	money -= price
+	print(money)
+	return true
+
+func add_consumable(consumable: Consumable) -> void:
+	if not consumable_inventory.has(consumable):
+		consumable_inventory.append(consumable)
+	consumable.count += 1
+
+func heal(health_recovered: int) -> bool:
+	if health_current == health_max: return false
+	self.health_current += health_recovered
+	self.health_current %= health_max + 1 #Caps the health to the max
+	return true
 
 func _process(delta: float) -> void:
 	_movement(delta)
