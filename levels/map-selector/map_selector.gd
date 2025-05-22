@@ -18,7 +18,7 @@ func _on_back_pressed() -> void:
 
 
 func _on_washington_pressed() -> void:
-	selected_level = "res://levels/white-house/stage-0.tscn"
+	selected_level = "res://levels/white-house/stage-1/stage1.tscn"
 
 
 func _on_start_pressed() -> void:

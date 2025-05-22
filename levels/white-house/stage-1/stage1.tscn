@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=14 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
+[ext_resource type="Script" uid="uid://ctrmk6445dii0" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
 [ext_resource type="PackedScene" uid="uid://btwfhm618xw17" path="res://levels/assets/border-template.tscn" id="2_lxmmg"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
@@ -40,6 +41,7 @@ height = 20.9342
 
 [node name="Stage1" type="Node2D"]
 position = Vector2(0, -1)
+script = ExtResource("1_yqug8")
 
 [node name="BorderTempalte" parent="." instance=ExtResource("2_lxmmg")]
 
@@ -150,7 +152,7 @@ region_rect = Rect2(23, 213, 55, 78)
 [node name="crashedCar" type="Sprite2D" parent="Panel"]
 
 [node name="Smoke2" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(3495, 721)
+position = Vector2(3491, 716)
 scale = Vector2(1.52661, 1.52661)
 sprite_frames = SubResource("SpriteFrames_nq2ak")
 animation = &"Smoke"

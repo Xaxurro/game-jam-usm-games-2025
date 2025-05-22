@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fkdnbj86khgh"]
+
+[ext_resource type="Script" uid="uid://odhvw8nwh0vm" path="res://levels/assets/music/menu_music.gd" id="1_o8rxf"]
+
+[node name="Menu-music" type="AudioStreamPlayer" groups=["menu_music"]]
+script = ExtResource("1_o8rxf")

@@ -15,9 +15,14 @@ run/main_scene="uid://bqjalplvqjepi"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+menu_music="*res://levels/assets/music/menu-music.tscn"
+
 [global_group]
 
 player=""
+menu_music=""
 
 [input]
 
