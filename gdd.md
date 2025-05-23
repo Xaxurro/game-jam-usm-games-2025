@@ -144,6 +144,7 @@ La historia ocurre en la epoca actual, con una exageracion absurda de lo bueno q
 
 ## 3.2. Insipiraciones
 - Bro Force
+- Terminator
 
 ## 3.3. Protagonista
 - Estadounidense

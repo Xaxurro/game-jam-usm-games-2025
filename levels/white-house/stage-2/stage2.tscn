@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=6 format=3 uid="uid://cex8u8s2h0ktb"]
+
+[ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="1_nhjyu"]
+[ext_resource type="Texture2D" uid="uid://iahycg7gj8bl" path="res://levels/white-house/stage-2/assets/BackGround stage 2.png" id="1_xosbv"]
+[ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
+[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="4_nhjyu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
+texture = ExtResource("1_xosbv")
 
 [node name="Stage2" type="Node2D"]
+
+[node name="World Border" parent="." instance=ExtResource("1_nhjyu")]
+metadata/_edit_lock_ = true
+
+[node name="BackGround" type="Panel" parent="."]
+offset_left = -2004.0
+offset_top = -518.0
+offset_right = 1993.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_16vje")
+metadata/_edit_lock_ = true
+
+[node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
+position = Vector2(2034, -12)
+
+[node name="Player" parent="." instance=ExtResource("4_nhjyu")]
+position = Vector2(-1980, 3)
+movement_speed = 600
+
+[node name="Props" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(-2004, -32, -1985, -32, -1984, -497, -1026, -497, -1025, -296, -1006, -296, -1005, -497, -266, -497, -265, 10, -605, 10, -605, 31, -146, 30, -146, 11, -245, 10, -244, -498, 495, -498, 494, -153, 514, -153, 514, -213, 714, -213, 714, -233, 515, -234, 516, -498, 994, -498, 994, -233, 794, -234, 794, -213, 994, -213, 994, -153, 1014, -153, 1014, -498, 1971, -499, 1973, -55, 1994, -53, 1993, -517, -2004, -518)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(-2004, 50, -1984, 50, -1984, 476, -1025, 476, -1024, 274, -1006, 274, -1005, 476, 13, 476, 13, 31, -65, 30, -65, 11, 193, 11, 193, 30, 33, 30, 34, 477, 992, 477, 993, 31, 795, 30, 794, 11, 994, 11, 995, -72, 1013, -71, 1015, 476, 1972, 476, 1973, 30, 1993, 30, 1994, 495, -2004, 497)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(-1025, 192, -1005, 192, -1005, 32, -684, 32, -685, 10, -1005, 10, -1005, -213, -1024, -213)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(274, 10, 274, 31, 713, 30, 713, 10, 514, 10, 514, -72, 494, -72, 494, 10)

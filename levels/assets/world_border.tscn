@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ja6xe6awo7b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4p5x"]
+normal = Vector2(-1, 0)
+distance = -1994.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqug8"]
+normal = Vector2(1, 0)
+distance = -2008.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nq2ak"]
+distance = -501.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_31hdv"]
+normal = Vector2(0, 1)
+distance = -501.0
+
+[node name="World Border" type="StaticBody2D" groups=["walls"]]
+
+[node name="Right Limit" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_u4p5x")
+
+[node name="Left Limit" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_yqug8")
+
+[node name="Lower Limit" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_nq2ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_31hdv")

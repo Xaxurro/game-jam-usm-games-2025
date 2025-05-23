@@ -1,11 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7b2m8ir8pwou"]
+[gd_scene load_steps=9 format=3 uid="uid://c7b2m8ir8pwou"]
 
 [ext_resource type="Script" uid="uid://ck54ngyu4ke1o" path="res://levels/map-selector/map_selector.gd" id="1_b1vr8"]
 [ext_resource type="Texture2D" uid="uid://ork5gln8k0t6" path="res://levels/map-selector/assets/UnitedStates.png" id="2_8u85p"]
+[ext_resource type="Texture2D" uid="uid://ds3cnakv83t0q" path="res://levels/map-selector/assets/pexels-denisha-sandoval-479748-3907416.jpg" id="2_u56n8"]
+[ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="4_j7w4q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcvmr"]
+texture = ExtResource("2_u56n8")
+modulate_color = Color(0.404511, 0.404511, 0.404511, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olo0e"]
 texture = ExtResource("2_8u85p")
 region_rect = Rect2(22, 181, 995, 650)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx4ok"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gc3kn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
 
 [node name="Map-selector" type="Control"]
 layout_mode = 3
@@ -18,12 +42,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b1vr8")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gcvmr")
+
 [node name="Map" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 414.0
-offset_top = 155.0
-offset_right = 1134.0
-offset_bottom = 589.0
+offset_left = 417.0
+offset_top = 158.0
+offset_right = 1137.0
+offset_bottom = 592.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_olo0e")
 
 [node name="Back" type="Button" parent="."]
@@ -36,6 +69,10 @@ offset_top = -57.0
 offset_right = 137.0
 offset_bottom = -23.0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_j7w4q")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_yx4ok")
 text = "<- Back"
 
 [node name="Start" type="Button" parent="."]
@@ -43,11 +80,15 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 198.0
+offset_left = 209.0
 offset_top = -58.0
-offset_right = 380.0
+offset_right = 391.0
 offset_bottom = -23.0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_j7w4q")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gc3kn")
 text = "Start the mission"
 
 [node name="Button" type="Button" parent="."]

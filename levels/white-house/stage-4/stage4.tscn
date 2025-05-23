@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6k6u4bs0kkb1"]
+
+[ext_resource type="Texture2D" uid="uid://bhhkmvaceri6u" path="res://levels/white-house/stage-4/assets/background stage4.png" id="1_r35jg"]
+[ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="2_io1e3"]
+[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_io1e3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1k44o"]
+texture = ExtResource("1_r35jg")
+
+[node name="Scene4" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -2008.0
+offset_top = -499.0
+offset_right = 2017.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1k44o")
+
+[node name="World Border" parent="." instance=ExtResource("2_io1e3")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_io1e3")]
+position = Vector2(-1950, 2)

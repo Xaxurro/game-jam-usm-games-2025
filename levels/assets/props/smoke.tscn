@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqdhtfllk3b0h"]
+
+[ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="1_l08ud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4p5x"]
+atlas = ExtResource("1_l08ud")
+region = Rect2(64, 0, 32, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqug8"]
+atlas = ExtResource("1_l08ud")
+region = Rect2(96, 0, 32, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nq2ak"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4p5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqug8")
+}],
+"loop": true,
+"name": &"Smoke",
+"speed": 5.0
+}]
+
+[node name="Smoke" type="AnimatedSprite2D"]
+scale = Vector2(1.29545, 1.29545)
+sprite_frames = SubResource("SpriteFrames_nq2ak")
+animation = &"Smoke"
+autoplay = "Smoke"
+frame_progress = 0.428241
