@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
-[ext_resource type="Script" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
+[ext_resource type="Script" uid="uid://ctrmk6445dii0" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
 [ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]

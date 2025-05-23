@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckhpd63gko42x"]
+
+[ext_resource type="Texture2D" uid="uid://c3lrnqrn6p1ao" path="res://levels/white-house/stage-3/assets/Background stage 3.png" id="1_bjy5w"]
+[ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="2_2pw0o"]
+[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_eplmt"]
+[ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="4_2pw0o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pw0o"]
+texture = ExtResource("1_bjy5w")
+
+[node name="Stage3" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -2005.0
+offset_top = -513.0
+offset_right = 1998.0
+offset_bottom = 509.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2pw0o")
+metadata/_edit_lock_ = true
+
+[node name="World Border" parent="." instance=ExtResource("2_2pw0o")]
+metadata/_edit_lock_ = true
+
+[node name="Props" type="Area2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(-2005, -56, -1981, -55, -1980, -487, -304, -487, -301, -127, 825, -124, 844, -180, 869, -232, 899, -278, 929, -316, 971, -360, 1014, -392, 1056, -422, 1123, -451, 1195, -473, 1264, -481, 1335, -475, 1384, -465, 1450, -442, 1509, -414, 1556, -381, 1618, -320, 1661, -268, 1689, -223, 1705, -181, 1723, -127, 1997, -124, 1997, -511, -2003, -511)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
+polygon = PackedVector2Array(-2005, 47, -1981, 47, -1980, 484, -305, 484, -303, 80, 816, 81, 826, 122, 846, 183, 875, 237, 905, 283, 938, 324, 977, 362, 1024, 396, 1068, 421, 1118, 444, 1169, 461, 1230, 472, 1267, 475, 1290, 474, 1334, 471, 1386, 460, 1434, 445, 1492, 417, 1543, 387, 1592, 343, 1634, 299, 1676, 239, 1707, 174, 1730, 102, 1997, 102, 2000, 511, -2004, 512)
+
+[node name="Player" parent="." instance=ExtResource("3_eplmt")]
+position = Vector2(-1949, -1)
+movement_speed = 600
+
+[node name="NextLevel" parent="." instance=ExtResource("4_2pw0o")]
+position = Vector2(1888, -11)

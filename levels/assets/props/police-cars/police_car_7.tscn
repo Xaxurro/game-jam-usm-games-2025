@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://svckxnokf88d"]
+
+[ext_resource type="Texture2D" uid="uid://c4w7lmn520ie3" path="res://levels/white-house/stage-1/assets/POLICE_CLEAN_8D0000-sheet.png" id="1_qqw8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_668ck"]
+size = Vector2(27, 52)
+
+[node name="PoliceCar7" type="Sprite2D"]
+texture = ExtResource("1_qqw8n")
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_668ck")
