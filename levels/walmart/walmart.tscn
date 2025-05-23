@@ -20,23 +20,23 @@ distance = -481.0
 normal = Vector2(-1, 0)
 distance = -481.0
 
-[node name="Area2D3" type="Node2D"]
+[node name="Walmart" type="Node2D"]
 
-[node name="World Limit" type="StaticBody2D" parent="." groups=["walls"]]
+[node name="WorldLimit" type="StaticBody2D" parent="." groups=["walls"]]
 
-[node name="Lower World Limit" type="CollisionShape2D" parent="World Limit"]
+[node name="LowerLimit" type="CollisionShape2D" parent="WorldLimit"]
 position = Vector2(0, 1)
 shape = SubResource("WorldBoundaryShape2D_83cls")
 
-[node name="Upper World Limit" type="CollisionShape2D" parent="World Limit"]
+[node name="UpperLimit" type="CollisionShape2D" parent="WorldLimit"]
 position = Vector2(0, 32)
 shape = SubResource("WorldBoundaryShape2D_be8ht")
 
-[node name="Left World Limit" type="CollisionShape2D" parent="World Limit"]
+[node name="LeftLimit" type="CollisionShape2D" parent="WorldLimit"]
 position = Vector2(-2, 0)
 shape = SubResource("WorldBoundaryShape2D_xy7hr")
 
-[node name="Right World Limit" type="CollisionShape2D" parent="World Limit"]
+[node name="RightLimit" type="CollisionShape2D" parent="WorldLimit"]
 shape = SubResource("WorldBoundaryShape2D_fsfca")
 
 [node name="Sprite" type="Sprite2D" parent="."]
