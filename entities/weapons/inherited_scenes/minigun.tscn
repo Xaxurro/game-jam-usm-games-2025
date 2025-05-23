@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://drj7uawr8fk27"]
+
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://entities/weapons/weapon.tscn" id="1_h6pjo"]
+[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://entities/weapons/assets/audio/shotgun-shoot.ogg" id="2_f1moc"]
+[ext_resource type="PackedScene" uid="uid://c3yoxd22ehu6h" path="res://entities/bullet/player/bullet.tscn" id="3_tq3ex"]
+[ext_resource type="Texture2D" uid="uid://bifi1m3g75jy1" path="res://entities/weapons/assets/sprite-sheets/minigun.png" id="4_j5e0u"]
+
+[node name="Weapon" instance=ExtResource("1_h6pjo")]
+damage = 5
+firerate_in_seconds = 0.1
+max_recoil_offset = 1.0
+shoot_sound_effect = ExtResource("2_f1moc")
+bullet_scene = ExtResource("3_tq3ex")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("4_j5e0u")
+
+[node name="Muzzle" parent="Sprite" index="0"]
+position = Vector2(13, -3)
