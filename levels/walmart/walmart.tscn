@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuvd0h8roktjj"]
+
+[ext_resource type="Texture2D" uid="uid://b7famfwmpxflo" path="res://levels/walmart/assets/walmart.png" id="1_4rs2p"]
+[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_83cls"]
+[ext_resource type="PackedScene" uid="uid://byinp7oedfn72" path="res://entities/consumables/consumable.tscn" id="3_be8ht"]
+[ext_resource type="Resource" uid="uid://iteyvx40i3cu" path="res://entities/consumables/resources/grenade.tres" id="4_xy7hr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_83cls"]
+distance = -226.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_be8ht"]
+normal = Vector2(0, 1)
+distance = -259.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xy7hr"]
+normal = Vector2(1, 0)
+distance = -481.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fsfca"]
+normal = Vector2(-1, 0)
+distance = -481.0
+
+[node name="Area2D3" type="Node2D"]
+
+[node name="World Limit" type="StaticBody2D" parent="." groups=["walls"]]
+
+[node name="Lower World Limit" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_83cls")
+
+[node name="Upper World Limit" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(0, 32)
+shape = SubResource("WorldBoundaryShape2D_be8ht")
+
+[node name="Left World Limit" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(-2, 0)
+shape = SubResource("WorldBoundaryShape2D_xy7hr")
+
+[node name="Right World Limit" type="CollisionShape2D" parent="World Limit"]
+shape = SubResource("WorldBoundaryShape2D_fsfca")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_4rs2p")
+
+[node name="Player" parent="." instance=ExtResource("2_83cls")]
+position = Vector2(-1, -194)
+movement_speed = 200
+money = 1500
+
+[node name="Beer" parent="." instance=ExtResource("3_be8ht")]
+position = Vector2(-322, -106)
+is_free = false
+
+[node name="Grenade" parent="." instance=ExtResource("3_be8ht")]
+position = Vector2(-165, -130)
+consumable_type = ExtResource("4_xy7hr")
+is_free = false
