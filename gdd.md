@@ -190,6 +190,11 @@ Si no hay checkpoints disponibles (porque esta peleando contra un jefe o esta en
 ## 4.4. Seleccion de Armas
 Al inicio de cada nivel el jugador elige que armas llevar en su aventura, no se pueden cambiar hasta que se termine el nivel, se salga del nivel, o pierda el nivel
 
+## 4.5. Seleccion de Consumibles
+En la esquina superior derecha sale el consumible activo del jugador
+En todo momento el jugador podra seleccionar el consumible que desea usar
+Cuando no hay consumibles no muestra nada
+
 # 5. Controles
 ## 5.1. Movimiento Basico
 WASD

@@ -19,15 +19,6 @@ func _ready() -> void:
 	timer.wait_time = lifespan_seconds
 	timer.timeout.connect(queue_free)
 
-func move(_delta: float) -> void:
-	pass
-	# Delete the bullet if got past lifespan
-	#position += velocity * delta
-
-func _process(delta: float) -> void:
-	move(delta)
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if target == TARGETS.PLAYER and body.is_in_group("player"):
 		#body.call("take_damage", damage)
