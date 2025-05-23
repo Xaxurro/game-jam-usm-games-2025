@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Consumable" load_steps=3 format=3 uid="uid://dfeap51crrsbm"]
 
-[ext_resource type="Script" uid="uid://bfultfon0wobs" path="res://entities/consumables/resources/consumable.gd" id="1_i050w"]
+[ext_resource type="Script" uid="uid://bfultfon0wobs" path="res://entities/consumables/resources/consumable_resource.gd" id="1_i050w"]
 [ext_resource type="Texture2D" uid="uid://0n6vcn2y7etu" path="res://entities/consumables/assets/beer.png" id="2_j8cgb"]
 
 [resource]

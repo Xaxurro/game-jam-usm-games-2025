@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Consumable" load_steps=3 format=3 uid="uid://iteyvx40i3cu"]
 
-[ext_resource type="Script" uid="uid://bfultfon0wobs" path="res://entities/consumables/resources/consumable.gd" id="1_cgewm"]
+[ext_resource type="Script" uid="uid://bfultfon0wobs" path="res://entities/consumables/resources/consumable_resource.gd" id="1_cgewm"]
 [ext_resource type="Texture2D" uid="uid://u114ybpts3j3" path="res://entities/consumables/assets/grenade.png" id="2_dvbdf"]
 
 [resource]
