@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://btodv3lj2lsiy"]
+
+[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://entities/weapons/inherited_scenes/m60.tscn" id="1_6k5s8"]
+[ext_resource type="Script" uid="uid://byu4eo6xwnceq" path="res://entities/weapons/resources/weapon_resource.gd" id="1_yjre8"]
+
+[resource]
+script = ExtResource("1_yjre8")
+name = &"m60"
+scene = ExtResource("1_6k5s8")

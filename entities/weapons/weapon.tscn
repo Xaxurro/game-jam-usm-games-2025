@@ -39,7 +39,7 @@ _data = {
 &"shoot": SubResource("Animation_qi637")
 }
 
-[node name="Weapon" type="Node2D"]
+[node name="Weapon2" type="Node2D"]
 script = ExtResource("2_l8a67")
 
 [node name="Sprite" type="Sprite2D" parent="."]

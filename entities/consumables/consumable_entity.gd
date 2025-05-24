@@ -22,8 +22,8 @@ func _ready() -> void:
 		label.text = "$%d" % consumable_data.price
 
 func _on_body_entered(body: Node2D) -> void:
-	if not body is Player:
-		pass
+	if body is not Player:
+		return
 
 	var player: Player = body
 	if is_free or player.pay(consumable_data.price):

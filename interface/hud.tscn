@@ -26,3 +26,9 @@ layout_mode = 0
 offset_left = 45.0
 offset_right = 85.0
 offset_bottom = 23.0
+
+[node name="Money" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 85.0
+offset_right = 50.0
+offset_bottom = 108.0

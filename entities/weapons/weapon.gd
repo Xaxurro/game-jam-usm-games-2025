@@ -3,12 +3,12 @@ extends Node2D
 
 const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.tscn")
 
+@export var is_enemy: bool = true
 @export var damage: int = 10
 @export var firerate_in_seconds: float = 0.5
 @export var should_do_recoil: bool = true
 @export var max_recoil_offset: float = 15.0
 @export var shoot_sound_effect: AudioStream
-@export var bullet_scene: PackedScene
 
 @onready var _sprite: Sprite2D = $Sprite
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
@@ -35,6 +35,9 @@ func shoot_at(target_direction: Vector2) -> void:
 	var bulletNode: Bullet = bulletScene.instantiate()
 	bulletNode.initial_direction = target_direction
 	bulletNode.damage = damage
+
+	if is_enemy:
+		bulletNode.target = bulletNode.TARGETS.PLAYER
 
 	# Spawn the bullet at the front of the barrel of the shotgun
 	bulletNode.global_position = _muzzle_point.global_position
