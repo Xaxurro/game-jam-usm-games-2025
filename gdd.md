@@ -211,6 +211,7 @@ Barra Espaciadora
 Apuntar: Mouse
 Arma Principal: Click Izquierdo
 Arma Secundaria: Click Derecho
+Consumible: Click Central
 
 # 6. Arte
 El estilo sera de Pixel Art (32 x 32 para la mayoria de assets como armas y personajes)

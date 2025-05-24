@@ -1,7 +1,7 @@
 class_name ConsumableEntity
 extends Area2D
 
-@export var consumable_type: Consumable = preload("res://entities/consumables/resources/beer.tres")
+@export var consumable_data: Consumable = preload("res://entities/consumables/resources/beer.tres")
 @export var is_free: bool = true
 
 @onready var sprite: Sprite2D = $Sprite
@@ -9,17 +9,23 @@ extends Area2D
 @onready var label: Label = $Label
 
 func _ready() -> void:
-	sprite.texture = consumable_type.texture
+	if not consumable_data:
+		printerr("ConsumableData NOT ASSIGNED FOR ConsumableEntity")
+		queue_free()
+
+	sprite.texture = consumable_data.texture
 	var new_shape: RectangleShape2D = RectangleShape2D.new()
 	new_shape.size = sprite.texture.get_size()
 	collision_shape.shape = new_shape
 
 	if not is_free:
-		label.text = "$%d" % consumable_type.price
+		label.text = "$%d" % consumable_data.price
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if is_free or body.call("pay", consumable_type.price):
-			body.call("add_consumable", consumable_type)
-			queue_free()
-	pass
+	if not body is Player:
+		pass
+
+	var player: Player = body
+	if is_free or player.pay(consumable_data.price):
+		player.add_consumable(consumable_data.duplicate())
+		queue_free()

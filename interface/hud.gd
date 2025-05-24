@@ -12,10 +12,11 @@ func _update_consumable_selected() -> void:
 	var consumable: Consumable = player.consumable_inventory[player.consumable_selected_index]
 	var label: Label = consumable_selected.get_node("Label")
 	consumable_selected.texture = consumable.texture
-	label.text = consumable.name
+	label.text = "%s x %d" % [consumable.name, consumable.count]
 
 func _ready() -> void:
 	player.health_changed.connect(_update_health_bar)
 	_update_health_bar()
+
 	player.consumable_selected_changed.connect(_update_consumable_selected)
 	_update_health_bar()

@@ -15,6 +15,7 @@ extends CharacterBody2D
 var consumable_inventory: Array[Consumable] = []
 var consumable_selected_index: int = 0
 
+
 signal health_changed
 signal consumable_selected_changed
 
@@ -59,12 +60,12 @@ func _cycle_consumables() -> void:
 		if consumable_inventory.size() == 0: return
 		consumable_selected_index += 1
 		consumable_selected_index %= consumable_inventory.size()
-		print(consumable_selected_index)
 		consumable_selected_changed.emit()
 
 func _process_input(delta: float) -> void:
 	_move(delta)
 	_cycle_consumables()
+	use_consumable()
 
 # Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> Vector2:
@@ -101,18 +102,26 @@ func _shoot_at(target_direction:Vector2) -> void:
 	if Input.is_action_just_pressed("shoot_secondary_weapon"):
 		recieve_damage(10)
 
+func use_consumable() -> void:
+	if not Input.is_action_just_pressed("consumable_use"): return
+	if consumable_inventory.size() == 0: return
+	var consumable: Consumable = consumable_inventory[consumable_selected_index]
+	if consumable.count == 0: return
+	consumable.effect(self)
+	consumable.count -= 1
+	consumable_selected_changed.emit()
+
 func pay(price: int) -> bool:
 	if price > money: return false
 	money -= price
-	print(money)
 	return true
 
 func add_consumable(consumable: Consumable) -> void:
 	if not consumable_inventory.has(consumable):
 		consumable_inventory.append(consumable)
-		consumable_selected_index = consumable_inventory.size() - 1 #Select the newest consumable
-		consumable_selected_changed.emit()
+	consumable_selected_index = consumable_inventory.size() - 1 #Select the newest consumable
 	consumable.count += 1
+	consumable_selected_changed.emit()
 
 func heal(health_recovered: int) -> bool:
 	if health_current == health_max: return false
