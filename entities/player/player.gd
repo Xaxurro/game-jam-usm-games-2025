@@ -106,7 +106,6 @@ func use_consumable() -> void:
 	if not Input.is_action_just_pressed("consumable_use"): return
 	if consumable_inventory.size() == 0: return
 	var consumable: Consumable = consumable_inventory[consumable_selected_index]
-	print(consumable)
 	if consumable.count == 0: return
 	consumable.effect(self)
 	consumable.count -= 1
@@ -115,7 +114,6 @@ func use_consumable() -> void:
 func pay(price: int) -> bool:
 	if price > money: return false
 	money -= price
-	print(money)
 	return true
 
 func add_consumable(consumable: Consumable) -> void:
