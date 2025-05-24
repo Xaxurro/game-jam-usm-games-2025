@@ -4,35 +4,35 @@ extends CharacterBody2D
 @export var health_max: int = 100
 @export var health_current: int = 100
 @export var movement_speed: int = 10
-@export var money: int = 0
 
 @onready var character_sprite: Sprite2D = $CharacterSprite
-@onready var primary_weapon: Weapon = $PrimaryWeapon
-@onready var secondary_weapon: Weapon = $SecondaryWeapon
+@onready var weapon_primary: Weapon = $PrimaryWeapon
+@onready var weapon_secondary: Weapon = $SecondaryWeapon
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: CanvasLayer = $Hud
 
-var consumable_inventory: Array[Consumable] = []
-var consumable_selected_index: int = 0
-
+@export var inventory: Inventory = Inventory.new()
 
 signal health_changed
 signal consumable_selected_changed
-
+signal money_changed
 
 func _ready() -> void:
-	secondary_weapon.visible = false
+	weapon_secondary.visible = false
 	hud.visible = true
 
 func _set_weapons_rotation(new_rotation: float) -> void:
-	primary_weapon.get_node("Sprite").rotation = new_rotation
-	secondary_weapon.get_node("Sprite").rotation = new_rotation
+	weapon_primary.get_node("Sprite").rotation = new_rotation
+	weapon_secondary.get_node("Sprite").rotation = new_rotation
 
 func _set_weapons_scale_y(new_scale: float) -> void:
-	primary_weapon.get_node("Sprite").scale.y = new_scale
-	secondary_weapon.get_node("Sprite").scale.y = new_scale
+	weapon_primary.get_node("Sprite").scale.y = new_scale
+	weapon_secondary.get_node("Sprite").scale.y = new_scale
 
 func _move(delta: float) -> void:
+	var speed_should_reduce: bool = false
+	if weapon_primary._cooldown.time_left != 0: speed_should_reduce = true
+	if weapon_secondary._cooldown.time_left != 0: speed_should_reduce = true
 	var new_direction: Vector2 = Vector2.ZERO
 
 	if Input.is_action_pressed("move_up"):
@@ -49,6 +49,8 @@ func _move(delta: float) -> void:
 	else:
 		animation_player.play("running")
 	
+	const SPEED_DIVIDER: int = 2
+	if speed_should_reduce: new_direction /= SPEED_DIVIDER
 	
 	position += new_direction
 	
@@ -57,9 +59,7 @@ func _move(delta: float) -> void:
 
 func _cycle_consumables() -> void:
 	if Input.is_action_just_pressed("consumable_cycle"):
-		if consumable_inventory.size() == 0: return
-		consumable_selected_index += 1
-		consumable_selected_index %= consumable_inventory.size()
+		inventory.cycle_consumables()
 		consumable_selected_changed.emit()
 
 func _process_input(delta: float) -> void:
@@ -90,33 +90,26 @@ func _aim() -> Vector2:
 func _shoot_at(target_direction:Vector2) -> void:
 	# Execute code only when pressed right click and is not on cooldown
 	if Input.is_action_pressed("shoot_primary_weapon"):
-		primary_weapon.visible = true
-		secondary_weapon.visible = true
-		primary_weapon.shoot_at(target_direction)
+		weapon_primary.visible = true
+		weapon_secondary.visible = false
+		weapon_primary.shoot_at(target_direction)
 	if Input.is_action_pressed("shoot_secondary_weapon"):
-		primary_weapon.visible = false
-		secondary_weapon.visible = true
-		secondary_weapon.shoot_at(target_direction)
+		weapon_primary.visible = false
+		weapon_secondary.visible = true
+		weapon_secondary.shoot_at(target_direction)
 
 func use_consumable() -> void:
 	if not Input.is_action_just_pressed("consumable_use"): return
-	if consumable_inventory.size() == 0: return
-	var consumable: Consumable = consumable_inventory[consumable_selected_index]
-	if consumable.count == 0: return
-	consumable.effect(self)
-	consumable.count -= 1
+	inventory.use_consumable(self)
 	consumable_selected_changed.emit()
 
 func pay(price: int) -> bool:
-	if price > money: return false
-	money -= price
-	return true
+	var success: bool = inventory.pay_money(price)
+	money_changed.emit()
+	return success
 
 func add_consumable(consumable: Consumable) -> void:
-	if not consumable_inventory.has(consumable):
-		consumable_inventory.append(consumable)
-	consumable_selected_index = consumable_inventory.size() - 1 #Select the newest consumable
-	consumable.count += 1
+	inventory.add_consumable(consumable)
 	consumable_selected_changed.emit()
 
 func heal(health_recovered: int) -> bool:

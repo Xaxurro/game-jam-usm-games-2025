@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnn3f7yq23gi0"]
+[gd_scene load_steps=8 format=3 uid="uid://bnn3f7yq23gi0"]
 
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://entities/weapons/weapon.tscn" id="1_kf2xp"]
 [ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://entities/weapons/assets/audio/shotgun-shoot.ogg" id="2_h2bgj"]
-[ext_resource type="PackedScene" uid="uid://c3yoxd22ehu6h" path="res://entities/bullet/player/bullet.tscn" id="3_k0kmy"]
 [ext_resource type="Texture2D" uid="uid://ccdgqkjy6537i" path="res://entities/weapons/assets/sprite-sheets/m60.png" id="4_o4nat"]
 
 [sub_resource type="Animation" id="Animation_2pbsc"]
@@ -48,7 +47,6 @@ _data = {
 damage = 5
 should_do_recoil = false
 shoot_sound_effect = ExtResource("2_h2bgj")
-bullet_scene = ExtResource("3_k0kmy")
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("4_o4nat")
