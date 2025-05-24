@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var health_current: int = 100
 @export var speed: float = 100.0
 @export var stop_distance: float = 120.0
 @export var shoot_distance: float = 150.0
@@ -117,3 +118,10 @@ func _aim_at_player() -> void:
 	sprite.flip_h = direction.x < -THRESHOLD
 	if weapon_sprite:
 		weapon_sprite.scale.y = -1 if sprite.flip_h else 1
+
+func recieve_damage(damage_recieved: int) -> void:
+	self.health_current -= damage_recieved
+	if health_current <= 0:
+		queue_free()
+	
+	

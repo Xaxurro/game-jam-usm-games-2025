@@ -1,37 +1,39 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdu3ivoi3fuix"]
+[gd_scene load_steps=14 format=3 uid="uid://5spnsgl7iprk"]
 
-[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_5lf1o"]
+[ext_resource type="Script" uid="uid://x66fab2bu3b8" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent_m_60.gd" id="1_a25gr"]
+[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_7afr1"]
+[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://entities/weapons/inherited_scenes/m60.tscn" id="3_a25gr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twhep"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lenvy"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vd3o"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tiw8"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uan1m"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q223v"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncurx"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7yfn"]
-atlas = ExtResource("2_5lf1o")
+atlas = ExtResource("2_7afr1")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_twyc1"]
@@ -74,8 +76,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4yt1"]
 size = Vector2(10, 25)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Fbi m60" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
+script = ExtResource("1_a25gr")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_twyc1")
@@ -94,3 +97,5 @@ neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
+
+[node name="PrimaryWeapon" parent="." instance=ExtResource("3_a25gr")]

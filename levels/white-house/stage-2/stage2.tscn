@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=10 format=3 uid="uid://cex8u8s2h0ktb"]
 
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="1_nhjyu"]
 [ext_resource type="Texture2D" uid="uid://iahycg7gj8bl" path="res://levels/white-house/stage-2/assets/BackGround stage 2.png" id="1_xosbv"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="4_nhjyu"]
-[ext_resource type="PackedScene" uid="uid://dmf3cl2kedrs6" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent_close.tscn" id="5_v8uua"]
+[ext_resource type="PackedScene" uid="uid://dmf3cl2kedrs6" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent_close.tscn" id="5_81vw2"]
+[ext_resource type="PackedScene" uid="uid://5spnsgl7iprk" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent-m60.tscn" id="6_ovjr4"]
+[ext_resource type="PackedScene" uid="uid://bud5is1d8i0m8" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent-mini.tscn" id="7_gvagb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
 texture = ExtResource("1_xosbv")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_16vje"]
+vertices = PackedVector2Array(784, 1.04688, 784, 41, 724, 40, 724, 1.04688, 724.508, -203, 2.03906, 42, 3.95313, 465, -995, 465, -75, 42, -675, 41, -615, 41, -995, 263, -994.063, 41, -995.063, 202, 722.508, -243, 525.039, -243, 525.961, -489, 983.039, -489, 983.961, -242.953, 782.461, -241.953, 784.508, -203.047, -1035.05, 263, -1034.04, 464.023, -1974, 465.969, -1974, -487.008, 982.977, 41, 982.023, 466, 43, 466, 263.461, 40, 203, 41, -994, -286, -994, -488, -275.977, -488, -275.023, 0, -615, 0, -993.961, -223, 1962, 465, 1024.02, 465, 1025.02, -82, 1962, -488, 1024.97, -488, 1023.97, -143, 984.117, -82, 984.172, -143, -136, 0, -235.023, 0, -235.977, -488.008, 484, -488.977, 484, -144, -75, -0.0390625, -862.781, 0.453125, -994.953, 0.03125, -675, 1.03125, -1035, -487.977, -1035, -286, -1035.02, -223, -1033.98, 202, -136, 41, 485, 0.0390625, 265.508, 1.03906, 203, 1.03906, 485, -81, 43, 41, 524, -144, 524, -81, 524, -203, 524, 0.0390625, 983.109, 0.0390625, 983.156, -202.039)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 8, 7, 11), PackedInt32Array(12, 9, 11, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18, 19), PackedInt32Array(4, 14, 19, 20, 0), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(1, 25, 26, 27), PackedInt32Array(28, 2, 1, 27, 29), PackedInt32Array(30, 31, 32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(40, 39, 38, 41), PackedInt32Array(41, 38, 42, 43), PackedInt32Array(44, 45, 46, 47, 48, 49), PackedInt32Array(50, 51, 35, 34, 52), PackedInt32Array(24, 53, 54, 55), PackedInt32Array(13, 11, 21, 56), PackedInt32Array(56, 21, 24, 55), PackedInt32Array(35, 55, 54, 30), PackedInt32Array(52, 34, 10, 9), PackedInt32Array(8, 10, 57), PackedInt32Array(49, 8, 57, 44), PackedInt32Array(58, 59, 60, 49, 48, 61), PackedInt32Array(27, 62, 29), PackedInt32Array(28, 29, 60, 59), PackedInt32Array(61, 48, 63, 64), PackedInt32Array(63, 65, 4), PackedInt32Array(3, 66, 64, 4), PackedInt32Array(43, 42, 67, 0, 20, 68), PackedInt32Array(64, 63, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1984, -497, -1025, -498, -1025, -296, -1004, -296, -1004, -498, -266, -498, -265, 10, -605, 10, -605, 31, -146, 31, -146, 10, -245, 10, -246, -498, 494, -499, 494, -154, 514, -154, 514, -213, 714, -213, 713, -233, 515, -233, 516, -499, 993, -499, 994, -233, 793, -232, 794, -213, 993, -212, 994, -153, 1014, -153, 1015, -498, 1972, -498, 1972, 475, 1014, 475, 1015, -72, 994, -72, 993, 10, 794, 11, 794, 31, 993, 31, 992, 476, 33, 476, 33, 31, 193, 31, 193, 11, -65, 10, -65, 32, 12, 32, 14, 475, -1005, 475, -1005, 273, -1025, 273, -1024, 474, -1984, 476), PackedVector2Array(-1005, 192, -1004, 31, -734.068, 31, -685, 31, -685, 11, -862.816, 10.4444, -1005, 10, -1004, -213, -1025, -213, -1024, 192), PackedVector2Array(274, 30, 714, 30, 714, 11, 514, 10, 514, -71, 495, -71, 495, 10, 275, 11)])
 
 [node name="Stage2" type="Node2D"]
 
@@ -17,7 +24,7 @@ metadata/_edit_lock_ = true
 [node name="Props" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Props"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Props" groups=["walls"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
 polygon = PackedVector2Array(-2004, -32, -1985, -32, -1984, -497, -1026, -497, -1025, -296, -1006, -296, -1005, -497, -266, -497, -265, 10, -605, 10, -605, 31, -146, 30, -146, 11, -245, 10, -244, -498, 495, -498, 494, -153, 514, -153, 514, -213, 714, -213, 714, -233, 515, -234, 516, -498, 994, -498, 994, -233, 794, -234, 794, -213, 994, -213, 994, -153, 1014, -153, 1014, -498, 1971, -499, 1973, -55, 1994, -53, 1993, -517, -2004, -518)
@@ -46,8 +53,370 @@ position = Vector2(2034, -12)
 position = Vector2(-1980, 3)
 movement_speed = 600
 
-[node name="Fbi Close" parent="." instance=ExtResource("5_v8uua")]
-position = Vector2(-603, -104)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_16vje")
 
-[node name="Fbi Close2" parent="." instance=ExtResource("5_v8uua")]
-position = Vector2(-825, -138)
+[node name="Enemies" type="Area2D" parent="."]
+
+[node name="Fbi Close49" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1594, 250)
+
+[node name="Fbi Close50" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1505, 247)
+
+[node name="Fbi Close51" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1548, 236)
+
+[node name="Fbi m108" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1546, 337)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m109" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1497, 306)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m110" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1592, 310)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini17" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-1544, 292)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close52" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1357, 44)
+
+[node name="Fbi Close53" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1268, 41)
+
+[node name="Fbi Close54" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1311, 30)
+
+[node name="Fbi m111" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1309, 131)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m112" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1260, 100)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m113" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1355, 104)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini18" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-1307, 86)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close55" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1513, -151)
+
+[node name="Fbi Close56" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1424, -154)
+
+[node name="Fbi Close57" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1467, -165)
+
+[node name="Fbi m114" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1465, -64)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m115" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1416, -95)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m116" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1511, -91)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini19" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-1463, -109)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close58" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1784, -369)
+
+[node name="Fbi Close59" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1695, -372)
+
+[node name="Fbi Close60" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-1738, -383)
+
+[node name="Fbi m117" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1736, -282)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m118" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1687, -313)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m119" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-1782, -309)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini20" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-1734, -327)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close61" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-927, -420)
+
+[node name="Fbi Close62" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-838, -423)
+
+[node name="Fbi Close63" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-881, -434)
+
+[node name="Fbi m120" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-879, -333)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m121" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-830, -364)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m122" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-925, -360)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini21" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-877, -378)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close64" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-466, -165)
+
+[node name="Fbi Close65" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-377, -168)
+
+[node name="Fbi Close66" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-420, -179)
+
+[node name="Fbi m123" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-418, -78)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m124" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-369, -109)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m125" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-464, -105)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini22" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-416, -123)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close67" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-831, 327)
+
+[node name="Fbi Close68" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-742, 324)
+
+[node name="Fbi Close69" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-785, 313)
+
+[node name="Fbi m126" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-783, 414)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m127" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-734, 383)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m128" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-829, 387)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini23" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-781, 369)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close70" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-342, 196)
+
+[node name="Fbi Close71" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-253, 193)
+
+[node name="Fbi Close72" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-296, 182)
+
+[node name="Fbi m129" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-294, 283)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m130" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-245, 252)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m131" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-340, 256)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini24" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(-292, 238)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close73" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(-11, -128)
+
+[node name="Fbi Close74" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(78, -131)
+
+[node name="Fbi Close75" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(35, -142)
+
+[node name="Fbi m132" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(37, -41)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m133" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(86, -72)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m134" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(-9, -68)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini25" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(39, -86)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close76" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(319, -433)
+
+[node name="Fbi Close77" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(408, -436)
+
+[node name="Fbi Close78" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(365, -447)
+
+[node name="Fbi m135" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(367, -346)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m136" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(416, -377)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m137" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(321, -373)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini26" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(369, -391)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close79" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(179, 262)
+
+[node name="Fbi Close80" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(268, 259)
+
+[node name="Fbi Close81" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(225, 248)
+
+[node name="Fbi m138" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(227, 349)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m139" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(276, 318)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m140" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(181, 322)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini27" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(229, 304)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close82" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(733, 260)
+
+[node name="Fbi Close83" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(822, 257)
+
+[node name="Fbi Close84" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(779, 246)
+
+[node name="Fbi m141" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(781, 347)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m142" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(830, 316)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi m143" parent="Enemies" instance=ExtResource("6_ovjr4")]
+position = Vector2(735, 320)
+shoot_cooldown = 1.5
+detection_range = 700.0
+
+[node name="Fbi Mini28" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(783, 302)
+shoot_cooldown = 0.4
+
+[node name="Fbi Close86" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(616, -282)
+
+[node name="Fbi Close87" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(895, -274)
+
+[node name="Fbi Close88" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(895, -274)
+
+[node name="Fbi Close89" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(927, -434)
+
+[node name="Fbi Close90" parent="Enemies" instance=ExtResource("5_81vw2")]
+position = Vector2(589, -438)
+
+[node name="Fbi Mini29" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(742, -470)
+shoot_cooldown = 0.4
+
+[node name="Fbi Mini30" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(806, -466)
+shoot_cooldown = 0.4
+
+[node name="Fbi Mini31" parent="Enemies" instance=ExtResource("7_gvagb")]
+position = Vector2(678, -469)
+shoot_cooldown = 0.4

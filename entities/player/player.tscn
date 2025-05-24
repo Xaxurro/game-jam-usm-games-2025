@@ -91,7 +91,7 @@ movement_speed = 50
 inventory = SubResource("Resource_qiwj3")
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CharacterSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_bls4j")
