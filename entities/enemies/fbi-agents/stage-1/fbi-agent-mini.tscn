@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmf3cl2kedrs6"]
+[gd_scene load_steps=14 format=3 uid="uid://bud5is1d8i0m8"]
 
-[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_gs3n3"]
-[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://entities/weapons/inherited_scenes/shotgun.tscn" id="3_lenvy"]
+[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_d0c88"]
+[ext_resource type="PackedScene" uid="uid://drj7uawr8fk27" path="res://entities/weapons/inherited_scenes/minigun.tscn" id="2_tuvhb"]
 
-[sub_resource type="GDScript" id="GDScript_twhep"]
+[sub_resource type="GDScript" id="GDScript_d0c88"]
 script/source = "extends CharacterBody2D
 
 @export var health_current: int = 100
@@ -134,38 +134,38 @@ func recieve_damage(damage_recieved: int) -> void:
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twhep"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lenvy"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vd3o"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tiw8"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uan1m"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q223v"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncurx"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7yfn"]
-atlas = ExtResource("1_gs3n3")
+atlas = ExtResource("1_d0c88")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v2g2y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1o0ha"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -202,28 +202,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twhep"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5w8c"]
 size = Vector2(10, 25)
 
-[node name="Fbi Close" type="CharacterBody2D" groups=["enemies"]]
-collision_layer = 65535
-collision_mask = 65535
+[node name="Fbi Mini" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
-script = SubResource("GDScript_twhep")
+script = SubResource("GDScript_d0c88")
+stop_distance = 250.0
+shoot_distance = 250.0
 detection_range = 700.0
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_v2g2y")
+sprite_frames = SubResource("SpriteFrames_1o0ha")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.376906
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
-shape = SubResource("RectangleShape2D_twhep")
-
-[node name="PrimaryWeapon" parent="." instance=ExtResource("3_lenvy")]
-damage = 25
+shape = SubResource("RectangleShape2D_x5w8c")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
@@ -233,3 +229,5 @@ neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
+
+[node name="PrimaryWeapon" parent="." instance=ExtResource("2_tuvhb")]
