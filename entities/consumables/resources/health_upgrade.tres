@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="HealthUpgrade" load_steps=2 format=3 uid="uid://d4q6k8k8gj6o"]
+[gd_resource type="Resource" script_class="HealthUpgrade" load_steps=3 format=3 uid="uid://d4q6k8k8gj6o"]
 
 [ext_resource type="Script" uid="uid://31amrnli60ev" path="res://entities/consumables/resources/health_upgrade.gd" id="1_8ss1a"]
+[ext_resource type="Texture2D" uid="uid://d0b13sn83dc6q" path="res://entities/consumables/assets/health_upgrade.png" id="2_f5oha"]
 
 [resource]
 script = ExtResource("1_8ss1a")
@@ -8,4 +9,5 @@ added_health = 10
 name = &"Unnamed Consumable"
 count = 0
 price = 0
+texture = ExtResource("2_f5oha")
 metadata/_custom_type_script = "uid://31amrnli60ev"

@@ -97,10 +97,6 @@ func _shoot_at(target_direction:Vector2) -> void:
 		primary_weapon.visible = false
 		secondary_weapon.visible = true
 		secondary_weapon.shoot_at(target_direction)
-	if Input.is_action_just_pressed("shoot_primary_weapon"):
-		heal(10)
-	if Input.is_action_just_pressed("shoot_secondary_weapon"):
-		recieve_damage(10)
 
 func use_consumable() -> void:
 	if not Input.is_action_just_pressed("consumable_use"): return
