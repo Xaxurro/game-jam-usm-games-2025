@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Consumable" load_steps=3 format=3 uid="uid://iteyvx40i3cu"]
+[gd_resource type="Resource" script_class="Grenade" load_steps=3 format=3 uid="uid://cc5q10xqdaeub"]
 
-[ext_resource type="Script" uid="uid://bfultfon0wobs" path="res://entities/consumables/resources/consumable_resource.gd" id="1_cgewm"]
+[ext_resource type="Script" uid="uid://dgjtng00uys66" path="res://entities/consumables/resources/grenade.gd" id="1_ja1qu"]
 [ext_resource type="Texture2D" uid="uid://u114ybpts3j3" path="res://entities/consumables/assets/grenade.png" id="2_dvbdf"]
 
 [resource]
-script = ExtResource("1_cgewm")
+script = ExtResource("1_ja1qu")
+damage = 50
 name = &"grenade"
 count = 0
 price = 3000
 texture = ExtResource("2_dvbdf")
-metadata/_custom_type_script = "uid://bfultfon0wobs"
+metadata/_custom_type_script = "uid://dgjtng00uys66"

@@ -46,7 +46,7 @@ texture = ExtResource("1_4rs2p")
 [node name="Player" parent="." instance=ExtResource("2_83cls")]
 position = Vector2(-1, -194)
 movement_speed = 200
-money = 1500
+money = 4500
 
 [node name="Beer" parent="." instance=ExtResource("3_be8ht")]
 position = Vector2(-322, -106)
