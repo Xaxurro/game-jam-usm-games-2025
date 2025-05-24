@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=30 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
-[ext_resource type="Script" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
+[ext_resource type="Script" uid="uid://ctrmk6445dii0" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
 [ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]
 [ext_resource type="Texture2D" uid="uid://c4w7lmn520ie3" path="res://levels/white-house/stage-1/assets/POLICE_CLEAN_8D0000-sheet.png" id="5_xngfr"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="7_u4p5x"]
-[ext_resource type="PackedScene" uid="uid://dmf3cl2kedrs6" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent_close.tscn" id="9_nq2ak"]
+[ext_resource type="PackedScene" uid="uid://bdu3ivoi3fuix" path="res://entities/enemies/enemy.tscn" id="8_yqug8"]
+[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://entities/weapons/inherited_scenes/shotgun.tscn" id="10_x7cji"]
+[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="11_668ck"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4p5x"]
 normal = Vector2(-1, 0)
@@ -23,6 +25,11 @@ distance = -706.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_31hdv"]
 normal = Vector2(0, 1)
 distance = -706.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yqug8"]
+vertices = PackedVector2Array(1934.01, 281.828, 1934.97, 694.992, -2003.95, 693, -1997.04, -693.992, 1908.24, 261.406, 1886.29, 238.406, 1872.71, 219.609, 1853.22, 188.828, 1834.83, 150, 1822.51, 119.203, 1812.15, 81.9219, 1805.05, 19.9766, 1799.98, -41.8203, 1803.06, -107.57, 1933.11, -693, 1822.43, -189.078, 1936.93, -354.211, 1894.6, -325.039, 1851.12, -254.648, 1812.29, -141.406)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3), PackedInt32Array(6, 5, 3), PackedInt32Array(7, 6, 3), PackedInt32Array(8, 7, 3), PackedInt32Array(9, 8, 3), PackedInt32Array(10, 9, 3), PackedInt32Array(11, 10, 3), PackedInt32Array(12, 11, 3), PackedInt32Array(13, 12, 3), PackedInt32Array(13, 3, 14, 15), PackedInt32Array(14, 16, 17), PackedInt32Array(14, 17, 18), PackedInt32Array(14, 18, 15), PackedInt32Array(13, 15, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2007, -704, 1943, -703, 1947, -349, 1902, -318, 1860, -250, 1832, -186, 1822, -139, 1813, -106, 1810, -42, 1815, 19, 1822, 80, 1832, 116, 1844, 146, 1862, 184, 1881, 214, 1894, 232, 1915, 254, 1944, 277, 1945, 705, -2014, 703)])
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82x6i"]
 texture = ExtResource("1_2o78u")
@@ -54,6 +61,75 @@ animations = [{
 radius = 6.61078
 height = 20.9342
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_31hdv"]
+atlas = ExtResource("11_668ck")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7cji"]
+atlas = ExtResource("11_668ck")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_668ck"]
+atlas = ExtResource("11_668ck")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o0ha"]
+atlas = ExtResource("11_668ck")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5w8c"]
+atlas = ExtResource("11_668ck")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbntd"]
+atlas = ExtResource("11_668ck")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4y1x"]
+atlas = ExtResource("11_668ck")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax4j5"]
+atlas = ExtResource("11_668ck")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_de00k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31hdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7cji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_668ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o0ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5w8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbntd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4y1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax4j5")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
 [node name="Stage1" type="Node2D"]
 position = Vector2(0, -1)
 script = ExtResource("1_yqug8")
@@ -71,6 +147,10 @@ shape = SubResource("WorldBoundaryShape2D_nq2ak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Border"]
 shape = SubResource("WorldBoundaryShape2D_31hdv")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_yqug8")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -2007.0
@@ -190,8 +270,14 @@ frame_progress = 0.955138
 position = Vector2(1795, -23)
 
 [node name="Player" parent="." instance=ExtResource("2_2o78u")]
-position = Vector2(-1561, 28)
+position = Vector2(-1845, 53)
 movement_speed = 200
 
-[node name="Fbi Close" parent="." instance=ExtResource("9_nq2ak")]
-position = Vector2(-1356, 5)
+[node name="Enemy" parent="." instance=ExtResource("8_yqug8")]
+position = Vector2(-460, 12)
+primary_weapon = ExtResource("10_x7cji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_de00k")
+animation = &"walking"
+autoplay = "idle"
