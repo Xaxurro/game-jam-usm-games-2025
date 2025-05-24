@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=7 format=3 uid="uid://cex8u8s2h0ktb"]
 
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="1_nhjyu"]
 [ext_resource type="Texture2D" uid="uid://iahycg7gj8bl" path="res://levels/white-house/stage-2/assets/BackGround stage 2.png" id="1_xosbv"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="4_nhjyu"]
+[ext_resource type="PackedScene" uid="uid://dmf3cl2kedrs6" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent_close.tscn" id="5_v8uua"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
 texture = ExtResource("1_xosbv")
@@ -12,21 +13,6 @@ texture = ExtResource("1_xosbv")
 
 [node name="World Border" parent="." instance=ExtResource("1_nhjyu")]
 metadata/_edit_lock_ = true
-
-[node name="BackGround" type="Panel" parent="."]
-offset_left = -2004.0
-offset_top = -518.0
-offset_right = 1993.0
-offset_bottom = 496.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_16vje")
-metadata/_edit_lock_ = true
-
-[node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
-position = Vector2(2034, -12)
-
-[node name="Player" parent="." instance=ExtResource("4_nhjyu")]
-position = Vector2(-1980, 3)
-movement_speed = 600
 
 [node name="Props" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
@@ -44,3 +30,24 @@ polygon = PackedVector2Array(-1025, 192, -1005, 192, -1005, 32, -684, 32, -685, 
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
 polygon = PackedVector2Array(274, 10, 274, 31, 713, 30, 713, 10, 514, 10, 514, -72, 494, -72, 494, 10)
+
+[node name="BackGround" type="Panel" parent="."]
+offset_left = -2004.0
+offset_top = -518.0
+offset_right = 1993.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_16vje")
+metadata/_edit_lock_ = true
+
+[node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
+position = Vector2(2034, -12)
+
+[node name="Player" parent="." instance=ExtResource("4_nhjyu")]
+position = Vector2(-1980, 3)
+movement_speed = 600
+
+[node name="Fbi Close" parent="." instance=ExtResource("5_v8uua")]
+position = Vector2(-603, -104)
+
+[node name="Fbi Close2" parent="." instance=ExtResource("5_v8uua")]
+position = Vector2(-825, -138)
