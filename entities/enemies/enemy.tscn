@@ -6,6 +6,12 @@
 size = Vector2(10, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owq46"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -17,3 +23,4 @@ shape = SubResource("RectangleShape2D_c8u6y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_owq46")
+animation = &"idle"

@@ -25,6 +25,7 @@ Global="*res://levels/assets/global.gd"
 player=""
 menu_music=""
 walls=""
+enemies=""
 
 [input]
 
