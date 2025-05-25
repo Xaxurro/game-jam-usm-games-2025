@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmf3cl2kedrs6"]
+[gd_scene load_steps=15 format=3 uid="uid://dmf3cl2kedrs6"]
 
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_gs3n3"]
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_twhep"]
+[ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="3_lenvy"]
 
 [sub_resource type="GDScript" id="GDScript_twhep"]
 script/source = "extends CharacterBody2D
@@ -232,3 +233,4 @@ avoidance_mask = 0
 debug_enabled = true
 
 [node name="Weapon" parent="." instance=ExtResource("2_twhep")]
+weapon_resource = ExtResource("3_lenvy")

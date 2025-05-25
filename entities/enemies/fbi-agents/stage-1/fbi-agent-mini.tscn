@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgk37absmj3xl"]
+[gd_scene load_steps=14 format=3 uid="uid://bud5is1d8i0m8"]
 
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_d0c88"]
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_d0c88"]
