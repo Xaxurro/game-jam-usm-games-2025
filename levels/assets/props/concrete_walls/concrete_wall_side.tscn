@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1wdkrw81fgnk"]
+
+[ext_resource type="Texture2D" uid="uid://wuc87aqfftla" path="res://levels/assets/props/sprites/concrete_wall_spritesheet.png" id="1_7dvhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otwsm"]
+size = Vector2(14, 16)
+
+[node name="ConcreteWallSide" type="StaticBody2D"]
+collision_layer = 2147483648
+collision_mask = 1610612739
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_7dvhb")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_otwsm")
