@@ -75,6 +75,8 @@ animations = [{
 size = Vector2(10, 25)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2147483649
 motion_mode = 1
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]

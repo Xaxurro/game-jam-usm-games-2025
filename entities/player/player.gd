@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var health_max: int = 100
 @export var health_current: int = 100
-@export var movement_speed: int = 10
+@export var movement_speed: int = 200
 
 @onready var character_sprite: Sprite2D = $CharacterSprite
 @onready var weapon_primary: Weapon = $PrimaryWeapon
@@ -29,30 +29,31 @@ func _set_weapons_scale_y(new_scale: float) -> void:
 	weapon_primary.get_node("Sprite").scale.y = new_scale
 	weapon_secondary.get_node("Sprite").scale.y = new_scale
 
-func _move(delta: float) -> void:
-	var speed_should_reduce: bool = false
-	if weapon_primary._cooldown.time_left != 0: speed_should_reduce = true
-	if weapon_secondary._cooldown.time_left != 0: speed_should_reduce = true
-	var new_direction: Vector2 = Vector2.ZERO
+func _update_velocity(delta: float) -> void:
+	var input_direction: Vector2 = Vector2.ZERO
 
 	if Input.is_action_pressed("move_up"):
-		new_direction.y = movement_speed * delta * -1
+		input_direction.y = movement_speed * delta * -1
 	if Input.is_action_pressed("move_down"):
-		new_direction.y = movement_speed * delta
+		input_direction.y = movement_speed * delta
 	if Input.is_action_pressed("move_left"):
-		new_direction.x = movement_speed * delta * -1
+		input_direction.x = movement_speed * delta * -1
 	if Input.is_action_pressed("move_right"):
-		new_direction.x = movement_speed * delta
+		input_direction.x = movement_speed * delta
 	
-	if new_direction == Vector2.ZERO:
+	velocity = input_direction.normalized() * movement_speed
+	
+	if input_direction == Vector2.ZERO:
 		animation_player.play("idle")
 	else:
 		animation_player.play("running")
 	
+	var speed_should_reduce: bool = false
+	if weapon_primary._cooldown.time_left != 0: speed_should_reduce = true
+	if weapon_secondary._cooldown.time_left != 0: speed_should_reduce = true
+
 	const SPEED_DIVIDER: int = 2
-	if speed_should_reduce: new_direction /= SPEED_DIVIDER
-	
-	position += new_direction
+	if speed_should_reduce: velocity /= SPEED_DIVIDER
 	
 	##Handle Collition
 	move_and_slide()
@@ -63,7 +64,7 @@ func _cycle_consumables() -> void:
 		consumable_selected_changed.emit()
 
 func _process_input(delta: float) -> void:
-	_move(delta)
+	_update_velocity(delta)
 	_cycle_consumables()
 	use_consumable()
 
@@ -127,7 +128,7 @@ func recieve_damage(damage_recieved: int) -> bool:
 
 	return health_current <= 0
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	_process_input(delta)
 	var target_direction: Vector2 = _aim()
 	_shoot_at(target_direction)

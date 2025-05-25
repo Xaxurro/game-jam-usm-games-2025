@@ -84,8 +84,7 @@ _data = {
 size = Vector2(22, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 65535
-collision_mask = 65535
+collision_mask = 3221225472
 script = ExtResource("1_sglur")
 movement_speed = 50
 inventory = SubResource("Resource_qiwj3")

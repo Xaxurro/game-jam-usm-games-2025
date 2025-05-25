@@ -206,6 +206,8 @@ animations = [{
 size = Vector2(10, 25)
 
 [node name="Fbi Mini" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 2147483649
 motion_mode = 1
 script = SubResource("GDScript_d0c88")
 stop_distance = 250.0
