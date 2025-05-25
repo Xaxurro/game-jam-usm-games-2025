@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://dum6kkdjvyvj8"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dum6kkdjvyvj8"]
 
 [ext_resource type="Script" uid="uid://byu4eo6xwnceq" path="res://weapons/resources/weapon_resource.gd" id="1_b86cr"]
+[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="2_wsopd"]
 
 [resource]
 script = ExtResource("1_b86cr")
@@ -8,5 +9,7 @@ name = &"shotgun"
 is_enemy = true
 damage = 30
 firerate_in_seconds = 1.0
+muzzle_position = Vector2(0, 0)
 should_do_recoil = true
 max_recoil_offset = 15.0
+shoot_sound_effect = ExtResource("2_wsopd")

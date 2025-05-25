@@ -6,8 +6,8 @@ extends CharacterBody2D
 @export var movement_speed: int = 200
 
 @onready var character_sprite: Sprite2D = $CharacterSprite
-@onready var weapon_primary: Weapon = $PrimaryWeapon
-@onready var weapon_secondary: Weapon = $SecondaryWeapon
+@onready var weapon_primary: Weapon = $WeaponPrimary
+@onready var weapon_secondary: Weapon = $WeaponSecondary
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: CanvasLayer = $Hud
 
@@ -18,6 +18,8 @@ signal consumable_selected_changed
 signal money_changed
 
 func _ready() -> void:
+	weapon_primary.weapon_resource.is_enemy = false
+	weapon_secondary.weapon_resource.is_enemy = false
 	weapon_secondary.visible = false
 	hud.visible = true
 

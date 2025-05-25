@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bud5is1d8i0m8"]
+[gd_scene load_steps=14 format=3 uid="uid://cgk37absmj3xl"]
 
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_d0c88"]
-[ext_resource type="PackedScene" uid="uid://drj7uawr8fk27" path="res://weapons/inherited_scenes/minigun.tscn" id="2_tuvhb"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_d0c88"]
 
 [sub_resource type="GDScript" id="GDScript_d0c88"]
 script/source = "extends CharacterBody2D
@@ -15,8 +15,8 @@ script/source = "extends CharacterBody2D
 @export var detection_range: float = 200.0  
 
 @onready var sprite: AnimatedSprite2D = $sprite
-@onready var primary_weapon: Weapon = $PrimaryWeapon
-@onready var weapon_sprite: Sprite2D = $PrimaryWeapon/Sprite
+@onready var primary_weapon: Weapon = $Weapon
+@onready var weapon_sprite: Sprite2D = $Weapon/Sprite
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -232,4 +232,4 @@ avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
 
-[node name="PrimaryWeapon" parent="." instance=ExtResource("2_tuvhb")]
+[node name="Weapon" parent="." instance=ExtResource("2_d0c88")]

@@ -3,12 +3,7 @@ extends Node2D
 
 const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.tscn")
 
-@export var is_enemy: bool = true
-@export var damage: int = 10
-@export var firerate_in_seconds: float = 0.5
-@export var should_do_recoil: bool = true
-@export var max_recoil_offset: float = 15.0
-@export var shoot_sound_effect: AudioStream
+@export var weapon_resource: WeaponResource = preload("res://weapons/resources/m60.tres")
 
 @onready var _sprite: Sprite2D = $Sprite
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
@@ -19,10 +14,12 @@ const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.ts
 var _initial_local_position: Vector2
 
 func _ready() -> void:
+	weapon_resource = weapon_resource.duplicate()
+	_sprite.texture = weapon_resource.spritesheet
 	_initial_local_position = position
 
-	_sound_effect_player.stream = shoot_sound_effect
-	_cooldown.wait_time = firerate_in_seconds
+	_sound_effect_player.stream = weapon_resource.shoot_sound_effect
+	_cooldown.wait_time = weapon_resource.firerate_in_seconds
 	_cooldown.one_shot = true
 	_cooldown.autostart = false
 
@@ -37,9 +34,9 @@ func shoot_at(target_direction: Vector2) -> void:
 
 	var bulletNode: Bullet = bulletScene.instantiate()
 	bulletNode.initial_direction = target_direction
-	bulletNode.damage = damage
+	bulletNode.damage = weapon_resource.damage
 
-	if is_enemy:
+	if weapon_resource.is_enemy:
 		bulletNode.target = bulletNode.TARGETS.PLAYER
 
 	# Spawn the bullet at the front of the barrel of the shotgun
@@ -60,11 +57,11 @@ func _update_recoil() -> void:
 	# Backwards direction
 	var recoil_direction_local: Vector2 = Vector2(-1, 0).rotated(_sprite.rotation)
 	# Apply recoil offset and factor
-	var recoil_vector_local: Vector2 = recoil_direction_local * max_recoil_offset * recoil_factor
+	var recoil_vector_local: Vector2 = recoil_direction_local * weapon_resource.max_recoil_offset * recoil_factor
 
 	# Apply recoil at local position
 	position = _initial_local_position + transform.basis_xform(recoil_vector_local)
 
 func _process(_delta: float):
-	if should_do_recoil:
+	if weapon_resource.should_do_recoil:
 		_update_recoil()

@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 @export var is_active: bool = false
 @export var health: int = 200
-@export var speed_normal: float = 10
-@export var speed_rushing: float = 20
+@export var speed_rushing: float = 500
 @export var time_between_blaster_shots: float = 0.2
 @export var player: Player
 
