@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dmf3cl2kedrs6"]
 
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_gs3n3"]
-[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://weapons/inherited_scenes/shotgun.tscn" id="3_lenvy"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_twhep"]
 
 [sub_resource type="GDScript" id="GDScript_twhep"]
 script/source = "extends CharacterBody2D
@@ -15,8 +15,8 @@ script/source = "extends CharacterBody2D
 @export var detection_range: float = 200.0  
 
 @onready var sprite: AnimatedSprite2D = $sprite
-@onready var primary_weapon: Weapon = $PrimaryWeapon
-@onready var weapon_sprite: Sprite2D = $PrimaryWeapon/Sprite
+@onready var primary_weapon: Weapon = $Weapon
+@onready var weapon_sprite: Sprite2D = $Weapon/Sprite
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -222,9 +222,6 @@ frame_progress = 0.376906
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_twhep")
 
-[node name="PrimaryWeapon" parent="." instance=ExtResource("3_lenvy")]
-damage = 25
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -233,3 +230,5 @@ neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
+
+[node name="Weapon" parent="." instance=ExtResource("2_twhep")]

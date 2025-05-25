@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="7_u4p5x"]
 [ext_resource type="PackedScene" uid="uid://5spnsgl7iprk" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent-m60.tscn" id="9_31hdv"]
 [ext_resource type="PackedScene" uid="uid://dmf3cl2kedrs6" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent_close.tscn" id="9_nq2ak"]
-[ext_resource type="PackedScene" uid="uid://bud5is1d8i0m8" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent-mini.tscn" id="10_31hdv"]
+[ext_resource type="PackedScene" uid="uid://cgk37absmj3xl" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent-mini.tscn" id="10_31hdv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yqug8"]
 vertices = PackedVector2Array(1933.02, 281.688, 1934.95, 695.992, -1995.01, 695, 1906.25, 259.391, 1875.95, 229.094, 1851.2, 184.758, 1839.92, 163.219, 1821.43, 118.031, -1996.98, -694.992, 1808.14, 59.75, 1801.01, 3.71875, 1799.99, -54.3828, 1806.11, -119.609, 1934, -694, 1824.49, -198.242, 1850.22, -254.852, 1877.89, -296.867, 1901.81, -327.031, 1934, -353.703)
@@ -62,7 +62,6 @@ radius = 6.61078
 height = 20.9342
 
 [node name="Stage1" type="Node2D"]
-position = Vector2(0, -1)
 script = ExtResource("1_yqug8")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -214,18 +213,12 @@ position = Vector2(-1231, 377)
 
 [node name="Fbi m60" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1229, 478)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m62" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1180, 447)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m61" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1275, 451)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-1227, 433)
@@ -242,18 +235,12 @@ position = Vector2(-1443, -234)
 
 [node name="Fbi m63" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1441, -133)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m64" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1392, -164)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m65" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1487, -160)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini2" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-1439, -178)
@@ -270,18 +257,12 @@ position = Vector2(-1031, -35)
 
 [node name="Fbi m66" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1029, 66)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m67" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-980, 35)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m68" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-1075, 39)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini3" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-1027, 21)
@@ -298,18 +279,12 @@ position = Vector2(-928, -310)
 
 [node name="Fbi m69" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-926, -209)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m70" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-877, -240)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m71" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-972, -236)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini4" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-924, -254)
@@ -326,18 +301,12 @@ position = Vector2(-503, 171)
 
 [node name="Fbi m72" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-501, 272)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m73" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-452, 241)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m74" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-547, 245)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini5" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-499, 227)
@@ -354,18 +323,12 @@ position = Vector2(-398, -193)
 
 [node name="Fbi m75" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-396, -92)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m76" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-347, -123)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m77" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-442, -119)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini6" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-394, -137)
@@ -382,18 +345,12 @@ position = Vector2(-141, 105)
 
 [node name="Fbi m78" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-139, 206)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m79" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-90, 175)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m80" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-185, 179)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini7" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-137, 161)
@@ -410,18 +367,12 @@ position = Vector2(273, -127)
 
 [node name="Fbi m81" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(275, -26)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m82" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(324, -57)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m83" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(229, -53)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini8" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(277, -71)
@@ -438,18 +389,12 @@ position = Vector2(-9, -384)
 
 [node name="Fbi m84" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-7, -283)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m85" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(42, -314)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m86" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-53, -310)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini9" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-5, -328)
@@ -466,18 +411,12 @@ position = Vector2(678, 159)
 
 [node name="Fbi m87" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(680, 260)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m88" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(729, 229)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m89" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(634, 233)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini10" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(682, 215)
@@ -494,18 +433,12 @@ position = Vector2(684, -321)
 
 [node name="Fbi m90" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(686, -220)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m91" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(735, -251)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m92" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(640, -247)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini11" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(688, -265)
@@ -522,18 +455,12 @@ position = Vector2(1462, -352)
 
 [node name="Fbi m93" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1464, -251)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m94" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1513, -282)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m95" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1418, -278)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini12" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(1466, -296)
@@ -550,18 +477,12 @@ position = Vector2(1660, 348)
 
 [node name="Fbi m96" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1662, 449)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m97" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1711, 418)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m98" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1616, 422)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini13" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(1664, 404)
@@ -578,18 +499,12 @@ position = Vector2(1308, -35)
 
 [node name="Fbi m99" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1310, 66)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m100" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1359, 35)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m101" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(1264, 39)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini14" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(1312, 21)
@@ -606,18 +521,12 @@ position = Vector2(259, 464)
 
 [node name="Fbi m102" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(261, 565)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m103" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(310, 534)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m104" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(215, 538)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini15" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(263, 520)
@@ -634,18 +543,12 @@ position = Vector2(-604, -569)
 
 [node name="Fbi m105" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-602, -468)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m106" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-553, -499)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m107" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-648, -495)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini16" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-600, -513)
@@ -662,18 +565,12 @@ position = Vector2(-604, -569)
 
 [node name="Fbi m108" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-602, -468)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m109" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-553, -499)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi m110" parent="Enemys" instance=ExtResource("9_31hdv")]
 position = Vector2(-648, -495)
-shoot_cooldown = 1.5
-detection_range = 700.0
 
 [node name="Fbi Mini17" parent="Enemys" instance=ExtResource("10_31hdv")]
 position = Vector2(-600, -513)

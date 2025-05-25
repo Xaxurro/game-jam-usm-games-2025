@@ -1,39 +1,39 @@
-[gd_scene load_steps=14 format=3 uid="uid://5spnsgl7iprk"]
+[gd_scene load_steps=14 format=3 uid="uid://31af2u7pp2ed"]
 
-[ext_resource type="Script" uid="uid://x66fab2bu3b8" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent.gd" id="1_a25gr"]
-[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_7afr1"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="3_a25gr"]
+[ext_resource type="Script" uid="uid://x66fab2bu3b8" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent.gd" id="1_fftjs"]
+[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_rh5pp"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="3_jgpy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twhep"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lenvy"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vd3o"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tiw8"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uan1m"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q223v"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncurx"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7yfn"]
-atlas = ExtResource("2_7afr1")
+atlas = ExtResource("2_rh5pp")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_twyc1"]
@@ -80,7 +80,7 @@ size = Vector2(10, 25)
 collision_layer = 2
 collision_mask = 2147483649
 motion_mode = 1
-script = ExtResource("1_a25gr")
+script = ExtResource("1_fftjs")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_twyc1")
@@ -100,4 +100,4 @@ avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
 
-[node name="Weapon" parent="." instance=ExtResource("3_a25gr")]
+[node name="Weapon" parent="." instance=ExtResource("3_jgpy7")]

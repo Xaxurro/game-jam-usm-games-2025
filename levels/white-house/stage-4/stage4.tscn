@@ -12,7 +12,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1983, -471, 1990, -473
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1k44o"]
 texture = ExtResource("1_r35jg")
 
-[node name="Scene4" type="Node2D"]
+[node name="Stage4" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_io1e3")
