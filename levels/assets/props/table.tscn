@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://nvodxfpxt80h"]
+
+[ext_resource type="Texture2D" uid="uid://sttkij4oa3vc" path="res://levels/assets/props/sprites/obstacle_table.png" id="1_pw1pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rddjt"]
+size = Vector2(18, 20)
+
+[node name="Fountain" type="StaticBody2D"]
+collision_layer = 2147483648
+collision_mask = 1073741827
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_pw1pq")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_rddjt")
