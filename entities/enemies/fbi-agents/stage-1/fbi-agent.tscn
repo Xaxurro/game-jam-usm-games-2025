@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://31af2u7pp2ed"]
+[gd_scene load_steps=14 format=3 uid="uid://cfy6w8utvrpvg"]
 
-[ext_resource type="Script" uid="uid://x66fab2bu3b8" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent.gd" id="1_fftjs"]
+[ext_resource type="Script" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent.gd" id="1_fftjs"]
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_rh5pp"]
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="3_jgpy7"]
 
