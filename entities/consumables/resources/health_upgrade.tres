@@ -8,6 +8,6 @@ script = ExtResource("1_8ss1a")
 added_health = 10
 name = &"Unnamed Consumable"
 count = 1
-price = 0
+price = 5000
 texture = ExtResource("2_f5oha")
 metadata/_custom_type_script = "uid://31amrnli60ev"
