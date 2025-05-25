@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bx46wlpha4ca5" path="res://entities/weapons/assets/sprite-sheets/shotgun.png" id="4_jxkw1"]
 
 [node name="Shotgun" instance=ExtResource("1_jxkw1")]
+damage = 30
 firerate_in_seconds = 1.0
 shoot_sound_effect = ExtResource("2_t5ec2")
 
