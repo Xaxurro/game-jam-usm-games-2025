@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bksnxrcq75dk4"]
+
+[ext_resource type="Script" uid="uid://c6hodrrqghhm3" path="res://entities/enemies/bosses/president/president.gd" id="1_8vbhx"]
+[ext_resource type="Texture2D" uid="uid://30abiphvepqh" path="res://entities/enemies/bosses/president/assets/President.png" id="2_ka4dl"]
+[ext_resource type="AudioStream" uid="uid://gkd58g5sw26c" path="res://entities/enemies/bosses/president/assets/audiomass-output.mp3" id="2_tc74m"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_wld45"]
+[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="4_8vbhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vbhx"]
+atlas = ExtResource("2_ka4dl")
+region = Rect2(0, 0, 56, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ka4dl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vbhx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ha7yl"]
+radius = 9.0
+height = 26.0
+
+[node name="President" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_8vbhx")
+shoot_cooldown = 0.1
+
+[node name="WindupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tc74m")
+volume_db = 20.0
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.821934, 0.821934)
+sprite_frames = SubResource("SpriteFrames_ka4dl")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_ha7yl")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 0.01
+neighbor_distance = 0.1
+avoidance_layers = 0
+avoidance_mask = 0
+debug_enabled = true
+
+[node name="Weapon" parent="." instance=ExtResource("2_wld45")]
+weapon_resource = ExtResource("4_8vbhx")

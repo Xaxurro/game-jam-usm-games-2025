@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6k6u4bs0kkb1"]
+[gd_scene load_steps=7 format=3 uid="uid://b6k6u4bs0kkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhhkmvaceri6u" path="res://levels/white-house/stage-4/assets/background stage4.png" id="1_r35jg"]
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="2_io1e3"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_io1e3"]
+[ext_resource type="PackedScene" uid="uid://bksnxrcq75dk4" path="res://entities/enemies/bosses/president/president.tscn" id="4_gud1e"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_io1e3"]
 vertices = PackedVector2Array(1983.96, 460, -1968.05, 460, -1972.94, -461, 1980.04, -462.992)
@@ -28,4 +29,17 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1k44o")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_io1e3")]
-position = Vector2(-1950, 2)
+position = Vector2(-1891, -3)
+motion_mode = 1
+movement_speed = 400
+
+[node name="President" parent="." instance=ExtResource("4_gud1e")]
+position = Vector2(-1220, -5)
+health_current = 500
+speed = 150.0
+stop_distance = 250.0
+shoot_distance = 300.0
+detection_range = 700.0
+windup_duration = 2.0
+burst_duration = 8.0
+recovery_duration = 8.0
