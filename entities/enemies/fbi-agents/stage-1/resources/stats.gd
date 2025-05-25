@@ -1,7 +1,7 @@
 class_name Stats
 extends Resource
 
-@export var health_current: int = 100
+@export var health_current: int = 50
 @export var speed: float = 100.0
 @export var stop_distance: float = 120.0
 @export var shoot_distance: float = 150.0

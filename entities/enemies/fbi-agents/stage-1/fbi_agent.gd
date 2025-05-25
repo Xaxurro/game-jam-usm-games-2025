@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var stats: Stats = preload("res://entities/enemies/fbi-agents/stage-1/resources/normal.tres")
+@export var weapon_resource: WeaponResource = preload("res://weapons/resources/m60.tres")
 
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var primary_weapon: Weapon = $Weapon
@@ -16,6 +17,7 @@ var has_seen_player: bool = false
 
 func _ready() -> void:
 	stats = stats.duplicate()
+	primary_weapon.set_resource(weapon_resource)
 	player = get_player()
 	if not player:
 		push_warning("No player found in group 'player'")
@@ -115,7 +117,7 @@ func _aim_at_player() -> void:
 		weapon_sprite.scale.y = -1 if sprite.flip_h else 1
 
 func recieve_damage(damage_recieved: int) -> void:
-	self.health_current -= damage_recieved
+	stats.health_current -= damage_recieved
 	if stats.health_current <= 0:
 		queue_free()
 	

@@ -13,13 +13,16 @@ const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.ts
 
 var _initial_local_position: Vector2
 
+func set_resource(new_weapon_resource: WeaponResource) -> void:
+	weapon_resource = new_weapon_resource.duplicate()
+	_sprite.texture = new_weapon_resource.spritesheet
+	_sound_effect_player.stream = new_weapon_resource.shoot_sound_effect
+	_cooldown.wait_time = new_weapon_resource.firerate_in_seconds
+
 func _ready() -> void:
-	weapon_resource = weapon_resource.duplicate()
-	_sprite.texture = weapon_resource.spritesheet
+	set_resource(weapon_resource)
 	_initial_local_position = position
 
-	_sound_effect_player.stream = weapon_resource.shoot_sound_effect
-	_cooldown.wait_time = weapon_resource.firerate_in_seconds
 	_cooldown.one_shot = true
 	_cooldown.autostart = false
 

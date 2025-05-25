@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d01lrlbvgiytm"]
+[gd_scene load_steps=4 format=3 uid="uid://d01lrlbvgiytm"]
 
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="1_b16hd"]
-[ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="2_yyu4g"]
+[ext_resource type="PackedScene" uid="uid://31af2u7pp2ed" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="2_b16hd"]
+[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="3_yyu4g"]
 
 [node name="Dev-room" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_b16hd")]
 movement_speed = 200
 
-[node name="Mini-boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_yyu4g")]
-position = Vector2(321, 14)
-is_active = true
-speed_rushing = 100.0
-player = NodePath("../Player")
+[node name="FBI Agent" parent="." instance=ExtResource("2_b16hd")]
+position = Vector2(282, 1)
+weapon_resource = ExtResource("3_yyu4g")

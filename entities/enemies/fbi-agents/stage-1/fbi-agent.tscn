@@ -76,7 +76,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4yt1"]
 size = Vector2(10, 25)
 
-[node name="Fbi m60" type="CharacterBody2D" groups=["enemies"]]
+[node name="FBI Agent" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 2147483649
 motion_mode = 1
