@@ -126,11 +126,15 @@ func recieve_damage(damage_recieved: int) -> bool:
 	self.health_current -= damage_recieved
 	if health_current <= 0:
 		health_current = 0
+		dead(health_current)
 	health_changed.emit()
-
 	return health_current <= 0
 
 func _physics_process(delta: float) -> void:
 	_process_input(delta)
 	var target_direction: Vector2 = _aim()
 	_shoot_at(target_direction)
+
+func dead(health_current: int) -> void:
+	if health_current <= 0:
+		get_tree().change_scene_to_file("res://levels/menu/main_menu.tscn")

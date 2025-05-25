@@ -2,10 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="1_achs6"]
 [ext_resource type="Script" uid="uid://bypdsy1oxr0t7" path="res://levels/menu/main_menu.gd" id="1_l70i3"]
-[ext_resource type="Texture2D" uid="uid://cxkjbkmqc6v1x" path="res://levels/menu/kadin-hatch-7bUWr7baztE-unsplash.jpg" id="2_ewnip"]
+[ext_resource type="Texture2D" uid="uid://brwaidovdq0ib" path="res://levels/menu/assets/Untitled.png" id="2_4lhkd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewuw1"]
-texture = ExtResource("2_ewnip")
+texture = ExtResource("2_4lhkd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lhkd"]
 bg_color = Color(1, 1, 1, 1)
@@ -124,6 +124,7 @@ offset_left = 23.0
 offset_top = 45.0
 offset_right = 547.0
 offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_achs6")
 theme_override_font_sizes/font_size = 200
 text = "American"

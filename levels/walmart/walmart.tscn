@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuvd0h8roktjj"]
+[gd_scene load_steps=11 format=3 uid="uid://cuvd0h8roktjj"]
 
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_83cls"]
 [ext_resource type="Texture2D" uid="uid://2gewiy3airk0" path="res://levels/walmart/assets/walmart_small.png" id="3_83cls"]
 [ext_resource type="PackedScene" uid="uid://byinp7oedfn72" path="res://entities/consumables/consumable.tscn" id="3_be8ht"]
-[ext_resource type="PackedScene" uid="uid://bm47syms8f0ny" path="res://levels/assets/props/pot.tscn" id="4_83cls"]
+[ext_resource type="PackedScene" path="res://levels/assets/props/pot.tscn" id="4_83cls"]
 [ext_resource type="Resource" uid="uid://d4q6k8k8gj6o" path="res://entities/consumables/resources/health_upgrade.tres" id="5_be8ht"]
+[ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="6_xy7hr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_83cls"]
 distance = -144.0
@@ -93,3 +94,6 @@ is_free = false
 position = Vector2(-150, 80)
 consumable_data = ExtResource("5_be8ht")
 is_free = false
+
+[node name="NextLevel" parent="." instance=ExtResource("6_xy7hr")]
+position = Vector2(-1, -172)
