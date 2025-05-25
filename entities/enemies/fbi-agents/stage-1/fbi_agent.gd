@@ -119,6 +119,9 @@ func _aim_at_player() -> void:
 func recieve_damage(damage_recieved: int) -> void:
 	stats.health_current -= damage_recieved
 	if stats.health_current <= 0:
-		queue_free()
-	
-	
+		die()
+
+func die() -> void:
+	player = get_player()
+	player.add_money(stats.money_on_death)
+	queue_free()

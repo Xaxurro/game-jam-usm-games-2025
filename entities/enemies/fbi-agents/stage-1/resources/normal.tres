@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_3gtax")
+money_on_death = 100
 health_current = 25
 speed = 175.0
 stop_distance = 120.0

@@ -106,6 +106,10 @@ func use_consumable() -> void:
 	inventory.use_consumable(self)
 	consumable_selected_changed.emit()
 
+func add_money(amount: int) -> void:
+	inventory.add_money(amount)
+	money_changed.emit()
+
 func pay(price: int) -> bool:
 	var success: bool = inventory.pay_money(price)
 	money_changed.emit()
