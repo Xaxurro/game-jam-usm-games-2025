@@ -44,7 +44,6 @@ _data = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kf2xp"]
 
 [node name="Weapon" instance=ExtResource("1_kf2xp")]
-damage = 5
 should_do_recoil = false
 shoot_sound_effect = ExtResource("2_h2bgj")
 

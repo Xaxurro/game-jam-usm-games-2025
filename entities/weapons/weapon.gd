@@ -29,6 +29,9 @@ func _ready() -> void:
 func shoot_at(target_direction: Vector2) -> void:
 	if _cooldown.time_left != 0: return
 
+	if not target_direction.is_normalized():
+		target_direction = target_direction.normalized()
+
 	_animation_player.play("shoot")
 	_sound_effect_player.play()
 

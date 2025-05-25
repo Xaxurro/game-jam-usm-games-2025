@@ -6,7 +6,7 @@
 
 [node name="Weapon" instance=ExtResource("1_h6pjo")]
 damage = 5
-firerate_in_seconds = 0.1
+firerate_in_seconds = 0.05
 max_recoil_offset = 1.0
 shoot_sound_effect = ExtResource("2_f1moc")
 

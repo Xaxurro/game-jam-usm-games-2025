@@ -84,6 +84,15 @@ consumable_use={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_29="environment"
+2d_physics/layer_30="consumables"
+2d_physics/layer_31="bullets"
+2d_physics/layer_32="walls"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

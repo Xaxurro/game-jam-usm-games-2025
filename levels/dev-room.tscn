@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d01lrlbvgiytm"]
+
+[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="1_b16hd"]
+[ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="2_yyu4g"]
+
+[node name="Dev-room" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_b16hd")]
+movement_speed = 200
+
+[node name="Mini-boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_yyu4g")]
+position = Vector2(321, 14)
+is_active = true
+speed_rushing = 100.0
+player = NodePath("../Player")
