@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dum6kkdjvyvj8"]
-
-[ext_resource type="Script" uid="uid://byu4eo6xwnceq" path="res://entities/weapons/resources/weapon_resource.gd" id="1_b86cr"]
-[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://entities/weapons/inherited_scenes/shotgun.tscn" id="1_i5qcf"]
-
-[resource]
-script = ExtResource("1_b86cr")
-name = &"shotgun"
-scene = ExtResource("1_i5qcf")

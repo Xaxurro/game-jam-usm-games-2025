@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpruki11oem18"]
 
-[ext_resource type="Script" uid="uid://cvj0e5stg6whj" path="res://entities/weapons/weapon.gd" id="2_l8a67"]
+[ext_resource type="Script" uid="uid://cvj0e5stg6whj" path="res://weapons/weapon.gd" id="2_l8a67"]
 
 [sub_resource type="Animation" id="Animation_2pbsc"]
 length = 0.001

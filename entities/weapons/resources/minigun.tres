@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://ncd4lbwy03u6"]
-
-[ext_resource type="PackedScene" uid="uid://drj7uawr8fk27" path="res://entities/weapons/inherited_scenes/minigun.tscn" id="1_7c30n"]
-[ext_resource type="Script" uid="uid://byu4eo6xwnceq" path="res://entities/weapons/resources/weapon_resource.gd" id="1_nfoku"]
-
-[resource]
-script = ExtResource("1_nfoku")
-name = &"minigun"
-scene = ExtResource("1_7c30n")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx46wlpha4ca5"
-path="res://.godot/imported/shotgun.png-279e6b786b91bb9de7b8460e24275318.ctex"
+uid="uid://cuv6yoi86j8mp"
+path="res://.godot/imported/miniboss_robot.png-e4587feaa840e832a9b90d51df7e9879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/weapons/assets/sprite-sheets/shotgun.png"
-dest_files=["res://.godot/imported/shotgun.png-279e6b786b91bb9de7b8460e24275318.ctex"]
+source_file="res://weapons/assets/sprite-sheets/miniboss_robot.png"
+dest_files=["res://.godot/imported/miniboss_robot.png-e4587feaa840e832a9b90d51df7e9879.ctex"]
 
 [params]
 

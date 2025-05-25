@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bifi1m3g75jy1"
-path="res://.godot/imported/minigun.png-a38cd5cb43c50311e6cf78adb272bcc4.ctex"
+uid="uid://ccdgqkjy6537i"
+path="res://.godot/imported/m60.png-c46c0ebb79126eef063f1d84b173ca6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/weapons/assets/sprite-sheets/minigun.png"
-dest_files=["res://.godot/imported/minigun.png-a38cd5cb43c50311e6cf78adb272bcc4.ctex"]
+source_file="res://weapons/assets/sprite-sheets/m60.png"
+dest_files=["res://.godot/imported/m60.png-c46c0ebb79126eef063f1d84b173ca6d.ctex"]
 
 [params]
 

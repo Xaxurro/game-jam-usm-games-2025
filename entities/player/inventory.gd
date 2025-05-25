@@ -12,8 +12,8 @@ var weapons: Array[WeaponResource] = []
 @export var money: int = 0
 
 @export_group("weapons")
-@export var weapon_primary: WeaponResource = load("res://entities/weapons/resources/m60.tres")
-@export var weapon_secondary: WeaponResource = load("res://entities/weapons/resources/shotgun.tres")
+@export var weapon_primary: WeaponResource = load("res://weapons/resources/m60.tres")
+@export var weapon_secondary: WeaponResource = load("res://weapons/resources/shotgun.tres")
 
 ###############
 # CONSUMABLES #

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b2wberq425aji" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Script" uid="uid://cn8wdifpu4b54" path="res://entities/player/inventory.gd" id="2_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://byuwd6c5cbe28" path="res://entities/player/assets/player.png" id="2_bls4j"]
-[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://entities/weapons/inherited_scenes/m60.tscn" id="3_fkugw"]
-[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://entities/weapons/inherited_scenes/shotgun.tscn" id="4_8fjmc"]
+[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://weapons/inherited_scenes/m60.tscn" id="3_fkugw"]
+[ext_resource type="PackedScene" uid="uid://me8m5ljifma5" path="res://weapons/inherited_scenes/shotgun.tscn" id="4_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://dk58jcqv3gnat" path="res://interface/hud.tscn" id="5_fkugw"]
 
 [sub_resource type="Resource" id="Resource_qiwj3"]

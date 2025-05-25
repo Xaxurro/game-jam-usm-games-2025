@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccdgqkjy6537i"
-path="res://.godot/imported/m60.png-72ddaaeb792b60cb8b569414375edb8e.ctex"
+uid="uid://bx46wlpha4ca5"
+path="res://.godot/imported/shotgun.png-a5fa5a1f5de33c17c3fb62a5acd5e1b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/weapons/assets/sprite-sheets/m60.png"
-dest_files=["res://.godot/imported/m60.png-72ddaaeb792b60cb8b569414375edb8e.ctex"]
+source_file="res://weapons/assets/sprite-sheets/shotgun.png"
+dest_files=["res://.godot/imported/shotgun.png-a5fa5a1f5de33c17c3fb62a5acd5e1b3.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnn3f7yq23gi0"]
 
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://entities/weapons/weapon.tscn" id="1_kf2xp"]
-[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://entities/weapons/assets/audio/shotgun-shoot.ogg" id="2_h2bgj"]
-[ext_resource type="Texture2D" uid="uid://ccdgqkjy6537i" path="res://entities/weapons/assets/sprite-sheets/m60.png" id="4_o4nat"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="1_kf2xp"]
+[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="2_h2bgj"]
+[ext_resource type="Texture2D" uid="uid://ccdgqkjy6537i" path="res://weapons/assets/sprite-sheets/m60.png" id="4_o4nat"]
 
 [sub_resource type="Animation" id="Animation_2pbsc"]
 length = 0.001

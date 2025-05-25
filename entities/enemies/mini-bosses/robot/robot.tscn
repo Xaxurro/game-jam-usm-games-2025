@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://eqeot6756rok" path="res://entities/enemies/mini-bosses/robot/assets/robot.png" id="1_7swb0"]
 [ext_resource type="Script" uid="uid://dwmnc752lp8h3" path="res://entities/enemies/mini-bosses/robot/robot.gd" id="1_pt2eh"]
-[ext_resource type="PackedScene" uid="uid://ccddwlpgob6lb" path="res://entities/weapons/inherited_scenes/blaster.tscn" id="2_kckci"]
+[ext_resource type="PackedScene" uid="uid://ccddwlpgob6lb" path="res://weapons/inherited_scenes/blaster.tscn" id="2_kckci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kckci"]
 size = Vector2(38, 63)

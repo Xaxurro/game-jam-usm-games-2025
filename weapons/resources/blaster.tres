@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://c8csi5dgksg1"]
+
+[ext_resource type="PackedScene" uid="uid://ccddwlpgob6lb" path="res://weapons/inherited_scenes/blaster.tscn" id="1_am733"]
+[ext_resource type="Script" uid="uid://byu4eo6xwnceq" path="res://weapons/resources/weapon_resource.gd" id="2_uorq1"]
+
+[resource]
+script = ExtResource("2_uorq1")
+name = &"blaster"
+scene = ExtResource("1_am733")

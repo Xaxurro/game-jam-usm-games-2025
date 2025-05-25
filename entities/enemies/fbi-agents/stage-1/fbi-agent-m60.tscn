@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://x66fab2bu3b8" path="res://entities/enemies/fbi-agents/stage-1/fbi_agent_m_60.gd" id="1_a25gr"]
 [ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_7afr1"]
-[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://entities/weapons/inherited_scenes/m60.tscn" id="3_a25gr"]
+[ext_resource type="PackedScene" uid="uid://bnn3f7yq23gi0" path="res://weapons/inherited_scenes/m60.tscn" id="3_a25gr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twhep"]
 atlas = ExtResource("2_7afr1")
