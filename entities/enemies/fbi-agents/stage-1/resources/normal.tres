@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_3gtax")
-health_current = 50
-speed = 100.0
+health_current = 25
+speed = 175.0
 stop_distance = 120.0
-shoot_distance = 150.0
-shoot_cooldown = 1.0
+shoot_distance = 120.0
+shoot_cooldown = 2.0
 acceleration = 500.0
-detection_range = 200.0
+detection_range = 500.0

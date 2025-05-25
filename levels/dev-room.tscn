@@ -8,7 +8,7 @@
 [node name="Dev-room" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_b16hd")]
-movement_speed = 200
+movement_speed = 400
 
 [node name="FBI Agent" parent="." instance=ExtResource("2_b16hd")]
 position = Vector2(282, 1)
