@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var health_max: int = 100
 @export var health_current: int = 100
-@export var movement_speed: int = 200
+@export var movement_speed: int = 400
 
 @onready var character_sprite: Sprite2D = $CharacterSprite
 @onready var weapon_primary: Weapon = $WeaponPrimary

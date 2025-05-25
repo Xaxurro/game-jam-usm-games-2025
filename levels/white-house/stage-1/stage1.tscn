@@ -202,4 +202,4 @@ frame_progress = 0.955138
 
 [node name="Player" parent="." instance=ExtResource("2_2o78u")]
 position = Vector2(-1815, 35)
-movement_speed = 200
+movement_speed = 400
