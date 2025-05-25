@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brnnngfjq2rxb"]
+[gd_scene load_steps=7 format=3 uid="uid://brnnngfjq2rxb"]
 
 [ext_resource type="Texture2D" uid="uid://eqeot6756rok" path="res://entities/enemies/mini-bosses/robot/assets/robot.png" id="1_7swb0"]
 [ext_resource type="Script" uid="uid://dwmnc752lp8h3" path="res://entities/enemies/mini-bosses/robot/robot.gd" id="1_pt2eh"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kckci"]
 size = Vector2(38, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wp67"]
+size = Vector2(52, 71)
 
 [node name="Mini-boss" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
@@ -36,12 +39,21 @@ weapon_resource = ExtResource("4_30ho6")
 position = Vector2(18, 5)
 weapon_resource = ExtResource("4_30ho6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_kckci")
-
 [node name="Cooldown" type="Timer" parent="." groups=["enemies"]]
 wait_time = 0.75
 one_shot = true
 
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kckci")
+
+[node name="RushCollision" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="RushCollision"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1wp67")
+debug_color = Color(1, 0, 0, 0.419608)
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="body_entered" from="RushCollision" to="." method="_on_rush_collision_body_entered"]
