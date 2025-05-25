@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm47syms8f0ny"]
+
+[ext_resource type="Texture2D" uid="uid://whmnbxhc5v3w" path="res://levels/assets/props/sprites/obstacle_pot.png" id="1_ege8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rddjt"]
+size = Vector2(16, 13)
+
+[node name="Pot" type="StaticBody2D"]
+collision_layer = 2147483648
+collision_mask = 1073741827
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ege8h")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_rddjt")

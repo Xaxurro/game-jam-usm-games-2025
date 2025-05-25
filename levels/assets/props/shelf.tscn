@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqkigyvuoh42s"]
+
+[ext_resource type="Texture2D" uid="uid://dxscy8okto34g" path="res://levels/assets/props/sprites/obstacle_shelf.png" id="1_6w86o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rddjt"]
+size = Vector2(24, 22)
+
+[node name="Shelf" type="StaticBody2D"]
+collision_layer = 2147483648
+collision_mask = 1073741827
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_6w86o")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_rddjt")
