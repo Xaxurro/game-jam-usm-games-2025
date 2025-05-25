@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="American Freedom"
-run/main_scene="uid://bqjalplvqjepi"
+run/main_scene="uid://q1fideuiytwd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

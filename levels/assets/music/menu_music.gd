@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const background_music = preload("res://levels/assets/music/menu-background-music.mp3")
+const background_music = preload("res://levels/assets/music/BustinLooseWLead.mp3")
 
 func _play_music(music: AudioStream, volume: float = 0.0):
 	if stream == music:

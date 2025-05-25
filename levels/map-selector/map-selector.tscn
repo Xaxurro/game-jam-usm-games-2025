@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck54ngyu4ke1o" path="res://levels/map-selector/map_selector.gd" id="1_b1vr8"]
 [ext_resource type="Texture2D" uid="uid://ork5gln8k0t6" path="res://levels/map-selector/assets/UnitedStates.png" id="2_8u85p"]
-[ext_resource type="Texture2D" uid="uid://ds3cnakv83t0q" path="res://levels/map-selector/assets/pexels-denisha-sandoval-479748-3907416.jpg" id="2_u56n8"]
+[ext_resource type="Texture2D" uid="uid://qi16lstvyq4v" path="res://levels/map-selector/assets/Usa.png" id="2_u56n8"]
 [ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="4_j7w4q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcvmr"]
