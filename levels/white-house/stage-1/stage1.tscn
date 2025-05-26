@@ -1,17 +1,25 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=32 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
-[ext_resource type="Script" uid="uid://ctrmk6445dii0" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
+[ext_resource type="Script" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="2_2o78u"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
 [ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]
-[ext_resource type="Texture2D" uid="uid://c4w7lmn520ie3" path="res://levels/white-house/stage-1/assets/POLICE_CLEAN_8D0000-sheet.png" id="5_xngfr"]
+[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="7_31hdv"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="7_u4p5x"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_yqug8"]
-vertices = PackedVector2Array(1933.02, 281.688, 1934.95, 695.992, -1995.01, 695, 1906.25, 259.391, 1875.95, 229.094, 1851.2, 184.758, 1839.92, 163.219, 1821.43, 118.031, -1996.98, -694.992, 1808.14, 59.75, 1801.01, 3.71875, 1799.99, -54.3828, 1806.11, -119.609, 1934, -694, 1824.49, -198.242, 1850.22, -254.852, 1877.89, -296.867, 1901.81, -327.031, 1934, -353.703)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2), PackedInt32Array(5, 4, 2), PackedInt32Array(6, 5, 2), PackedInt32Array(7, 6, 2, 8), PackedInt32Array(9, 7, 8), PackedInt32Array(10, 9, 8), PackedInt32Array(11, 10, 8), PackedInt32Array(12, 11, 8), PackedInt32Array(12, 8, 13, 14), PackedInt32Array(15, 14, 13), PackedInt32Array(16, 15, 13), PackedInt32Array(17, 16, 13), PackedInt32Array(17, 13, 18)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-2007, -705, 1944, -704, 1944, -349, 1909, -320, 1886, -291, 1859, -250, 1834, -195, 1816, -118, 1810, -54, 1811, 3, 1818, 58, 1831, 115, 1849, 159, 1860, 180, 1884, 223, 1913, 252, 1943, 277, 1945, 706, -2005, 705)])
+[ext_resource type="PackedScene" uid="uid://bd8fjrdw1uju7" path="res://levels/assets/props/fountain.tscn" id="8_pbntd"]
+[ext_resource type="Resource" uid="uid://dmo72ost8l5f4" path="res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres" id="9_1o0ha"]
+[ext_resource type="PackedScene" uid="uid://clmhmcgg1wyep" path="res://levels/assets/props/police-cars/police_car_2.tscn" id="9_ax4j5"]
+[ext_resource type="PackedScene" uid="uid://tpugr832uqud" path="res://levels/assets/props/concrete_walls/concrete_wall_corner.tscn" id="9_h4y1x"]
+[ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="9_x7cji"]
+[ext_resource type="PackedScene" uid="uid://l1k3x1yinbj6" path="res://levels/assets/props/police-cars/police_car_3.tscn" id="10_de00k"]
+[ext_resource type="PackedScene" uid="uid://bj02v0b6qdl4p" path="res://levels/assets/props/police-cars/police_car_4.tscn" id="10_w65hh"]
+[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="10_x5w8c"]
+[ext_resource type="PackedScene" uid="uid://wk8iy5f5lyh8" path="res://levels/assets/props/police-cars/police_car_6.tscn" id="11_ewufq"]
+[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="11_pbntd"]
+[ext_resource type="Resource" uid="uid://btodv3lj2lsiy" path="res://weapons/resources/m60.tres" id="11_x5w8c"]
+[ext_resource type="PackedScene" uid="uid://svckxnokf88d" path="res://levels/assets/props/police-cars/police_car_7.tscn" id="12_teoa5"]
+[ext_resource type="PackedScene" uid="uid://bjjnrbkvpk3lo" path="res://levels/assets/props/police-cars/police_car_8.tscn" id="13_jrtpp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4p5x"]
 normal = Vector2(-1, 0)
@@ -58,13 +66,25 @@ animations = [{
 radius = 6.61078
 height = 20.9342
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yqug8"]
+vertices = PackedVector2Array(194, 193, 146, 193, -1481, 189, -1481, -119, -977, -249, -929, -249, -494, -218, 694.281, -55.5938, 623, -44, 57, -35, -41, -35, -446, -218, 138, -223, 186, -223, 670.281, -97.1562, -921, 366, 194, 309, 1906.25, 259.391, 1933.02, 281.688, 1934.95, 695.992, -1995.01, 695, 146, 309, -449, 309, -497, 309, 1875.95, 229.094, 863.719, 176.844, 1839.92, 163.219, 1851.2, 184.758, 839.719, 218.406, 1821.43, 118.031, 815.758, 147.859, 1808.14, 59.75, 815.188, 148.82, -921, 250, -497, 193, 1801.01, 3.71875, 700.641, 81.6875, 671, 72, 671, -44, 623, 72, 57, 30, -494, -334, -929, -365, 858.359, -149.742, 1806.11, -119.609, 1799.99, -54.3828, 792.281, -111.594, 834.359, -191.312, 785.477, -163.094, 785.359, -163.312, 736.477, -135.094, 736.359, -135.312, -969, 366, -446, -334, 138, -339, 742.719, 161.406, 742.844, 161.188, 774.188, 179.289, 773.641, 180.258, -449, 193, -969, 250, -1996.98, -694.992, 1934, -694, 1934, -353.703, 1901.81, -327.031, 1877.89, -296.867, 1850.22, -254.852, 1824.49, -198.242, 186, -339, -977, -365, 749.641, 109.688, 749.508, 109.898, 743.148, -83.7969, 743.281, -83.5938, 792.148, -111.797, -1529, 189, -1529, -119, -41, 30, 676.641, 123.258)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 16, 15), PackedInt32Array(22, 21, 15), PackedInt32Array(23, 22, 15), PackedInt32Array(24, 17, 16), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(27, 24, 16, 28), PackedInt32Array(29, 26, 25), PackedInt32Array(30, 31, 29, 25, 32), PackedInt32Array(23, 15, 33, 34), PackedInt32Array(35, 31, 36, 37, 38), PackedInt32Array(8, 39, 0, 40, 9), PackedInt32Array(41, 6, 5, 42), PackedInt32Array(43, 44, 45, 46), PackedInt32Array(45, 35, 38, 7), PackedInt32Array(47, 48, 49), PackedInt32Array(49, 50, 51), PackedInt32Array(52, 15, 20), PackedInt32Array(12, 11, 53, 54), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(1, 21, 22, 59), PackedInt32Array(2, 1, 59), PackedInt32Array(2, 59, 34), PackedInt32Array(2, 34, 33, 60), PackedInt32Array(61, 62, 63, 64), PackedInt32Array(61, 64, 65), PackedInt32Array(61, 65, 66), PackedInt32Array(61, 66, 67, 68), PackedInt32Array(13, 68, 67, 47), PackedInt32Array(61, 68, 54), PackedInt32Array(61, 54, 53, 41, 42), PackedInt32Array(61, 42, 69), PackedInt32Array(70, 71, 36), PackedInt32Array(7, 72, 73), PackedInt32Array(73, 74, 46), PackedInt32Array(2, 60, 52, 20, 75), PackedInt32Array(75, 20, 61, 76), PackedInt32Array(3, 76, 61, 69, 4), PackedInt32Array(0, 6, 11, 77), PackedInt32Array(67, 44, 43, 47), PackedInt32Array(13, 47, 49), PackedInt32Array(13, 49, 51), PackedInt32Array(13, 51, 14), PackedInt32Array(58, 28, 16), PackedInt32Array(78, 55, 58, 16, 0), PackedInt32Array(37, 36, 78, 0, 39), PackedInt32Array(31, 30, 70), PackedInt32Array(73, 46, 45), PackedInt32Array(31, 70, 36), PackedInt32Array(77, 40, 0), PackedInt32Array(10, 77, 11), PackedInt32Array(38, 8, 7), PackedInt32Array(45, 7, 73)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2007, -705, 1944, -704, 1944, -349, 1909, -320, 1886, -291, 1859, -250, 1834, -195, 1816, -118, 1810, -54, 1811, 3, 1818, 58, 1831, 115, 1849, 159, 1860, 180, 1884, 223, 1913, 252, 1943, 277, 1945, 706, -2005, 705)])
+
+[sub_resource type="Resource" id="Resource_h4y1x"]
+script = ExtResource("10_x5w8c")
+money_on_death = 100
+health_current = 75
+speed = 60.0
+stop_distance = 120.0
+shoot_distance = 150.0
+shoot_cooldown = 0.5
+acceleration = 500.0
+detection_range = 200.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_yqug8")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-9, 1)
-navigation_polygon = SubResource("NavigationPolygon_yqug8")
-metadata/_edit_lock_ = true
 
 [node name="NextLevel" parent="." instance=ExtResource("7_u4p5x")]
 position = Vector2(1795, -23)
@@ -114,13 +134,6 @@ animation = &"Smoke"
 autoplay = "Smoke"
 frame_progress = 0.530558
 
-[node name="PoliceCar" type="Sprite2D" parent="Panel"]
-position = Vector2(3395, 252)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(109, 16, 81, 73)
-
 [node name="Tree2" type="Sprite2D" parent="Panel"]
 position = Vector2(461, 352)
 scale = Vector2(1.81522, 1.81522)
@@ -137,68 +150,453 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pucyt")
 one_way_collision_margin = 0.0
 
-[node name="PoliceCar2" type="Sprite2D" parent="Panel"]
-position = Vector2(3613, 312)
-rotation = 0.165806
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(112, 14, 82, 78)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-9, 1)
+navigation_polygon = SubResource("NavigationPolygon_yqug8")
+metadata/_edit_lock_ = true
 
-[node name="PoliceCar3" type="Sprite2D" parent="Panel"]
-position = Vector2(3579, 534)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(222, 16, 58, 80)
+[node name="Props" type="Node2D" parent="NavigationRegion2D" groups=["walls"]]
+position = Vector2(9, -1)
 
-[node name="PoliceCar4" type="Sprite2D" parent="Panel"]
-position = Vector2(3524, 736)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(11, 111, 80, 84)
+[node name="LargeWall" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-962, -342)
 
-[node name="PoliceCar5" type="Sprite2D" parent="Panel"]
-position = Vector2(3506, 796)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(210, 115, 81, 77)
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
 
-[node name="PoliceCar6" type="Sprite2D" parent="Panel"]
-position = Vector2(3495, 1210)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(109, 214, 81, 77)
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
 
-[node name="PoliceCar7" type="Sprite2D" parent="Panel"]
-position = Vector2(3462, 1050)
-rotation = -0.16057
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(109, 214, 81, 77)
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
 
-[node name="PoliceCar8" type="Sprite2D" parent="Panel"]
-position = Vector2(3674.25, 930)
-scale = Vector2(1.41138, 1.50649)
-texture = ExtResource("5_xngfr")
-region_enabled = true
-region_rect = Rect2(23, 213, 55, 78)
+[node name="LargeWall5" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-954, 273)
 
-[node name="crashedCar" type="Sprite2D" parent="Panel"]
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall5" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
 
-[node name="Smoke2" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(3491, 716)
-scale = Vector2(1.52661, 1.52661)
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall5" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall5" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall6" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-479, -311)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall6" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall6" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall6" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall7" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-482, 216)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall7" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall7" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall7" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall8" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(161, 216)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall8" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall8" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall8" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall9" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(153, -316)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall9" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall9" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall9" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall10" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(638, -21)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall10" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall10" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall10" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall2" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-1514, 0)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall2" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall2" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall2" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall3" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-1514, -96)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall3" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall3" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall3" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="LargeWall4" type="Node2D" parent="NavigationRegion2D/Props"]
+position = Vector2(-1514, 96)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props/LargeWall4" instance=ExtResource("9_x7cji")]
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props/LargeWall4" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props/LargeWall4" instance=ExtResource("9_x7cji")]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+
+[node name="Fountain" parent="NavigationRegion2D/Props" instance=ExtResource("8_pbntd")]
+position = Vector2(-1, -15)
+scale = Vector2(3, 3)
+
+[node name="Cars" type="Node2D" parent="NavigationRegion2D/Props"]
+
+[node name="PoliceCar2" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("9_ax4j5")]
+position = Vector2(1383, -465)
+
+[node name="PoliceCar4" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("9_ax4j5")]
+position = Vector2(1587, -408)
+
+[node name="PoliceCar3" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("10_de00k")]
+position = Vector2(1570, -173)
+
+[node name="PoliceCar5" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("10_w65hh")]
+position = Vector2(1515, 31)
+
+[node name="PoliceCar6" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("11_ewufq")]
+position = Vector2(1495, 83)
+
+[node name="Smoke2" type="AnimatedSprite2D" parent="NavigationRegion2D/Props/Cars/PoliceCar6"]
+position = Vector2(-17.5, -38.5)
+scale = Vector2(0.763305, 0.763305)
 sprite_frames = SubResource("SpriteFrames_nq2ak")
 animation = &"Smoke"
 autoplay = "Smoke"
 frame_progress = 0.955138
 
-[node name="Enemys" type="Area2D" parent="."]
+[node name="PoliceCar7" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("12_teoa5")]
+position = Vector2(1663, 221)
+
+[node name="PoliceCar8" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("13_jrtpp")]
+position = Vector2(1443, 334)
+
+[node name="PoliceCar9" parent="NavigationRegion2D/Props/Cars" instance=ExtResource("13_jrtpp")]
+position = Vector2(1496, 497)
+
+[node name="ConcreteWallCorner" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(709, -96)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallCorner2" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(758, -124)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallCorner3" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(807, -152)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallCorner4" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(710, 121)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="ConcreteWallCorner5" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(759, 149)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="ConcreteWallCorner6" parent="NavigationRegion2D/Props" instance=ExtResource("9_h4y1x")]
+position = Vector2(807, 178)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="GroupEasy" type="Node2D" parent="Enemies"]
+
+[node name="FBI Agent" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupEasy2" type="Node2D" parent="Enemies"]
+position = Vector2(5, 628)
+
+[node name="FBI Agent" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupEasy3" type="Node2D" parent="Enemies"]
+position = Vector2(1054, -4)
+
+[node name="FBI Agent" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupEasy4" type="Node2D" parent="Enemies"]
+position = Vector2(1059, 624)
+
+[node name="FBI Agent" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupEasy5" type="Node2D" parent="Enemies"]
+position = Vector2(2273, -2)
+
+[node name="FBI Agent" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupEasy6" type="Node2D" parent="Enemies"]
+position = Vector2(2278, 626)
+
+[node name="FBI Agent" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+position = Vector2(-1214, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent2" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+position = Vector2(-1206, -312)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+position = Vector2(-1197, -280)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="GroupMedium" type="Node2D" parent="Enemies"]
+position = Vector2(-908, 21)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupMedium2" type="Node2D" parent="Enemies"]
+position = Vector2(-703, -438)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupMedium3" type="Node2D" parent="Enemies"]
+position = Vector2(-685, 317)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupMedium4" type="Node2D" parent="Enemies"]
+position = Vector2(413, -342)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupMedium5" type="Node2D" parent="Enemies"]
+position = Vector2(439, 24)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupMedium6" type="Node2D" parent="Enemies"]
+position = Vector2(436, 325)
+
+[node name="FBI Agent" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent2" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+position = Vector2(-1, -35)
+weapon_resource = ExtResource("11_x5w8c")
+
+[node name="FBI Agent3" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+position = Vector2(-26, 20)
+
+[node name="FBI Agent4" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+position = Vector2(27, 20)
+
+[node name="GroupHard" type="Node2D" parent="Enemies"]
+position = Vector2(-92, 57)
+
+[node name="FBI Agent" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+position = Vector2(0, -40)
+stats = SubResource("Resource_h4y1x")
+weapon_resource = ExtResource("11_pbntd")
+
+[node name="FBI Agent2" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+position = Vector2(26, 13)
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent3" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+position = Vector2(-27, 13)
+stats = ExtResource("9_1o0ha")
+
+[node name="GroupHard2" type="Node2D" parent="Enemies"]
+position = Vector2(-5, -114)
+
+[node name="FBI Agent" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+position = Vector2(0, -40)
+stats = SubResource("Resource_h4y1x")
+weapon_resource = ExtResource("11_pbntd")
+
+[node name="FBI Agent2" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+position = Vector2(26, 13)
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent3" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+position = Vector2(-27, 13)
+stats = ExtResource("9_1o0ha")
+
+[node name="GroupHard3" type="Node2D" parent="Enemies"]
+position = Vector2(91, 43)
+
+[node name="FBI Agent" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+position = Vector2(0, -40)
+stats = SubResource("Resource_h4y1x")
+weapon_resource = ExtResource("11_pbntd")
+
+[node name="FBI Agent2" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+position = Vector2(26, 13)
+stats = ExtResource("9_1o0ha")
+
+[node name="FBI Agent3" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+position = Vector2(-27, 13)
+stats = ExtResource("9_1o0ha")
 
 [node name="Player" parent="." instance=ExtResource("2_2o78u")]
 position = Vector2(-1815, 35)

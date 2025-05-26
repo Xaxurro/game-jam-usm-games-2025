@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvlsv"]
 size = Vector2(75.4581, 26.2414)
 
-[node name="PoliceCar1" type="Sprite2D"]
+[node name="PoliceCar1" type="Sprite2D" groups=["walls"]]
 scale = Vector2(1.41138, 1.50649)
 texture = ExtResource("1_rucs0")
 hframes = 3
@@ -13,6 +13,8 @@ vframes = 3
 region_rect = Rect2(109, 16, 81, 73)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 1610612739
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.177126, 6.48277)
