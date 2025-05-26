@@ -15,38 +15,38 @@ American Freedom
 # Índice
 
 -   [1. Visión General del Juego](#1-visión-general-del-juego)
-    -   [1.1. Género](#11-género)
+	-   [1.1. Género](#11-género)
 -   [2. Mecánicas de Juego](#2-mecánicas-de-juego)
-    -   [2.1. Navegación y Selección de Nivel](#21-navegación-y-selección-de-nivel)
-    -   [2.2. Movimiento](#22-movimiento)
-    -   [2.3. Combate con Armas de Fuego](#23-combate-con-armas-de-fuego)
-    -   [2.4. Habilidades Activas](#24-habilidades-activas)
-    -   [2.5. Consumibles](#25-consumibles)
-    -   [2.6. Interacción con el Entorno](#26-interacción-con-el-entorno)
-    -   [2.7. Compras en Walmart](#27-compras-en-walmart)
-    -   [2.8. Coleccionables: Liberando Civiles](#28-coleccionables-liberando-civiles)
-    -   [2.9. Enemigos Básicos](#29-enemigos-básicos)
-    -   [2.10. Mini-Jefes](#210-mini-jefes)
-    -   [2.11. Jefes Finales](#211-jefes-finales)
+	-   [2.1. Navegación y Selección de Nivel](#21-navegación-y-selección-de-nivel)
+	-   [2.2. Movimiento](#22-movimiento)
+	-   [2.3. Combate con Armas de Fuego](#23-combate-con-armas-de-fuego)
+	-   [2.4. Habilidades Activas](#24-habilidades-activas)
+	-   [2.5. Consumibles](#25-consumibles)
+	-   [2.6. Interacción con el Entorno](#26-interacción-con-el-entorno)
+	-   [2.7. Compras en Walmart](#27-compras-en-walmart)
+	-   [2.8. Coleccionables: Liberando Civiles](#28-coleccionables-liberando-civiles)
+	-   [2.9. Enemigos Básicos](#29-enemigos-básicos)
+	-   [2.10. Mini-Jefes](#210-mini-jefes)
+	-   [2.11. Jefes Finales](#211-jefes-finales)
 -   [3. Historia y Ambientación](#3-historia-y-ambientación)
-    -   [3.1. Trama Principal](#31-trama-principal)
-    -   [3.2. Ambiente](#32-ambiente)
-    -   [3.3. Inspiraciones](#33-inspiraciones)
-    -   [3.4. Protagonista: John Freedom](#34-protagonista-john-freedom)
-    -   [3.5. La Alianza Anti-Estados Unidos](#35-la-alianza-anti-estados-unidos)
+	-   [3.1. Trama Principal](#31-trama-principal)
+	-   [3.2. Ambiente](#32-ambiente)
+	-   [3.3. Inspiraciones](#33-inspiraciones)
+	-   [3.4. Protagonista: John Freedom](#34-protagonista-john-freedom)
+	-   [3.5. La Alianza Anti-Estados Unidos](#35-la-alianza-anti-estados-unidos)
 -   [4. Interfaz de Usuario (UI)](#4-interfaz-de-usuario-ui)
-    -   [4.1. Pantalla de Selección de Nivel](#41-pantalla-de-selección-de-nivel)
-    -   [4.2. Indicador de Salud](#42-indicador-de-salud)
-    -   [4.3. Brújula](#43-brújula)
-    -   [4.4. Selección de Armas](#44-selección-de-armas)
-    -   [4.5. Consumible Activo](#45-consumible-activo)
+	-   [4.1. Pantalla de Selección de Nivel](#41-pantalla-de-selección-de-nivel)
+	-   [4.2. Indicador de Salud](#42-indicador-de-salud)
+	-   [4.3. Brújula](#43-brújula)
+	-   [4.4. Selección de Armas](#44-selección-de-armas)
+	-   [4.5. Consumible Activo](#45-consumible-activo)
 -   [5. Controles](#5-controles)
-    -   [5.1. Movimiento Básico](#51-movimiento-básico)
-    -   [5.2. Interacción](#52-interacción)
-    -   [5.3. Dasheo](#53-dasheo)
-    -   [5.4. Disparo](#54-disparo)
+	-   [5.1. Movimiento Básico](#51-movimiento-básico)
+	-   [5.2. Interacción](#52-interacción)
+	-   [5.3. Dasheo](#53-dasheo)
+	-   [5.4. Disparo](#54-disparo)
 -   [6. Dirección de Arte](#6-dirección-de-arte)
-    -   [6.1. Diseño de Personaje: John Freedom](#61-diseño-de-personaje-john-freedom)
+	-   [6.1. Diseño de Personaje: John Freedom](#61-diseño-de-personaje-john-freedom)
 -   [7. Herramientas de Desarrollo](#7-herramientas-de-desarrollo)
 
 ---
@@ -142,20 +142,22 @@ Encuentros con enemigos más poderosos que aparecen a mitad de los niveles. Util
 
 ### R.O.B.O.T.
 -   **Descripción:** Una máquina de guerra con dos ataques principales:
-    -   **Carga:** Corre hacia el jugador, infligiendo daño considerable al contacto.
-    -   **Disparo Cuadruple:** Realiza 4 disparos en sucesion dirigidos al jugador.
+	-   **Carga:** Corre hacia el jugador, infligiendo daño considerable al contacto.
+	-   **Disparo Cuadruple:** Realiza 4 disparos en sucesion dirigidos al jugador.
 
 ### U.F.O.
 -   **Descripción:** Una nave de transporte alienígena:
-    -   **Ráfaga de Balas:** Dispara una ráfaga concentrada de proyectiles hacia el jugador.
-    -   **Pendiente:** Añadir más ataques para este mini-jefe.
+	-   **Ráfaga de Balas:** Dispara una ráfaga concentrada de proyectiles hacia el jugador.
+	-   **Pendiente:** Añadir más ataques para este mini-jefe.
 
 ## 2.11. Jefes Finales
 Cada área culminará con un jefe final único y desafiante.
 
-### Pendiente
-Añadir a Trump
-
+### Presidente Robot.
+-   **Descripción:** Presidente de U.S.A siendo suplantado por un Robot:
+	-   **Ráfaga de Balas:** Dispara una ráfaga concentrada de proyectiles hacia el jugador por cierta cantidad de segundos.
+	-   **Cicrulo de Balas:** Dispara un circulo de balas alrededor del boss.
+	-   **Spawnear enemigos normales:** Spawnea enemigos alrededor del boss cada vez que termina una mecanica.
 ---
 
 # 3. Historia y Ambientación
@@ -195,11 +197,11 @@ Un mapa de los estados unidos, el jugador hace click en un estado y saldra por q
 
 ### Áreas (Ejemplos de Niveles)
 -   **Área 51:**
-    -   **Jefe Final:** UFO.
-    -   **Enemigos Comunes:** Alienígenas.
+	-   **Jefe Final:** UFO.
+	-   **Enemigos Comunes:** Alienígenas.
 -   **Washington D.C.:**
-    -   **Jefe Final:** Robo-President.
-    -   **Enemigos Comunes:** Robots.
+	-   **Jefe Final:** Robo-President.
+	-   **Enemigos Comunes:** Robots.
 
 ## 4.2. Indicador de Salud
 Línea esquina superior izquierda de la pantalla, muestra la vida actual del personaje y su vida máxima en formato numérico.
