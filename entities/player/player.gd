@@ -141,4 +141,5 @@ func _physics_process(delta: float) -> void:
 
 func dead(health_current: int) -> void:
 	if health_current <= 0:
+		Global.stage_index = 0
 		get_tree().change_scene_to_file("res://levels/menu/main_menu.tscn")
