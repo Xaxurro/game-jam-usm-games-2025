@@ -1,22 +1,61 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckhpd63gko42x"]
+[gd_scene load_steps=16 format=3 uid="uid://ckhpd63gko42x"]
 
 [ext_resource type="Texture2D" uid="uid://c3lrnqrn6p1ao" path="res://levels/white-house/stage-3/assets/Background stage 3.png" id="1_bjy5w"]
+[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="1_eh350"]
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="2_2pw0o"]
+[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="2_bqfti"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_eplmt"]
+[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="3_laxr3"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="4_2pw0o"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_2pw0o"]
-vertices = PackedVector2Array(-314, 472, -1969.01, 472, -1969.98, -476.992, -314.969, -476, -314, 72.0234, -313.969, -112.992, 823.539, 69.9922, 834.539, -114.008, 1697.66, 169.328, 1667.36, 232.883, 1625.21, 291.68, 1582.08, 337.75, 1537.1, 376.867, 1486.14, 407.25, 1433.3, 433.672, 1387.43, 447.328, 1339.37, 459.102, 1294.59, 463, 1261.69, 463, 1179.1, 452.18, 1122.54, 434.633, 1069.76, 411.172, 1029.47, 385.617, 979.328, 351.211, 942.406, 315.258, 910.211, 275.258, 885.602, 234.891, 856.281, 180.148, 837.617, 119.25, 852.289, -176.117, 879.727, -225.109, 908.352, -271.492, 934.523, -308.328, 981.469, -351.367, 1017.94, -379.953, 1062.95, -411.258, 1125.64, -439.656, 1198.1, -463.172, 1260.22, -469.961, 1321.6, -466.063, 1383.39, -452.328, 1443.28, -433.68, 1501.85, -404.391, 1544.84, -374.109, 1581.12, -343.703, 1607.44, -315.438, 1647.8, -267.203, 1677.1, -217.398, 1693.84, -180.953, 1706.6, -148.57, 1715.03, -124.211, 1719.96, 98.5625)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 6, 7, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1980, -487, -305, -486, -304, -123, 827, -124, 843, -180, 871, -230, 900, -277, 927, -315, 975, -359, 1012, -388, 1058, -420, 1122, -449, 1196, -473, 1260, -480, 1323, -476, 1386, -462, 1447, -443, 1507, -413, 1551, -382, 1588, -351, 1615, -322, 1656, -273, 1686, -222, 1703, -185, 1716, -152, 1725, -126, 1730, 100, 1707, 173, 1676, 238, 1633, 298, 1589, 345, 1543, 385, 1491, 416, 1437, 443, 1390, 457, 1341, 469, 1295, 473, 1261, 473, 1177, 462, 1119, 444, 1065, 420, 1024, 394, 973, 359, 935, 322, 902, 281, 877, 240, 847, 184, 828, 122, 816, 80, -304, 82, -304, 482, -1979, 482)])
+[ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="8_p6v43"]
+[ext_resource type="PackedScene" uid="uid://vidagoefobiy" path="res://levels/assets/props/concrete_walls/concrete_wall_front.tscn" id="9_fsgbb"]
+[ext_resource type="Resource" uid="uid://cwljolqksqhm4" path="res://weapons/resources/shotgun_enemy.tres" id="10_bb4lo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pw0o"]
 texture = ExtResource("1_bjy5w")
 
-[node name="Stage3" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2pw0o"]
+vertices = PackedVector2Array(-314.969, -476, -313.969, -112.992, -491, -187, -547, -257, -547, -292, -525, -187, -525, 85, -689, 98, -713, -19, -713, -54, -840, -54, -928.961, -103, -930.039, -375, -674, -257, -724.039, 99.6797, -722.961, 370, -948, 264, -948, 229, -723, 98, -1075, 229, -1271.96, 166, -840, -19, -1246, -253, -1246, -288, -965, -375, -965, -103, -1373, -253, -1616, -117, -1795, -166, -1795, -201, -1273.04, 440, -1075, 264, -314, 72.0234, -314, 472, -689, 370, -491, 85, -1616, 155, -1533.61, 140.898, -1531.42, 178.094, -1404, 176.906, -1404, 142.094, -1308.04, 166, -1307.84, 214.773, -1306.96, 440, -723, 99.6016, -1969.98, -476.992, -1373, -288, -1922, -201, -1650, -117, -1922, -166, -1650, 155, -1969.01, 472, -674, -292, 834.539, -114.008, 852.289, -176.117, 879.727, -225.109, 908.352, -271.492, 934.523, -308.328, 981.469, -351.367, 1017.94, -379.953, 1062.95, -411.258, 1125.64, -439.656, 1198.1, -463.172, 1260.22, -469.961, 1321.6, -466.063, 1383.39, -452.328, 1443.28, -433.68, 1501.85, -404.391, 1544.84, -374.109, 1581.12, -343.703, 1607.44, -315.438, 1647.8, -267.203, 1677.1, -217.398, 1693.84, -180.953, 1706.6, -148.57, 1715.03, -124.211, 1719.96, 98.5625, 1697.66, 169.328, 1667.36, 232.883, 1625.21, 291.68, 1582.08, 337.75, 1537.1, 376.867, 1486.14, 407.25, 1433.3, 433.672, 1387.43, 447.328, 1339.37, 459.102, 1294.59, 463, 1261.69, 463, 1179.1, 452.18, 1122.54, 434.633, 1069.76, 411.172, 1029.47, 385.617, 979.328, 351.211, 942.406, 315.258, 910.211, 275.258, 885.602, 234.891, 856.281, 180.148, 837.617, 119.25, 823.539, 69.9922)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(5, 9, 10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 14, 17, 19, 20, 21, 8), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 22, 25, 27, 28, 29), PackedInt32Array(30, 20, 19, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(35, 34, 7, 6), PackedInt32Array(8, 7, 18), PackedInt32Array(36, 27, 37, 38), PackedInt32Array(39, 40, 41, 42, 43), PackedInt32Array(32, 35, 2, 1), PackedInt32Array(18, 44, 14), PackedInt32Array(45, 46, 26, 29, 47), PackedInt32Array(40, 37, 27, 25), PackedInt32Array(38, 39, 43), PackedInt32Array(25, 11, 10, 21, 20, 41, 40), PackedInt32Array(30, 31, 16, 15), PackedInt32Array(28, 27, 48), PackedInt32Array(49, 28, 48, 50, 51), PackedInt32Array(0, 4, 52, 12), PackedInt32Array(50, 36, 38, 43, 51), PackedInt32Array(53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98), PackedInt32Array(1, 53, 98, 32), PackedInt32Array(3, 2, 5, 13), PackedInt32Array(52, 13, 12), PackedInt32Array(45, 0, 12, 24), PackedInt32Array(45, 24, 23, 46), PackedInt32Array(51, 45, 47, 49), PackedInt32Array(33, 51, 43, 30), PackedInt32Array(33, 30, 15, 34)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1980, -487, -305, -486, -304, -123, 827, -124, 843, -180, 871, -230, 900, -277, 927, -315, 975, -359, 1012, -388, 1058, -420, 1122, -449, 1196, -473, 1260, -480, 1323, -476, 1386, -462, 1447, -443, 1507, -413, 1551, -382, 1588, -351, 1615, -322, 1656, -273, 1686, -222, 1703, -185, 1716, -152, 1725, -126, 1730, 100, 1707, 173, 1676, 238, 1633, 298, 1589, 345, 1543, 385, 1491, 416, 1437, 443, 1390, 457, 1341, 469, 1295, 473, 1261, 473, 1177, 462, 1119, 444, 1065, 420, 1024, 394, 973, 359, 935, 322, 902, 281, 877, 240, 847, 184, 828, 122, 816, 80, -304, 82, -304, 482, -1979, 482), PackedVector2Array(-1805, -176, -1805, -191, -1912, -191, -1912, -177, -1853.04, -176.449, -1805, -176), PackedVector2Array(-1297, 430, -1283, 430, -1282, 176, -1298, 176, -1297.85, 214.732), PackedVector2Array(-713, 360, -700, 360, -699, 108, -714, 109), PackedVector2Array(-515, 75, -501, 75, -501, -177, -515, -177), PackedVector2Array(-664, -267, -558, -267, -557, -282, -664, -282), PackedVector2Array(-939, -113, -940, -365, -955, -365, -955, -113), PackedVector2Array(-1363, -263, -1256, -263, -1256, -278, -1363, -278), PackedVector2Array(-1641, -107, -1626, -107, -1626, -11.3, -1626, 9.59995, -1626, 145, -1640, 145), PackedVector2Array(-1414, 167, -1414, 152, -1523, 151, -1522, 168), PackedVector2Array(-1065, 239, -958, 239, -958, 254, -1065, 254), PackedVector2Array(-830, -44, -723, -44, -722, -30, -831, -30)])
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_2pw0o")
+[sub_resource type="Resource" id="Resource_fhowl"]
+script = ExtResource("2_bqfti")
+money_on_death = 100
+health_current = 25
+speed = 175.0
+stop_distance = 120.0
+shoot_distance = 120.0
+shoot_cooldown = 2.0
+acceleration = 500.0
+detection_range = 300.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[sub_resource type="Resource" id="Resource_3oqcx"]
+script = ExtResource("2_bqfti")
+money_on_death = 100
+health_current = 30
+speed = 130.0
+stop_distance = 200.0
+shoot_distance = 200.0
+shoot_cooldown = 1.0
+acceleration = 500.0
+detection_range = 500.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[sub_resource type="Resource" id="Resource_rwrb6"]
+script = ExtResource("2_bqfti")
+money_on_death = 100
+health_current = 50
+speed = 100.0
+stop_distance = 275.0
+shoot_distance = 275.0
+shoot_cooldown = 0.3
+acceleration = 500.0
+detection_range = 500.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[node name="Stage3" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -2005.0
@@ -29,20 +68,6 @@ metadata/_edit_lock_ = true
 [node name="World Border" parent="." instance=ExtResource("2_2pw0o")]
 metadata/_edit_lock_ = true
 
-[node name="Props" type="Area2D" parent="." groups=["enemies"]]
-collision_layer = 2147483648
-collision_mask = 1073741827
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Props"]
-collision_layer = 2147483648
-collision_mask = 1073741827
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(-2005, -56, -1981, -55, -1980, -487, -304, -487, -301, -127, 825, -124, 844, -180, 869, -232, 899, -278, 929, -316, 971, -360, 1014, -392, 1056, -422, 1123, -451, 1195, -473, 1264, -481, 1335, -475, 1384, -465, 1450, -442, 1509, -414, 1556, -381, 1618, -320, 1661, -268, 1689, -223, 1705, -181, 1723, -127, 1997, -124, 1997, -511, -2003, -511)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(-2005, 47, -1981, 47, -1980, 484, -305, 484, -303, 80, 816, 81, 826, 122, 846, 183, 875, 237, 905, 283, 938, 324, 977, 362, 1024, 396, 1068, 421, 1118, 444, 1169, 461, 1230, 472, 1267, 475, 1290, 474, 1334, 471, 1386, 460, 1434, 445, 1492, 417, 1543, 387, 1592, 343, 1634, 299, 1676, 239, 1707, 174, 1730, 102, 1997, 102, 2000, 511, -2004, 512)
-
 [node name="Player" parent="." instance=ExtResource("3_eplmt")]
 position = Vector2(-1949, -1)
 movement_speed = 600
@@ -50,4 +75,660 @@ movement_speed = 600
 [node name="NextLevel" parent="." instance=ExtResource("4_2pw0o")]
 position = Vector2(1888, -11)
 
-[node name="Enemies" type="Area2D" parent="."]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_2pw0o")
+
+[node name="Props" type="Node2D" parent="NavigationRegion2D" groups=["walls"]]
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -171)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -163)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -156)
+
+[node name="ConcreteWallSide4" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -148)
+
+[node name="ConcreteWallSide5" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -140)
+
+[node name="ConcreteWallSide6" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -132)
+
+[node name="ConcreteWallSide7" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -125)
+
+[node name="ConcreteWallSide8" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -117)
+
+[node name="ConcreteWallSide9" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -110)
+
+[node name="ConcreteWallSide10" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -102)
+
+[node name="ConcreteWallSide11" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -95)
+
+[node name="ConcreteWallSide12" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -87)
+
+[node name="ConcreteWallSide13" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -79)
+
+[node name="ConcreteWallSide14" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -71)
+
+[node name="ConcreteWallSide15" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -64)
+
+[node name="ConcreteWallSide16" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -56)
+
+[node name="ConcreteWallSide17" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -50)
+
+[node name="ConcreteWallSide18" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -42)
+
+[node name="ConcreteWallSide19" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -35)
+
+[node name="ConcreteWallSide20" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -27)
+
+[node name="ConcreteWallSide21" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -19)
+
+[node name="ConcreteWallSide22" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -11)
+
+[node name="ConcreteWallSide23" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, -4)
+
+[node name="ConcreteWallSide24" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 4)
+
+[node name="ConcreteWallSide25" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 11)
+
+[node name="ConcreteWallSide26" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 19)
+
+[node name="ConcreteWallSide27" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 26)
+
+[node name="ConcreteWallSide28" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 34)
+
+[node name="ConcreteWallSide29" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 42)
+
+[node name="ConcreteWallSide30" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 50)
+
+[node name="ConcreteWallSide31" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 57)
+
+[node name="ConcreteWallSide32" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-508, 65)
+
+[node name="ConcreteWallSide33" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 114)
+
+[node name="ConcreteWallSide34" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 122)
+
+[node name="ConcreteWallSide35" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 129)
+
+[node name="ConcreteWallSide36" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 137)
+
+[node name="ConcreteWallSide37" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 145)
+
+[node name="ConcreteWallSide38" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 153)
+
+[node name="ConcreteWallSide39" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 160)
+
+[node name="ConcreteWallSide40" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 168)
+
+[node name="ConcreteWallSide41" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 175)
+
+[node name="ConcreteWallSide42" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 183)
+
+[node name="ConcreteWallSide43" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 190)
+
+[node name="ConcreteWallSide44" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 198)
+
+[node name="ConcreteWallSide45" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 206)
+
+[node name="ConcreteWallSide46" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 214)
+
+[node name="ConcreteWallSide47" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 221)
+
+[node name="ConcreteWallSide48" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 229)
+
+[node name="ConcreteWallSide49" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 235)
+
+[node name="ConcreteWallSide50" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 243)
+
+[node name="ConcreteWallSide51" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 250)
+
+[node name="ConcreteWallSide52" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 258)
+
+[node name="ConcreteWallSide53" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 266)
+
+[node name="ConcreteWallSide54" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 274)
+
+[node name="ConcreteWallSide55" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 281)
+
+[node name="ConcreteWallSide56" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 289)
+
+[node name="ConcreteWallSide57" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 296)
+
+[node name="ConcreteWallSide58" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 304)
+
+[node name="ConcreteWallSide59" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 311)
+
+[node name="ConcreteWallSide60" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 319)
+
+[node name="ConcreteWallSide61" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 327)
+
+[node name="ConcreteWallSide62" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 335)
+
+[node name="ConcreteWallSide63" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 342)
+
+[node name="ConcreteWallSide64" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-706, 350)
+
+[node name="ConcreteWallSide65" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -359)
+
+[node name="ConcreteWallSide66" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -351)
+
+[node name="ConcreteWallSide67" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -344)
+
+[node name="ConcreteWallSide68" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -336)
+
+[node name="ConcreteWallSide69" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -328)
+
+[node name="ConcreteWallSide70" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -320)
+
+[node name="ConcreteWallSide71" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -313)
+
+[node name="ConcreteWallSide72" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -305)
+
+[node name="ConcreteWallSide73" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -298)
+
+[node name="ConcreteWallSide74" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -290)
+
+[node name="ConcreteWallSide75" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -283)
+
+[node name="ConcreteWallSide76" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -275)
+
+[node name="ConcreteWallSide77" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -267)
+
+[node name="ConcreteWallSide78" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -259)
+
+[node name="ConcreteWallSide79" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -252)
+
+[node name="ConcreteWallSide80" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -244)
+
+[node name="ConcreteWallSide81" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -238)
+
+[node name="ConcreteWallSide82" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -230)
+
+[node name="ConcreteWallSide83" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -223)
+
+[node name="ConcreteWallSide84" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -215)
+
+[node name="ConcreteWallSide85" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -207)
+
+[node name="ConcreteWallSide86" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -199)
+
+[node name="ConcreteWallSide87" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -192)
+
+[node name="ConcreteWallSide88" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -184)
+
+[node name="ConcreteWallSide89" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -177)
+
+[node name="ConcreteWallSide90" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -169)
+
+[node name="ConcreteWallSide91" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -162)
+
+[node name="ConcreteWallSide92" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -154)
+
+[node name="ConcreteWallSide93" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -146)
+
+[node name="ConcreteWallSide94" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -138)
+
+[node name="ConcreteWallSide95" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -131)
+
+[node name="ConcreteWallSide96" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-947, -123)
+
+[node name="ConcreteWallSide97" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -101)
+
+[node name="ConcreteWallSide98" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -93)
+
+[node name="ConcreteWallSide99" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -86)
+
+[node name="ConcreteWallSide100" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -78)
+
+[node name="ConcreteWallSide101" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -70)
+
+[node name="ConcreteWallSide102" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -62)
+
+[node name="ConcreteWallSide103" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -55)
+
+[node name="ConcreteWallSide104" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -47)
+
+[node name="ConcreteWallSide105" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -40)
+
+[node name="ConcreteWallSide106" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -32)
+
+[node name="ConcreteWallSide107" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -25)
+
+[node name="ConcreteWallSide108" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -17)
+
+[node name="ConcreteWallSide109" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -9)
+
+[node name="ConcreteWallSide110" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, -1)
+
+[node name="ConcreteWallSide111" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 6)
+
+[node name="ConcreteWallSide112" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 14)
+
+[node name="ConcreteWallSide113" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 20)
+
+[node name="ConcreteWallSide114" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 28)
+
+[node name="ConcreteWallSide115" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 35)
+
+[node name="ConcreteWallSide116" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 43)
+
+[node name="ConcreteWallSide117" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 51)
+
+[node name="ConcreteWallSide118" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 59)
+
+[node name="ConcreteWallSide119" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 66)
+
+[node name="ConcreteWallSide120" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 74)
+
+[node name="ConcreteWallSide121" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 81)
+
+[node name="ConcreteWallSide122" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 89)
+
+[node name="ConcreteWallSide123" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 96)
+
+[node name="ConcreteWallSide124" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 104)
+
+[node name="ConcreteWallSide125" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 112)
+
+[node name="ConcreteWallSide126" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 120)
+
+[node name="ConcreteWallSide127" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 127)
+
+[node name="ConcreteWallSide128" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1633, 135)
+
+[node name="ConcreteWallSide129" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 184)
+
+[node name="ConcreteWallSide130" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 192)
+
+[node name="ConcreteWallSide131" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 199)
+
+[node name="ConcreteWallSide132" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 207)
+
+[node name="ConcreteWallSide133" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 215)
+
+[node name="ConcreteWallSide134" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 223)
+
+[node name="ConcreteWallSide135" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 230)
+
+[node name="ConcreteWallSide136" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 238)
+
+[node name="ConcreteWallSide137" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 245)
+
+[node name="ConcreteWallSide138" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 253)
+
+[node name="ConcreteWallSide139" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 260)
+
+[node name="ConcreteWallSide140" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 268)
+
+[node name="ConcreteWallSide141" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 276)
+
+[node name="ConcreteWallSide142" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 284)
+
+[node name="ConcreteWallSide143" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 291)
+
+[node name="ConcreteWallSide144" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 299)
+
+[node name="ConcreteWallSide145" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 305)
+
+[node name="ConcreteWallSide146" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 313)
+
+[node name="ConcreteWallSide147" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 320)
+
+[node name="ConcreteWallSide148" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 328)
+
+[node name="ConcreteWallSide149" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 336)
+
+[node name="ConcreteWallSide150" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 344)
+
+[node name="ConcreteWallSide151" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 351)
+
+[node name="ConcreteWallSide152" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 359)
+
+[node name="ConcreteWallSide153" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 366)
+
+[node name="ConcreteWallSide154" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 374)
+
+[node name="ConcreteWallSide155" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 381)
+
+[node name="ConcreteWallSide156" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 389)
+
+[node name="ConcreteWallSide157" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 397)
+
+[node name="ConcreteWallSide158" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 405)
+
+[node name="ConcreteWallSide159" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 412)
+
+[node name="ConcreteWallSide160" parent="NavigationRegion2D/Props" instance=ExtResource("8_p6v43")]
+position = Vector2(-1290, 420)
+
+[node name="ConcreteWallFront" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1898, -183)
+
+[node name="ConcreteWallFront2" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1873, -183)
+
+[node name="ConcreteWallFront3" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1846, -183)
+
+[node name="ConcreteWallFront4" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1819, -183)
+
+[node name="ConcreteWallFront5" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1508, 160)
+
+[node name="ConcreteWallFront6" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1483, 160)
+
+[node name="ConcreteWallFront7" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1456, 160)
+
+[node name="ConcreteWallFront8" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1429, 160)
+
+[node name="ConcreteWallFront9" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1349, -270)
+
+[node name="ConcreteWallFront10" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1324, -270)
+
+[node name="ConcreteWallFront11" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1297, -270)
+
+[node name="ConcreteWallFront12" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1270, -270)
+
+[node name="ConcreteWallFront13" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1051, 247)
+
+[node name="ConcreteWallFront14" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-1026, 247)
+
+[node name="ConcreteWallFront15" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-999, 247)
+
+[node name="ConcreteWallFront16" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-972, 247)
+
+[node name="ConcreteWallFront17" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-816, -36)
+
+[node name="ConcreteWallFront18" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-791, -36)
+
+[node name="ConcreteWallFront19" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-764, -36)
+
+[node name="ConcreteWallFront20" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-737, -36)
+
+[node name="ConcreteWallFront21" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-650, -274)
+
+[node name="ConcreteWallFront22" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-625, -274)
+
+[node name="ConcreteWallFront23" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-598, -274)
+
+[node name="ConcreteWallFront24" parent="NavigationRegion2D/Props" instance=ExtResource("9_fsgbb")]
+position = Vector2(-571, -274)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="FBI Agent2" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1853, -281)
+stats = SubResource("Resource_fhowl")
+weapon_resource = ExtResource("10_bb4lo")
+
+[node name="FBI Agent3" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1311, -319)
+stats = SubResource("Resource_fhowl")
+weapon_resource = ExtResource("10_bb4lo")
+
+[node name="FBI Agent20" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-181, -40)
+stats = SubResource("Resource_fhowl")
+weapon_resource = ExtResource("10_bb4lo")
+
+[node name="FBI Agent21" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-195, 30)
+stats = SubResource("Resource_fhowl")
+weapon_resource = ExtResource("10_bb4lo")
+
+[node name="FBI Agent5" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1447, 96)
+stats = SubResource("Resource_fhowl")
+weapon_resource = ExtResource("10_bb4lo")
+
+[node name="FBI Agent6" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1573, 332)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent15" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1105, -152)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent16" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-740, -140)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent17" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-575, 239)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent18" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1517, -69)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent19" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(1032, -7)
+stats = SubResource("Resource_3oqcx")
+
+[node name="FBI Agent4" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1022, 5)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent9" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-619, -337)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent10" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(675, -61)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent11" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(673, 17)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent12" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(1530, -8)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent13" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(1474, -148)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent14" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(1479, 170)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent7" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-920, 372)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent8" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-421, -73)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")
+
+[node name="FBI Agent22" parent="Enemies" instance=ExtResource("1_eh350")]
+position = Vector2(-1088, 344)
+stats = SubResource("Resource_rwrb6")
+weapon_resource = ExtResource("3_laxr3")

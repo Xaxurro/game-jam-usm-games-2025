@@ -20,6 +20,7 @@ texture = ExtResource("1_xosbv")
 
 [sub_resource type="Resource" id="Resource_vy11p"]
 script = ExtResource("6_w1o5g")
+money_on_death = 100
 health_current = 50
 speed = 100.0
 stop_distance = 275.0
@@ -31,6 +32,7 @@ metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [sub_resource type="Resource" id="Resource_updjx"]
 script = ExtResource("6_w1o5g")
+money_on_death = 100
 health_current = 30
 speed = 130.0
 stop_distance = 200.0
@@ -42,6 +44,7 @@ metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [sub_resource type="Resource" id="Resource_2b4po"]
 script = ExtResource("6_w1o5g")
+money_on_death = 100
 health_current = 25
 speed = 175.0
 stop_distance = 120.0
