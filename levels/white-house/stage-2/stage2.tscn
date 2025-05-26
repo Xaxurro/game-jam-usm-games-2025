@@ -1,60 +1,34 @@
-[gd_scene load_steps=15 format=3 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=21 format=3 uid="uid://cex8u8s2h0ktb"]
 
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="1_nhjyu"]
+[ext_resource type="Script" uid="uid://dlx2tv23crsxa" path="res://levels/white-house/stage-2/stage_2.gd" id="1_u4arq"]
 [ext_resource type="Texture2D" uid="uid://iahycg7gj8bl" path="res://levels/white-house/stage-2/assets/BackGround stage 2.png" id="1_xosbv"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
+[ext_resource type="PackedScene" uid="uid://cqkigyvuoh42s" path="res://levels/assets/props/shelf.tscn" id="3_vy5qb"]
+[ext_resource type="PackedScene" uid="uid://nvodxfpxt80h" path="res://levels/assets/props/table.tscn" id="4_8dqml"]
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="4_nhjyu"]
 [ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="5_gvagb"]
-[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="6_w1o5g"]
-[ext_resource type="Resource" uid="uid://cwljolqksqhm4" path="res://weapons/resources/shotgun_enemy.tres" id="7_8xp15"]
+[ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="5_u4arq"]
+[ext_resource type="PackedScene" uid="uid://vidagoefobiy" path="res://levels/assets/props/concrete_walls/concrete_wall_front.tscn" id="6_bkoqm"]
+[ext_resource type="PackedScene" uid="uid://tpugr832uqud" path="res://levels/assets/props/concrete_walls/concrete_wall_corner.tscn" id="7_mr6vr"]
 [ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="8_b1aep"]
+[ext_resource type="PackedScene" uid="uid://bm47syms8f0ny" path="res://levels/assets/props/pot.tscn" id="8_omc48"]
 [ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="8_ovjr4"]
+[ext_resource type="Resource" uid="uid://dmo72ost8l5f4" path="res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres" id="13_8dqml"]
+[ext_resource type="Resource" uid="uid://c6nr5oae5q7gr" path="res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres" id="13_crgiq"]
+[ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="14_u4arq"]
+[ext_resource type="Resource" uid="uid://uevakrr645at" path="res://entities/enemies/fbi-agents/stage-1/resources/tank.tres" id="14_utqdd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
 texture = ExtResource("1_xosbv")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_16vje"]
-vertices = PackedVector2Array(784, 1.04688, 784, 41, 724, 40, 724, 1.04688, 724.508, -203, 2.03906, 42, 3.95313, 465, -995, 465, -75, 42, -675, 41, -615, 41, -995, 263, -994.063, 41, -995.063, 202, 722.508, -243, 525.039, -243, 525.961, -489, 983.039, -489, 983.961, -242.953, 782.461, -241.953, 784.508, -203.047, -1035.05, 263, -1034.04, 464.023, -1974, 465.969, -1974, -487.008, 982.977, 41, 982.023, 466, 43, 466, 263.461, 40, 203, 41, -994, -286, -994, -488, -275.977, -488, -275.023, 0, -615, 0, -993.961, -223, 1962, 465, 1024.02, 465, 1025.02, -82, 1962, -488, 1024.97, -488, 1023.97, -143, 984.117, -82, 984.172, -143, -136, 0, -235.023, 0, -235.977, -488.008, 484, -488.977, 484, -144, -75, -0.0390625, -862.781, 0.453125, -994.953, 0.03125, -675, 1.03125, -1035, -487.977, -1035, -286, -1035.02, -223, -1033.98, 202, -136, 41, 485, 0.0390625, 265.508, 1.03906, 203, 1.03906, 485, -81, 43, 41, 524, -144, 524, -81, 524, -203, 524, 0.0390625, 983.109, 0.0390625, 983.156, -202.039)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 8, 7, 11), PackedInt32Array(12, 9, 11, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18, 19), PackedInt32Array(4, 14, 19, 20, 0), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(1, 25, 26, 27), PackedInt32Array(28, 2, 1, 27, 29), PackedInt32Array(30, 31, 32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(40, 39, 38, 41), PackedInt32Array(41, 38, 42, 43), PackedInt32Array(44, 45, 46, 47, 48, 49), PackedInt32Array(50, 51, 35, 34, 52), PackedInt32Array(24, 53, 54, 55), PackedInt32Array(13, 11, 21, 56), PackedInt32Array(56, 21, 24, 55), PackedInt32Array(35, 55, 54, 30), PackedInt32Array(52, 34, 10, 9), PackedInt32Array(8, 10, 57), PackedInt32Array(49, 8, 57, 44), PackedInt32Array(58, 59, 60, 49, 48, 61), PackedInt32Array(27, 62, 29), PackedInt32Array(28, 29, 60, 59), PackedInt32Array(61, 48, 63, 64), PackedInt32Array(63, 65, 4), PackedInt32Array(3, 66, 64, 4), PackedInt32Array(43, 42, 67, 0, 20, 68), PackedInt32Array(64, 63, 4)])
+vertices = PackedVector2Array(-995.062, 202, -673.539, 42, -615, 41, -607, 41, -607, 229.102, -634.688, 245.094, 1962, 465, 1024.96, 465, 1218, 423, 1282, 423, 1182, 423, -994, -286, -761, -261.891, -788.688, -245.906, -1466, -266, -1034.95, -286, -682.688, 275.094, -682.156, 276, -844, 276, -575.992, 250.461, -580.297, 243, -573, 243, -729.992, -240.539, -733.719, -247, -727, -247, 1961.05, -488, 1962, -276.961, 1718, -377, 1718, -410, 1024.97, -488, 1682, -410, -1035.95, -487, -1152, -330, -1152, -390, -1974, -487, -1208, -390, 1182, 390, 1024.33, 293.352, 1025.02, -82, -1466, -116, -1035.02, -223, -1034.5, -10.4766, -1466, 120, -1466, -180, 1718, 423, 1718, 390, 1218, -377, 1282, -377, 1682, 390, -1035.05, 263, -1034.49, 374.289, -1154, 358, -1154, 298, -1466, 334, -1210, 298, -1210, 358, -1974, 465.969, -1466, 270, -1035.02, 202, -1466, 184, 784, 1.04688, 784, 41, 724, 40, 724, 1.10156, -634.188, 245.938, -658.688, 260.094, -658.188, 260.938, 525.961, -488, 983.039, -488, 983.961, -243.047, 784, -244.047, 525.633, -399.961, 525.094, -256.961, 525.031, -243.938, 724, -242.953, 784, -242, 782.461, -242, 724, -203, 784.508, -203.047, -675.438, 0, -994.961, 0, -994.07, -198, -788, -198, 38, -192, 38, 0.390625, -75, -0.0390625, -234.023, -488, -788.188, -245.047, -809.07, -233, -1004, -233, 264, 41.0234, 483, 40.5234, 483, 233, 982.977, 41, 982.023, 466, 43.9766, 466, 43.0234, 41, 203, 41, -275.977, -487, -275.023, 0, -615, 0, -788, -205.898, -753.992, -225.539, -136, 0, -234.977, 0, 524, -143, 524, -203, 984.117, -82, 1682, -377, 1618, -377, 1618, -410, 1582, -410, 1682, 423, 1618, 423, 1618, 390, 1582, 390, 1182, -377, 723, 0, 524, 0, 524, -82, 484, -82, 484, 0, 264, 0, 72, -192, 3, 253.547, 3, 465, -995, 465, -656, 311, -994, -487, -761, -347, -1004, -223, -1534, -266, -1534, -180, -1534, -116, -1534, 120, -573, 41, -136, 41, 484, -488, 484, -143, 517, 233, 517, 40.4375, 713.023, 40, 203, 1.03906, 72, 0.53125, -75, 42, 2.03906, 42, -994.07, 42, -1034.93, 464.023, -1534, 334, -1534, 270, -754.477, -226.398, -623.992, 280.461, -624.477, 279.602, -599.992, 265.461, -600.477, 264.602, 983.109, 0.0390625, 723, 1.07812, 983.156, -202.039, 984.172, -143, -1208, -330, -1466, -330, -844, 311, -995, 263, -727, -347, -656, 298.938, 1218, 390, 1023.97, -143, 1582, 423, 1518, 390, -1534, -330, -1534, 184, 1582, -377, 1518, -377, 1518, -410, 1482, -410, 1482, -377, 1418, -377, 1418, -410, 1382, -410, 1382, -377, 1318, -377, 1318, -410, 1282, -410, 1218, -410, 1182, -410, 1518, 423, 1482, 390, 1482, 423, 1418, 390, 1418, 423, 1382, 390, 1382, 423, 1318, 390, 1318, 423, 1282, 390)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 8, 7), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(16, 17, 18, 0), PackedInt32Array(19, 20, 21), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 25, 28, 30), PackedInt32Array(31, 15, 32, 33), PackedInt32Array(34, 31, 33, 35), PackedInt32Array(36, 10, 7, 37, 38), PackedInt32Array(39, 40, 41, 42), PackedInt32Array(40, 39, 43), PackedInt32Array(26, 6, 44, 45), PackedInt32Array(46, 47, 26, 45, 48), PackedInt32Array(49, 50, 51, 52), PackedInt32Array(53, 54, 55, 56), PackedInt32Array(54, 53, 57, 58), PackedInt32Array(59, 41, 58, 57), PackedInt32Array(41, 59, 42), PackedInt32Array(60, 61, 62, 63), PackedInt32Array(5, 64, 65, 0), PackedInt32Array(65, 66, 16, 0), PackedInt32Array(67, 68, 69, 70, 71), PackedInt32Array(72, 71, 70), PackedInt32Array(73, 72, 70, 74), PackedInt32Array(74, 70, 75, 76), PackedInt32Array(77, 74, 76, 78), PackedInt32Array(79, 80, 81, 82), PackedInt32Array(83, 84, 85, 86), PackedInt32Array(14, 13, 87, 88, 89), PackedInt32Array(90, 91, 92), PackedInt32Array(61, 93, 94), PackedInt32Array(92, 95, 96, 97, 90), PackedInt32Array(98, 99, 100, 82, 101, 102), PackedInt32Array(103, 104, 86, 85), PackedInt32Array(105, 106, 77, 107), PackedInt32Array(30, 108, 109, 110), PackedInt32Array(29, 30, 110), PackedInt32Array(29, 110, 111), PackedInt32Array(48, 112, 113, 114), PackedInt32Array(46, 48, 114), PackedInt32Array(46, 114, 115, 116), PackedInt32Array(117, 118, 119, 107), PackedInt32Array(120, 121, 122, 123), PackedInt32Array(124, 125, 126, 127), PackedInt32Array(11, 128, 98, 129), PackedInt32Array(89, 130, 40, 14), PackedInt32Array(131, 14, 40, 43, 132), PackedInt32Array(133, 39, 42, 134), PackedInt32Array(21, 135, 136), PackedInt32Array(86, 137, 138, 123), PackedInt32Array(94, 139, 140, 141, 62, 61), PackedInt32Array(142, 143, 123, 122), PackedInt32Array(144, 145, 124), PackedInt32Array(0, 146, 1), PackedInt32Array(51, 50, 147, 56, 55), PackedInt32Array(148, 53, 56), PackedInt32Array(148, 56, 34, 149), PackedInt32Array(102, 150, 22, 98), PackedInt32Array(151, 152, 153, 124), PackedInt32Array(124, 153, 154, 19, 136, 144), PackedInt32Array(100, 2, 1, 79), PackedInt32Array(117, 107, 155, 60, 63, 156), PackedInt32Array(78, 157, 158, 107, 77), PackedInt32Array(34, 35, 159, 160), PackedInt32Array(58, 0, 18, 161, 162), PackedInt32Array(100, 79, 82), PackedInt32Array(98, 22, 24), PackedInt32Array(98, 24, 163), PackedInt32Array(127, 164, 151, 124), PackedInt32Array(139, 94, 95, 92), PackedInt32Array(122, 90, 97, 142), PackedInt32Array(165, 36, 38, 166, 29, 116), PackedInt32Array(19, 21, 136), PackedInt32Array(116, 115, 167, 168), PackedInt32Array(108, 27, 26), PackedInt32Array(159, 32, 15, 14), PackedInt32Array(109, 108, 26), PackedInt32Array(98, 163, 129), PackedInt32Array(11, 129, 12), PackedInt32Array(159, 14, 160), PackedInt32Array(34, 160, 169), PackedInt32Array(34, 169, 131), PackedInt32Array(34, 131, 132), PackedInt32Array(34, 132, 133), PackedInt32Array(34, 133, 134), PackedInt32Array(34, 134, 170), PackedInt32Array(149, 34, 170), PackedInt32Array(57, 149, 170, 59), PackedInt32Array(52, 54, 58, 49), PackedInt32Array(162, 49, 58), PackedInt32Array(126, 162, 161), PackedInt32Array(126, 161, 127), PackedInt32Array(85, 144, 136, 103), PackedInt32Array(123, 83, 86), PackedInt32Array(120, 123, 138), PackedInt32Array(120, 138, 105, 119), PackedInt32Array(107, 119, 105), PackedInt32Array(38, 107, 158, 166), PackedInt32Array(171, 109, 26), PackedInt32Array(171, 26, 172), PackedInt32Array(111, 171, 172, 173), PackedInt32Array(29, 111, 173), PackedInt32Array(29, 173, 174), PackedInt32Array(175, 172, 26), PackedInt32Array(175, 26, 176), PackedInt32Array(174, 175, 176, 177), PackedInt32Array(29, 174, 177), PackedInt32Array(29, 177, 178), PackedInt32Array(179, 176, 26), PackedInt32Array(179, 26, 180), PackedInt32Array(178, 179, 180, 181), PackedInt32Array(29, 178, 181), PackedInt32Array(29, 181, 182), PackedInt32Array(112, 44, 6), PackedInt32Array(47, 180, 26), PackedInt32Array(182, 47, 46, 183), PackedInt32Array(29, 182, 183), PackedInt32Array(29, 183, 184), PackedInt32Array(29, 184, 116), PackedInt32Array(113, 112, 6), PackedInt32Array(167, 113, 6), PackedInt32Array(167, 6, 185), PackedInt32Array(167, 185, 168), PackedInt32Array(116, 168, 186), PackedInt32Array(116, 186, 187, 188), PackedInt32Array(187, 185, 6), PackedInt32Array(187, 6, 189), PackedInt32Array(187, 189, 188), PackedInt32Array(116, 188, 190), PackedInt32Array(116, 190, 191, 192), PackedInt32Array(191, 189, 6), PackedInt32Array(191, 6, 193), PackedInt32Array(191, 193, 192), PackedInt32Array(116, 192, 194), PackedInt32Array(165, 116, 194, 9), PackedInt32Array(8, 165, 9), PackedInt32Array(6, 9, 193)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1984, -497, -1025, -498, -1025, -296, -1004, -296, -1004, -498, -266, -498, -265, 10, -605, 10, -605, 31, -146, 31, -146, 10, -245, 10, -246, -498, 494, -499, 494, -154, 514, -154, 514, -213, 714, -213, 713, -233, 515, -233, 516, -499, 993, -499, 994, -233, 793, -232, 794, -213, 993, -212, 994, -153, 1014, -153, 1015, -498, 1972, -498, 1972, 475, 1014, 475, 1015, -72, 994, -72, 993, 10, 794, 11, 794, 31, 993, 31, 992, 476, 33, 476, 33, 31, 193, 31, 193, 11, -65, 10, -65, 32, 12, 32, 14, 475, -1005, 475, -1005, 273, -1025, 273, -1024, 474, -1984, 476), PackedVector2Array(-1005, 192, -1004, 31, -734.068, 31, -685, 31, -685, 11, -862.816, 10.4444, -1005, 10, -1004, -213, -1025, -213, -1024, 192), PackedVector2Array(274, 30, 714, 30, 714, 11, 514, 10, 514, -71, 495, -71, 495, 10, 275, 11)])
 
-[sub_resource type="Resource" id="Resource_vy11p"]
-script = ExtResource("6_w1o5g")
-money_on_death = 100
-health_current = 50
-speed = 100.0
-stop_distance = 275.0
-shoot_distance = 275.0
-shoot_cooldown = 0.3
-acceleration = 500.0
-detection_range = 500.0
-metadata/_custom_type_script = "uid://bkuerueepudmd"
-
-[sub_resource type="Resource" id="Resource_updjx"]
-script = ExtResource("6_w1o5g")
-money_on_death = 100
-health_current = 30
-speed = 130.0
-stop_distance = 200.0
-shoot_distance = 200.0
-shoot_cooldown = 1.0
-acceleration = 500.0
-detection_range = 500.0
-metadata/_custom_type_script = "uid://bkuerueepudmd"
-
-[sub_resource type="Resource" id="Resource_2b4po"]
-script = ExtResource("6_w1o5g")
-money_on_death = 100
-health_current = 25
-speed = 175.0
-stop_distance = 120.0
-shoot_distance = 120.0
-shoot_cooldown = 2.0
-acceleration = 500.0
-detection_range = 300.0
-metadata/_custom_type_script = "uid://bkuerueepudmd"
-
 [node name="Stage2" type="Node2D"]
+script = ExtResource("1_u4arq")
 
 [node name="World Border" parent="." instance=ExtResource("1_nhjyu")]
 metadata/_edit_lock_ = true
@@ -90,6 +64,243 @@ polygon = PackedVector2Array(-1025, 192, -1005, 192, -1005, 32, -684, 32, -685, 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NavigationRegion2D/Props/StaticBody2D"]
 polygon = PackedVector2Array(274, 10, 274, 31, 713, 30, 713, 10, 514, 10, 514, -72, 494, -72, 494, 10)
 
+[node name="Shelf" parent="NavigationRegion2D/Props" instance=ExtResource("3_vy5qb")]
+position = Vector2(-1500, -300)
+scale = Vector2(2, 2)
+
+[node name="Shelf2" parent="NavigationRegion2D/Props" instance=ExtResource("3_vy5qb")]
+position = Vector2(-1500, -150)
+scale = Vector2(2, 2)
+
+[node name="Shelf3" parent="NavigationRegion2D/Props" instance=ExtResource("3_vy5qb")]
+position = Vector2(-1500, 150)
+scale = Vector2(2, 2)
+
+[node name="Shelf4" parent="NavigationRegion2D/Props" instance=ExtResource("3_vy5qb")]
+position = Vector2(-1500, 300)
+scale = Vector2(2, 2)
+
+[node name="Table" parent="NavigationRegion2D/Props" instance=ExtResource("4_8dqml")]
+position = Vector2(-1182, 336)
+scale = Vector2(2, 2)
+
+[node name="Table2" parent="NavigationRegion2D/Props" instance=ExtResource("4_8dqml")]
+position = Vector2(-1180, -352)
+scale = Vector2(2, 2)
+
+[node name="ConcreteWallSide" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 207)
+
+[node name="ConcreteWallSide2" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 223)
+
+[node name="ConcreteWallSide3" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 191)
+
+[node name="ConcreteWallSide9" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 159)
+
+[node name="ConcreteWallSide10" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 175)
+
+[node name="ConcreteWallSide11" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 143)
+
+[node name="ConcreteWallSide12" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 111)
+
+[node name="ConcreteWallSide13" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 127)
+
+[node name="ConcreteWallSide14" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 95)
+
+[node name="ConcreteWallSide15" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 63)
+
+[node name="ConcreteWallSide16" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 79)
+
+[node name="ConcreteWallSide17" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-590, 47)
+
+[node name="ConcreteWallSide18" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -16)
+
+[node name="ConcreteWallSide19" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, 0)
+
+[node name="ConcreteWallSide20" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -32)
+
+[node name="ConcreteWallSide21" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -64)
+
+[node name="ConcreteWallSide22" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -48)
+
+[node name="ConcreteWallSide23" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -80)
+
+[node name="ConcreteWallSide24" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -112)
+
+[node name="ConcreteWallSide25" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -96)
+
+[node name="ConcreteWallSide26" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -128)
+
+[node name="ConcreteWallSide27" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -160)
+
+[node name="ConcreteWallSide28" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -144)
+
+[node name="ConcreteWallSide29" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(55, -176)
+
+[node name="ConcreteWallSide30" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 197)
+
+[node name="ConcreteWallSide31" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 213)
+
+[node name="ConcreteWallSide32" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 181)
+
+[node name="ConcreteWallSide33" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 149)
+
+[node name="ConcreteWallSide34" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 165)
+
+[node name="ConcreteWallSide35" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 133)
+
+[node name="ConcreteWallSide36" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 101)
+
+[node name="ConcreteWallSide37" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 117)
+
+[node name="ConcreteWallSide38" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 85)
+
+[node name="ConcreteWallSide39" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 53)
+
+[node name="ConcreteWallSide40" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 69)
+
+[node name="ConcreteWallSide41" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(500, 37)
+
+[node name="ConcreteWallFront" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-820, 294)
+
+[node name="ConcreteWallFront2" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-792, 294)
+
+[node name="ConcreteWallFront3" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-764, 294)
+
+[node name="ConcreteWallFront11" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-736, 294)
+
+[node name="ConcreteWallFront12" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-708, 294)
+
+[node name="ConcreteWallFront13" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-680, 294)
+
+[node name="ConcreteWallFront4" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-980, -215)
+
+[node name="ConcreteWallFront5" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-952, -215)
+
+[node name="ConcreteWallFront6" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-924, -215)
+
+[node name="ConcreteWallFront7" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-896, -215)
+
+[node name="ConcreteWallFront8" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-868, -215)
+
+[node name="ConcreteWallFront9" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-840, -215)
+
+[node name="ConcreteWallFront10" parent="NavigationRegion2D/Props" instance=ExtResource("6_bkoqm")]
+position = Vector2(-812, -215)
+
+[node name="ConcreteWallCorner" parent="NavigationRegion2D/Props" instance=ExtResource("7_mr6vr")]
+position = Vector2(-782, -229)
+
+[node name="ConcreteWallCorner2" parent="NavigationRegion2D/Props" instance=ExtResource("7_mr6vr")]
+position = Vector2(-758, -244)
+
+[node name="ConcreteWallSide4" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-744, -267)
+
+[node name="ConcreteWallSide5" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-744, -283)
+
+[node name="ConcreteWallSide6" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-744, -299)
+
+[node name="ConcreteWallSide7" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-744, -315)
+
+[node name="ConcreteWallSide8" parent="NavigationRegion2D/Props" instance=ExtResource("5_u4arq")]
+position = Vector2(-744, -331)
+
+[node name="ConcreteWallCorner3" parent="NavigationRegion2D/Props" instance=ExtResource("7_mr6vr")]
+position = Vector2(-652, 277)
+
+[node name="ConcreteWallCorner4" parent="NavigationRegion2D/Props" instance=ExtResource("7_mr6vr")]
+position = Vector2(-628, 262)
+
+[node name="ConcreteWallCorner5" parent="NavigationRegion2D/Props" instance=ExtResource("7_mr6vr")]
+position = Vector2(-604, 247)
+
+[node name="Pot" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1200, -400)
+
+[node name="Pot2" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1600, -400)
+
+[node name="Pot3" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1500, -400)
+
+[node name="Pot4" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1400, -400)
+
+[node name="Pot5" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1300, -400)
+
+[node name="Pot6" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1700, -400)
+
+[node name="Pot7" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1200, 400)
+
+[node name="Pot8" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1600, 400)
+
+[node name="Pot9" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1500, 400)
+
+[node name="Pot10" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1400, 400)
+
+[node name="Pot11" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1300, 400)
+
+[node name="Pot12" parent="NavigationRegion2D/Props" instance=ExtResource("8_omc48")]
+position = Vector2(1700, 400)
+
 [node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
 position = Vector2(2034, -12)
 
@@ -99,220 +310,107 @@ movement_speed = 600
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="FBI Agent4" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1088, 344)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
+[node name="FBI Agent" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1326, 230)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent6" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1100, 52)
-stats = SubResource("Resource_updjx")
+[node name="FBI Agent16" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-460, -388)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
 
-[node name="FBI Agent2" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1170, 180)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
+[node name="FBI Agent17" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1061, -5)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
 
-[node name="FBI Agent9" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1107, -365)
-stats = SubResource("Resource_vy11p")
+[node name="FBI Agent18" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-593, 417)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
+
+[node name="FBI Agent19" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-77, -463)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
+
+[node name="FBI Agent20" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(235, 387)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
+
+[node name="FBI Agent21" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(774, -104)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
+
+[node name="FBI Agent22" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(774, -104)
+stats = ExtResource("13_8dqml")
+weapon_resource = ExtResource("14_u4arq")
+
+[node name="FBI Agent10" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1302, 0)
+stats = ExtResource("14_utqdd")
 weapon_resource = ExtResource("8_b1aep")
 
 [node name="FBI Agent11" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1200, -192)
-stats = SubResource("Resource_updjx")
+position = Vector2(-331, -80)
+stats = ExtResource("14_utqdd")
+weapon_resource = ExtResource("8_b1aep")
+
+[node name="FBI Agent12" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-51, 427)
+stats = ExtResource("14_utqdd")
+weapon_resource = ExtResource("8_b1aep")
+
+[node name="FBI Agent13" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(408, -448)
+stats = ExtResource("14_utqdd")
+weapon_resource = ExtResource("8_b1aep")
 
 [node name="FBI Agent14" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-1069, -452)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
+position = Vector2(932, 418)
+stats = ExtResource("14_utqdd")
+weapon_resource = ExtResource("8_b1aep")
 
 [node name="FBI Agent15" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-827, -132)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent58" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-880, -313)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent16" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-408, -390)
-stats = SubResource("Resource_vy11p")
+position = Vector2(1559, -7)
+stats = ExtResource("14_utqdd")
 weapon_resource = ExtResource("8_b1aep")
 
-[node name="FBI Agent17" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-733, -325)
-stats = SubResource("Resource_updjx")
+[node name="FBI Agent2" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1342, -227)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent18" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-533, -229)
-stats = SubResource("Resource_updjx")
+[node name="FBI Agent3" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1180, -439)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent19" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-567, -353)
-stats = SubResource("Resource_updjx")
+[node name="FBI Agent5" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-902, -86)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent20" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-365, -158)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
+[node name="FBI Agent6" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-442, 74)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent21" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-526, -88)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
+[node name="FBI Agent7" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(109, -31)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent22" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-602, 338)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
+[node name="FBI Agent8" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(564, 70)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent23" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-348, 370)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
+[node name="FBI Agent9" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(759, -384)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent24" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-781, 409)
-stats = SubResource("Resource_updjx")
+[node name="FBI Agent4" parent="Enemies" instance=ExtResource("5_gvagb")]
+position = Vector2(-1168, 442)
+stats = ExtResource("13_crgiq")
 
-[node name="FBI Agent25" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-372, 279)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent26" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-451, 133)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent27" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-210, 164)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent28" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-693, 217)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent29" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(394, -88)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent30" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(321, -391)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent31" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-103, -420)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent32" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(105, -133)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent33" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(111, -311)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent34" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(417, -200)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent35" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(-37, -187)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent37" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(443, 271)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent38" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(746, 224)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent39" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(604, 359)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent40" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(421, 170)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent41" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(815, 340)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent42" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(905, 185)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent44" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(542, 302)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent59" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(758, -97)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent52" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(666, -425)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent53" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(749, -437)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent54" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(834, -418)
-stats = SubResource("Resource_vy11p")
-weapon_resource = ExtResource("8_b1aep")
-
-[node name="FBI Agent45" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(239, 176)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent46" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(504, 94)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent47" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(596, 169)
-stats = SubResource("Resource_updjx")
-
-[node name="FBI Agent48" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(308, 313)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent50" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(623, -290)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent51" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(892, -287)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="FBI Agent49" parent="Enemies" instance=ExtResource("5_gvagb")]
-position = Vector2(140, 293)
-stats = SubResource("Resource_2b4po")
-weapon_resource = ExtResource("7_8xp15")
-
-[node name="Mini-boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_ovjr4")]
+[node name="MiniBoss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_ovjr4")]
 position = Vector2(1853, -4)
-is_active = true
 player = NodePath("../Player")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://c6nr5oae5q7gr"]
+
+[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="1_0x2ti"]
+
+[resource]
+script = ExtResource("1_0x2ti")
+money_on_death = 100
+health_current = 20
+speed = 150.0
+stop_distance = 100.0
+shoot_distance = 300.0
+shoot_cooldown = 0.75
+acceleration = 500.0
+detection_range = 300.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"

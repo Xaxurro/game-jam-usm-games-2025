@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=31 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
 [ext_resource type="Script" path="res://levels/white-house/stage-1/stage_1.gd" id="1_yqug8"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="10_x5w8c"]
 [ext_resource type="PackedScene" uid="uid://wk8iy5f5lyh8" path="res://levels/assets/props/police-cars/police_car_6.tscn" id="11_ewufq"]
 [ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="11_pbntd"]
-[ext_resource type="Resource" uid="uid://btodv3lj2lsiy" path="res://weapons/resources/m60.tres" id="11_x5w8c"]
 [ext_resource type="PackedScene" uid="uid://svckxnokf88d" path="res://levels/assets/props/police-cars/police_car_7.tscn" id="12_teoa5"]
 [ext_resource type="PackedScene" uid="uid://bjjnrbkvpk3lo" path="res://levels/assets/props/police-cars/police_car_8.tscn" id="13_jrtpp"]
 
@@ -369,90 +368,72 @@ scale = Vector2(2, -2)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupEasy2" type="Node2D" parent="Enemies"]
 position = Vector2(5, 628)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupEasy3" type="Node2D" parent="Enemies"]
 position = Vector2(1054, -4)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupEasy4" type="Node2D" parent="Enemies"]
 position = Vector2(1059, 624)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupEasy5" type="Node2D" parent="Enemies"]
 position = Vector2(2273, -2)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupEasy6" type="Node2D" parent="Enemies"]
 position = Vector2(2278, 626)
 
 [node name="FBI Agent" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
 position = Vector2(-1214, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent2" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
 position = Vector2(-1206, -312)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
 position = Vector2(-1197, -280)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="GroupMedium" type="Node2D" parent="Enemies"]
 position = Vector2(-908, 21)
@@ -462,7 +443,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
@@ -478,7 +458,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
@@ -494,7 +473,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
@@ -510,7 +488,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
@@ -526,7 +503,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
@@ -542,7 +518,6 @@ stats = ExtResource("9_1o0ha")
 
 [node name="FBI Agent2" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
 position = Vector2(-1, -35)
-weapon_resource = ExtResource("11_x5w8c")
 
 [node name="FBI Agent3" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
 position = Vector2(-26, 20)
