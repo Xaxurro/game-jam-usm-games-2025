@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_3gtax")
 money_on_death = 100
-health_current = 25
-speed = 175.0
-stop_distance = 120.0
-shoot_distance = 120.0
-shoot_cooldown = 2.0
+health_current = 30
+speed = 120.0
+stop_distance = 200.0
+shoot_distance = 200.0
+shoot_cooldown = 1.0
 acceleration = 500.0
 detection_range = 500.0

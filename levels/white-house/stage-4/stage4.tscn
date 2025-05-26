@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6k6u4bs0kkb1"]
+[gd_scene load_steps=16 format=3 uid="uid://b6k6u4bs0kkb1"]
 
 [ext_resource type="Script" uid="uid://bvmt1p0bv7kwf" path="res://levels/white-house/stage-4/stage_4.gd" id="1_edevh"]
 [ext_resource type="Texture2D" uid="uid://bhhkmvaceri6u" path="res://levels/white-house/stage-4/assets/background stage4.png" id="1_r35jg"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_io1e3"]
 [ext_resource type="PackedScene" uid="uid://bksnxrcq75dk4" path="res://entities/enemies/bosses/president/president.tscn" id="4_gud1e"]
 [ext_resource type="AudioStream" uid="uid://dsb3o5o4djsoa" path="res://levels/white-house/stage-4/assets/FightScene.mp3" id="6_nw80o"]
+[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="7_d3wpc"]
+[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="8_533gv"]
+[ext_resource type="Resource" uid="uid://cwljolqksqhm4" path="res://weapons/resources/shotgun_enemy.tres" id="9_p0y4p"]
+[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="10_wsd86"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_io1e3"]
 vertices = PackedVector2Array(1983.96, 460, -1968.05, 460, -1972.94, -461, 1980.04, -462.992)
@@ -14,6 +18,42 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1983, -471, 1990, -473
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1k44o"]
 texture = ExtResource("1_r35jg")
+
+[sub_resource type="Resource" id="Resource_p0y4p"]
+script = ExtResource("8_533gv")
+money_on_death = 100
+health_current = 30
+speed = 130.0
+stop_distance = 200.0
+shoot_distance = 200.0
+shoot_cooldown = 1.0
+acceleration = 500.0
+detection_range = 500.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[sub_resource type="Resource" id="Resource_hph6p"]
+script = ExtResource("8_533gv")
+money_on_death = 100
+health_current = 25
+speed = 175.0
+stop_distance = 120.0
+shoot_distance = 120.0
+shoot_cooldown = 2.0
+acceleration = 500.0
+detection_range = 300.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[sub_resource type="Resource" id="Resource_3q8wy"]
+script = ExtResource("8_533gv")
+money_on_death = 100
+health_current = 50
+speed = 100.0
+stop_distance = 275.0
+shoot_distance = 275.0
+shoot_cooldown = 0.3
+acceleration = 500.0
+detection_range = 500.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [node name="Stage4" type="Node2D"]
 script = ExtResource("1_edevh")
@@ -27,6 +67,7 @@ offset_top = -499.0
 offset_right = 2017.0
 offset_bottom = 496.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_1k44o")
+metadata/_edit_lock_ = true
 
 [node name="World Border" parent="." instance=ExtResource("2_io1e3")]
 metadata/_edit_lock_ = true
@@ -37,7 +78,7 @@ motion_mode = 1
 movement_speed = 400
 
 [node name="President" parent="." instance=ExtResource("4_gud1e")]
-position = Vector2(-277, -8)
+position = Vector2(1642, 7)
 health_current = 1000
 speed = 150.0
 stop_distance = 250.0
@@ -49,3 +90,57 @@ windup_duration = 2.0
 stream = ExtResource("6_nw80o")
 volume_db = 20.0
 autoplay = true
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="FBI Agent19" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-1434, 103)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent20" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-1426, -96)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent21" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-977, -133)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent22" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-973, 156)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent23" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-243, -115)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent24" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-238, 143)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent26" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(715, -91)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent27" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(714, 143)
+stats = SubResource("Resource_p0y4p")
+
+[node name="FBI Agent25" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-589, 3)
+stats = SubResource("Resource_hph6p")
+weapon_resource = ExtResource("9_p0y4p")
+
+[node name="FBI Agent28" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(-1250, -1)
+stats = SubResource("Resource_hph6p")
+weapon_resource = ExtResource("9_p0y4p")
+
+[node name="FBI Agent30" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(1005, 6)
+stats = SubResource("Resource_hph6p")
+weapon_resource = ExtResource("9_p0y4p")
+
+[node name="FBI Agent10" parent="Enemies" instance=ExtResource("7_d3wpc")]
+position = Vector2(299, 6)
+stats = SubResource("Resource_3q8wy")
+weapon_resource = ExtResource("10_wsd86")
