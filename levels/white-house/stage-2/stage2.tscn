@@ -10,13 +10,13 @@
 [ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="8_b1aep"]
 [ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="8_ovjr4"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
+texture = ExtResource("1_xosbv")
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_16vje"]
 vertices = PackedVector2Array(784, 1.04688, 784, 41, 724, 40, 724, 1.04688, 724.508, -203, 2.03906, 42, 3.95313, 465, -995, 465, -75, 42, -675, 41, -615, 41, -995, 263, -994.063, 41, -995.063, 202, 722.508, -243, 525.039, -243, 525.961, -489, 983.039, -489, 983.961, -242.953, 782.461, -241.953, 784.508, -203.047, -1035.05, 263, -1034.04, 464.023, -1974, 465.969, -1974, -487.008, 982.977, 41, 982.023, 466, 43, 466, 263.461, 40, 203, 41, -994, -286, -994, -488, -275.977, -488, -275.023, 0, -615, 0, -993.961, -223, 1962, 465, 1024.02, 465, 1025.02, -82, 1962, -488, 1024.97, -488, 1023.97, -143, 984.117, -82, 984.172, -143, -136, 0, -235.023, 0, -235.977, -488.008, 484, -488.977, 484, -144, -75, -0.0390625, -862.781, 0.453125, -994.953, 0.03125, -675, 1.03125, -1035, -487.977, -1035, -286, -1035.02, -223, -1033.98, 202, -136, 41, 485, 0.0390625, 265.508, 1.03906, 203, 1.03906, 485, -81, 43, 41, 524, -144, 524, -81, 524, -203, 524, 0.0390625, 983.109, 0.0390625, 983.156, -202.039)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 8, 7, 11), PackedInt32Array(12, 9, 11, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18, 19), PackedInt32Array(4, 14, 19, 20, 0), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(1, 25, 26, 27), PackedInt32Array(28, 2, 1, 27, 29), PackedInt32Array(30, 31, 32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(40, 39, 38, 41), PackedInt32Array(41, 38, 42, 43), PackedInt32Array(44, 45, 46, 47, 48, 49), PackedInt32Array(50, 51, 35, 34, 52), PackedInt32Array(24, 53, 54, 55), PackedInt32Array(13, 11, 21, 56), PackedInt32Array(56, 21, 24, 55), PackedInt32Array(35, 55, 54, 30), PackedInt32Array(52, 34, 10, 9), PackedInt32Array(8, 10, 57), PackedInt32Array(49, 8, 57, 44), PackedInt32Array(58, 59, 60, 49, 48, 61), PackedInt32Array(27, 62, 29), PackedInt32Array(28, 29, 60, 59), PackedInt32Array(61, 48, 63, 64), PackedInt32Array(63, 65, 4), PackedInt32Array(3, 66, 64, 4), PackedInt32Array(43, 42, 67, 0, 20, 68), PackedInt32Array(64, 63, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1984, -497, -1025, -498, -1025, -296, -1004, -296, -1004, -498, -266, -498, -265, 10, -605, 10, -605, 31, -146, 31, -146, 10, -245, 10, -246, -498, 494, -499, 494, -154, 514, -154, 514, -213, 714, -213, 713, -233, 515, -233, 516, -499, 993, -499, 994, -233, 793, -232, 794, -213, 993, -212, 994, -153, 1014, -153, 1015, -498, 1972, -498, 1972, 475, 1014, 475, 1015, -72, 994, -72, 993, 10, 794, 11, 794, 31, 993, 31, 992, 476, 33, 476, 33, 31, 193, 31, 193, 11, -65, 10, -65, 32, 12, 32, 14, 475, -1005, 475, -1005, 273, -1025, 273, -1024, 474, -1984, 476), PackedVector2Array(-1005, 192, -1004, 31, -734.068, 31, -685, 31, -685, 11, -862.816, 10.4444, -1005, 10, -1004, -213, -1025, -213, -1024, 192), PackedVector2Array(274, 30, 714, 30, 714, 11, 514, 10, 514, -71, 495, -71, 495, 10, 275, 11)])
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
-texture = ExtResource("1_xosbv")
 
 [sub_resource type="Resource" id="Resource_vy11p"]
 script = ExtResource("6_w1o5g")
@@ -56,33 +56,8 @@ metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [node name="Stage2" type="Node2D"]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_16vje")
-metadata/_edit_lock_ = true
-
 [node name="World Border" parent="." instance=ExtResource("1_nhjyu")]
 metadata/_edit_lock_ = true
-
-[node name="Props" type="Area2D" parent="."]
-collision_layer = 2147483648
-collision_mask = 1073741827
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Props" groups=["walls"]]
-collision_layer = 2147483648
-collision_mask = 1073741827
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(-2004, -32, -1985, -32, -1984, -497, -1026, -497, -1025, -296, -1006, -296, -1005, -497, -266, -497, -265, 10, -605, 10, -605, 31, -146, 30, -146, 11, -245, 10, -244, -498, 495, -498, 494, -153, 514, -153, 514, -213, 714, -213, 714, -233, 515, -234, 516, -498, 994, -498, 994, -233, 794, -234, 794, -213, 994, -213, 994, -153, 1014, -153, 1014, -498, 1971, -499, 1973, -55, 1994, -53, 1993, -517, -2004, -518)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(-2004, 50, -1984, 50, -1984, 476, -1025, 476, -1024, 274, -1006, 274, -1005, 476, 13, 476, 13, 31, -65, 30, -65, 11, 193, 11, 193, 30, 33, 30, 34, 477, 992, 477, 993, 31, 795, 30, 794, 11, 994, 11, 995, -72, 1013, -71, 1015, 476, 1972, 476, 1973, 30, 1993, 30, 1994, 495, -2004, 497)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(-1025, 192, -1005, 192, -1005, 32, -684, 32, -685, 10, -1005, 10, -1005, -213, -1024, -213)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Props/StaticBody2D"]
-polygon = PackedVector2Array(274, 10, 274, 31, 713, 30, 713, 10, 514, 10, 514, -72, 494, -72, 494, 10)
 
 [node name="BackGround" type="Panel" parent="."]
 offset_left = -2004.0
@@ -92,6 +67,29 @@ offset_bottom = 496.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_16vje")
 metadata/_edit_lock_ = true
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_16vje")
+metadata/_edit_lock_ = true
+
+[node name="Props" type="Node2D" parent="NavigationRegion2D"]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/Props" groups=["walls"]]
+collision_layer = 2147483648
+collision_mask = 1073741827
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Props/StaticBody2D"]
+polygon = PackedVector2Array(-2004, -32, -1985, -32, -1984, -497, -1026, -497, -1025, -296, -1006, -296, -1005, -497, -266, -497, -265, 10, -605, 10, -605, 31, -146, 30, -146, 11, -245, 10, -244, -498, 495, -498, 494, -153, 514, -153, 514, -213, 714, -213, 714, -233, 515, -234, 516, -498, 994, -498, 994, -233, 794, -234, 794, -213, 994, -213, 994, -153, 1014, -153, 1014, -498, 1971, -499, 1973, -55, 1994, -53, 1993, -517, -2004, -518)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NavigationRegion2D/Props/StaticBody2D"]
+polygon = PackedVector2Array(-2004, 50, -1984, 50, -1984, 476, -1025, 476, -1024, 274, -1006, 274, -1005, 476, 13, 476, 13, 31, -65, 30, -65, 11, 193, 11, 193, 30, 33, 30, 34, 477, 992, 477, 993, 31, 795, 30, 794, 11, 994, 11, 995, -72, 1013, -71, 1015, 476, 1972, 476, 1973, 30, 1993, 30, 1994, 495, -2004, 497)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NavigationRegion2D/Props/StaticBody2D"]
+polygon = PackedVector2Array(-1025, 192, -1005, 192, -1005, 32, -684, 32, -685, 10, -1005, 10, -1005, -213, -1024, -213)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NavigationRegion2D/Props/StaticBody2D"]
+polygon = PackedVector2Array(274, 10, 274, 31, 713, 30, 713, 10, 514, 10, 514, -72, 494, -72, 494, 10)
+
 [node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
 position = Vector2(2034, -12)
 
@@ -99,7 +97,7 @@ position = Vector2(2034, -12)
 position = Vector2(-1872, 4)
 movement_speed = 600
 
-[node name="Enemies" type="Area2D" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="FBI Agent4" parent="Enemies" instance=ExtResource("5_gvagb")]
 position = Vector2(-1088, 344)
