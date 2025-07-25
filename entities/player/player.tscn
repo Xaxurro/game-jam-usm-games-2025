@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cn8wdifpu4b54" path="res://entities/player/inventory.gd" id="2_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://byuwd6c5cbe28" path="res://entities/player/assets/player.png" id="2_bls4j"]
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="4_fkugw"]
-[ext_resource type="PackedScene" uid="uid://dk58jcqv3gnat" path="res://interface/hud.tscn" id="5_fkugw"]
+[ext_resource type="PackedScene" uid="uid://dk58jcqv3gnat" path="res://ui/hud/hud.tscn" id="5_fkugw"]
 [ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="6_qiwj3"]
 
 [sub_resource type="Resource" id="Resource_qiwj3"]
@@ -81,12 +81,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bls4j"]
-size = Vector2(22, 32)
+size = Vector2(10, 31)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 collision_mask = 3221225472
 script = ExtResource("1_sglur")
-movement_speed = 50
 inventory = SubResource("Resource_qiwj3")
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -106,6 +106,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_bls4j")
 
 [node name="WeaponPrimary" parent="." instance=ExtResource("4_fkugw")]
@@ -113,6 +114,5 @@ shape = SubResource("RectangleShape2D_bls4j")
 [node name="WeaponSecondary" parent="." instance=ExtResource("4_fkugw")]
 weapon_resource = ExtResource("6_qiwj3")
 
-[node name="Hud" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_fkugw")]
+[node name="Hud" parent="." instance=ExtResource("5_fkugw")]
 visible = false
-player = NodePath("..")

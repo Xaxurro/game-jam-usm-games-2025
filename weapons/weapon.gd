@@ -38,6 +38,8 @@ func shoot_at(target_direction: Vector2) -> void:
 	var bulletNode: Bullet = bulletScene.instantiate()
 	bulletNode.initial_direction = target_direction
 	bulletNode.damage = weapon_resource.damage
+	if get_parent() is Player and Player.euphoria.is_active:
+		bulletNode.damage *= Player.euphoria.damage_multiplier
 
 	if weapon_resource.is_enemy:
 		bulletNode.target = bulletNode.TARGETS.PLAYER

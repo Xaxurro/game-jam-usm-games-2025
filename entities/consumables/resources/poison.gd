@@ -1,4 +1,4 @@
-class_name Beer
+class_name Poison
 extends ConsumableResource
 
 @export var health_amount: int = 25

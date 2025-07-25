@@ -1,7 +1,7 @@
 class_name ConsumableEntity
 extends Area2D
 
-@export var consumable_data: Consumable = preload("res://entities/consumables/resources/beer.tres")
+@export var consumable_data: ConsumableResource = preload("res://entities/consumables/resources/beer.tres")
 @export var is_free: bool = true
 
 @onready var sprite: Sprite2D = $Sprite
@@ -25,7 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 
-	var player: Player = body
-	if is_free or player.pay(consumable_data.price):
-		player.add_consumable(consumable_data.duplicate())
+	if is_free or Player.pay(consumable_data.price):
+		Player.add_consumable(consumable_data.duplicate())
 		queue_free()

@@ -1,16 +1,14 @@
 extends Node
 
-@export var player: Player
-
 @onready var health_bar: TextureProgressBar = $HealthBar
 @onready var consumable_selected: TextureRect = $ConsumableSelected
 @onready var money: Label = $Money
 
 func _update_health_bar() -> void:
-	health_bar.value = player.health_current * 100 / player.health_max
+	health_bar.value = Player.health_current * 100 / Player.health_max
 
 func _update_consumable_selected() -> void:
-	var consumable: Consumable = player.inventory.selected_consumable
+	var consumable: ConsumableResource = Player.inventory.selected_consumable
 	var label: Label = consumable_selected.get_node("Label")
 	if consumable == null:
 		consumable_selected.texture = null
@@ -20,14 +18,14 @@ func _update_consumable_selected() -> void:
 	label.text = "%s x %d" % [consumable.name, consumable.count]
 
 func _update_money() -> void:
-	money.text = "$%d" % player.inventory.money
+	money.text = "$%d" % Player.inventory.money
 
 func _ready() -> void:
-	player.health_changed.connect(_update_health_bar)
+	Player.health_changed.connect(_update_health_bar)
 	_update_health_bar()
 
-	player.consumable_selected_changed.connect(_update_consumable_selected)
+	Player.consumable_selected_changed.connect(_update_consumable_selected)
 	_update_health_bar()
 
-	player.money_changed.connect(_update_money)
+	Player.money_changed.connect(_update_money)
 	_update_money()

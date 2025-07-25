@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byinp7oedfn72"]
 
 [ext_resource type="Script" uid="uid://buxcybf7277an" path="res://entities/consumables/consumable_entity.gd" id="1_xe6h7"]
-[ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://levels/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="2_mbrl4"]
+[ext_resource type="FontFile" uid="uid://by1eih4wtjini" path="res://ui/menu/assets/fonts/32bit Regular/32bit Regular.ttf" id="2_mbrl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18af"]
 
