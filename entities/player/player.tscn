@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqmv8pqxkpm0c"]
+[gd_scene load_steps=14 format=3 uid="uid://bqmv8pqxkpm0c"]
 
 [ext_resource type="Script" uid="uid://b2wberq425aji" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Script" uid="uid://cn8wdifpu4b54" path="res://entities/player/inventory.gd" id="2_8fjmc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="4_fkugw"]
 [ext_resource type="PackedScene" uid="uid://dk58jcqv3gnat" path="res://ui/hud/hud.tscn" id="5_fkugw"]
 [ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="6_qiwj3"]
+[ext_resource type="Script" uid="uid://nrukgjc4u8rv" path="res://entities/player/euphoria.gd" id="7_qiwj3"]
 
 [sub_resource type="Resource" id="Resource_qiwj3"]
 script = ExtResource("2_8fjmc")
@@ -116,3 +117,17 @@ weapon_resource = ExtResource("6_qiwj3")
 
 [node name="Hud" parent="." instance=ExtResource("5_fkugw")]
 visible = false
+
+[node name="Euphoria" type="Node" parent="."]
+script = ExtResource("7_qiwj3")
+
+[node name="RedFilter" type="CanvasLayer" parent="Euphoria"]
+visible = false
+
+[node name="RedRect" type="ColorRect" parent="Euphoria/RedFilter"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.105882, 0.141176, 0.431373)

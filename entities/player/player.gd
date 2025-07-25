@@ -9,9 +9,9 @@ extends CharacterBody2D
 @onready var weapon_secondary: Weapon = $WeaponSecondary
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: CanvasLayer = $Hud
+@onready var euphoria: Euphoria = $Euphoria
 
 @export var inventory: Inventory = Inventory.new()
-var euphoria: Euphoria = Euphoria.new()
 
 signal health_changed
 signal consumable_selected_changed
@@ -19,7 +19,8 @@ signal money_changed
 
 func _ready() -> void:
 	## DEBUG
-	euphoria.is_active = true
+	euphoria.meter_current = 100
+	euphoria.activate()
 	## DEBUG
 	weapon_primary.weapon_resource.is_enemy = false
 	weapon_secondary.weapon_resource.is_enemy = false
