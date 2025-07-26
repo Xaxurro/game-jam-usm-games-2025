@@ -1,4 +1,7 @@
 extends Area2D
+
+@onready var next_level_text_label = $Label
+
 var next_path = ""
 var check = ""
 var stages: Array[String] = [
@@ -19,6 +22,10 @@ func extract_path(next_path: String) -> String:
 	return "res://" 
 
 func _ready() -> void:
+	##UI element
+	next_level_text_label.visible = entered
+	
+	##Pathin for next level
 	next_path = Global.full_path
 	check = get_tree().current_scene.scene_file_path
 	if check != "res://levels/walmart/walmart.tscn":
@@ -26,11 +33,14 @@ func _ready() -> void:
 		next_path = Global.full_path
 			
 func _process(_delta: float) -> void:
+	
+	##Next level Logic
 	if entered and Input.is_action_just_pressed("interaction"):
+		##Vamos recoriendo la lista con un index global para que no se pierdan entre stages
 		if Global.stage_index < stages.size():
 			var next_scene_path_in_array: String = stages[Global.stage_index]
 			var scene_to_load: String = ""
-
+			##Chek para ver si puede entrar al wallmart (tienda)
 			if next_scene_path_in_array == "res://levels/walmart/walmart.tscn":
 				scene_to_load = next_scene_path_in_array
 			else:
@@ -44,8 +54,14 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"):
 		entered = true
+		_next_level_text()
 
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"):
 		entered = false
+		_next_level_text()
+
+func _next_level_text() -> void:
+	next_level_text_label.visible = entered
+	
