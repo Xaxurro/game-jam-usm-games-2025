@@ -27,5 +27,5 @@ func _ready() -> void:
 	Player.consumable_selected_changed.connect(_update_consumable_selected)
 	_update_health_bar()
 
-	Player.money_changed.connect(_update_money)
+	Player.inventory.money_changed.connect(_update_money)
 	_update_money()

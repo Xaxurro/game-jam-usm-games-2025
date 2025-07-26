@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://d01lrlbvgiytm"]
+[gd_scene load_steps=10 format=4 uid="uid://d01lrlbvgiytm"]
 
 [ext_resource type="Texture2D" uid="uid://bjmhqa61yfktn" path="res://levels/_dev_room/tile_dev_room.png" id="1_f8o27"]
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_tor4j"]
 [ext_resource type="PackedScene" uid="uid://byinp7oedfn72" path="res://entities/consumables/consumable.tscn" id="3_f2k64"]
 [ext_resource type="Resource" uid="uid://hihf5djvco4p" path="res://entities/consumables/resources/poison.tres" id="4_os5ms"]
+[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="5_os5ms"]
+[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="6_brr4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2k64"]
 texture = ExtResource("1_f8o27")
@@ -13,6 +15,19 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_os5ms"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_f2k64")
+
+[sub_resource type="Resource" id="Resource_6hm3f"]
+script = ExtResource("6_brr4i")
+money_on_death = 100
+euphoria_on_death = 5
+health_current = 50
+speed = 100.0
+stop_distance = 120.0
+shoot_distance = 150.0
+shoot_cooldown = 1.0
+acceleration = 500.0
+detection_range = 200.0
+metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [node name="Dev-room" type="Node2D"]
 script = ExtResource("1_tor4j")
@@ -27,3 +42,7 @@ tile_set = SubResource("TileSet_os5ms")
 [node name="Area2D" parent="." instance=ExtResource("3_f2k64")]
 position = Vector2(170, -18)
 consumable_data = ExtResource("4_os5ms")
+
+[node name="FBI Agent" parent="." instance=ExtResource("5_os5ms")]
+position = Vector2(358, 96)
+stats = SubResource("Resource_6hm3f")

@@ -25,6 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 
-	if is_free or Player.pay(consumable_data.price):
+	if is_free or Player.inventory.pay(consumable_data.price):
 		Player.add_consumable(consumable_data.duplicate())
 		queue_free()

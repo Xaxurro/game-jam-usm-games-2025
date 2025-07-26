@@ -15,6 +15,8 @@ var weapons: Array[WeaponResource] = []
 @export var weapon_primary: WeaponResource = load("res://weapons/resources/m60.tres")
 @export var weapon_secondary: WeaponResource = load("res://weapons/resources/shotgun.tres")
 
+signal money_changed
+
 ###############
 # CONSUMABLES #
 ###############

@@ -82,7 +82,7 @@ collision_mask = 2147483649
 motion_mode = 1
 script = ExtResource("1_fftjs")
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_twyc1")
 animation = &"idle"
 autoplay = "idle"

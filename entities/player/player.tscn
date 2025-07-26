@@ -131,3 +131,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.878431, 0.105882, 0.141176, 0.431373)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Euphoria"]

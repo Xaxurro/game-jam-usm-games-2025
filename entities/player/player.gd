@@ -13,19 +13,29 @@ extends CharacterBody2D
 
 @export var inventory: Inventory = Inventory.new()
 
+var enabled: bool = true
+
 signal health_changed
 signal consumable_selected_changed
-signal money_changed
 
-func _ready() -> void:
-	## DEBUG
-	euphoria.meter_current = 100
-	euphoria.activate()
-	## DEBUG
-	weapon_primary.weapon_resource.is_enemy = false
-	weapon_secondary.weapon_resource.is_enemy = false
+func disable() -> void:
+	enabled = false
+	visible = false
+	weapon_primary.visible = false
+	weapon_secondary.visible = false
+	hud.visible = false
+
+func enable() -> void:
+	enabled = true
+	visible = true
+	weapon_primary.visible = true
 	weapon_secondary.visible = false
 	hud.visible = true
+
+func _ready() -> void:
+	weapon_primary.weapon_resource.is_enemy = false
+	weapon_secondary.weapon_resource.is_enemy = false
+	disable()
 
 func _set_weapons_rotation(new_rotation: float) -> void:
 	weapon_primary.get_node("Sprite").rotation = new_rotation
@@ -57,8 +67,8 @@ func _update_velocity() -> void:
 		animation_player.play("running")
 	
 	var speed_should_reduce: bool = false
-	if weapon_primary._cooldown.time_left != 0: speed_should_reduce = true
-	if weapon_secondary._cooldown.time_left != 0: speed_should_reduce = true
+	if weapon_primary.cooldown.time_left != 0: speed_should_reduce = true
+	if weapon_secondary.cooldown.time_left != 0: speed_should_reduce = true
 
 	const SPEED_DIVIDER: int = 2
 	if speed_should_reduce: velocity /= SPEED_DIVIDER
@@ -66,16 +76,29 @@ func _update_velocity() -> void:
 	move_and_slide()
 
 func _cycle_consumables() -> void:
-	if Input.is_action_just_pressed("consumable_cycle"):
-		inventory.cycle_consumables()
-		consumable_selected_changed.emit()
+	if not Input.is_action_just_pressed("consumable_cycle"): return
+	inventory.cycle_consumables()
+	consumable_selected_changed.emit()
+
+func use_consumable() -> void:
+	if not Input.is_action_just_pressed("consumable_use"): return
+	inventory.use_consumable()
+	consumable_selected_changed.emit()
+
+func toggle_euphoria() -> void:
+	if not Input.is_action_just_pressed("euphoria_toggle"): return
+	if euphoria.is_active:
+		euphoria.deactivate()
+	else:
+		euphoria.activate()
 
 func _process_input(_delta: float) -> void:
 	_update_velocity()
 	_cycle_consumables()
 	use_consumable()
+	toggle_euphoria()
 
-# Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
+## Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> Vector2:
 	# Rotate the weapon
 	var mouse_position: Vector2 = get_global_mouse_position()
@@ -96,7 +119,6 @@ func _aim() -> Vector2:
 	return direction.normalized()
 
 func _shoot_at(target_direction:Vector2) -> void:
-	# Execute code only when pressed right click and is not on cooldown
 	if Input.is_action_pressed("shoot_primary_weapon"):
 		weapon_primary.visible = true
 		weapon_secondary.visible = false
@@ -105,24 +127,6 @@ func _shoot_at(target_direction:Vector2) -> void:
 		weapon_primary.visible = false
 		weapon_secondary.visible = true
 		weapon_secondary.shoot_at(target_direction)
-
-func use_consumable() -> void:
-	if not Input.is_action_just_pressed("consumable_use"): return
-	inventory.use_consumable()
-	consumable_selected_changed.emit()
-
-func add_money(amount: int) -> void:
-	inventory.add_money(amount)
-	money_changed.emit()
-
-func pay(price: int) -> bool:
-	var success: bool = inventory.pay_money(price)
-	money_changed.emit()
-	return success
-
-func add_consumable(consumable: ConsumableResource) -> void:
-	inventory.add_consumable(consumable)
-	consumable_selected_changed.emit()
 
 func change_health(amount: float) -> void:
 	if amount > 0 and health_current == health_max: return
@@ -133,6 +137,7 @@ func change_health(amount: float) -> void:
 		kill()
 
 func _physics_process(delta: float) -> void:
+	if not enabled: return
 	_process_input(delta)
 	var target_direction: Vector2 = _aim()
 	_shoot_at(target_direction)

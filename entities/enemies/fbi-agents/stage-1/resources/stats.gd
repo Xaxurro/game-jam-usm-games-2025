@@ -2,6 +2,7 @@ class_name Stats
 extends Resource
 
 @export var money_on_death: int = 100
+@export var euphoria_on_death: int = 5
 @export var health_current: int = 50
 @export var speed: float = 100.0
 @export var stop_distance: float = 120.0
