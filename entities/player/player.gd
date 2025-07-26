@@ -10,10 +10,12 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: CanvasLayer = $Hud
 @onready var euphoria: Euphoria = $Euphoria
+@onready var dodge: Dodge = $Dodge
 
 @export var inventory: Inventory = Inventory.new()
 
 var enabled: bool = true
+var can_recieve_damage: bool = true
 
 signal health_changed
 signal consumable_selected_changed
@@ -21,6 +23,7 @@ signal consumable_selected_changed
 func disable() -> void:
 	enabled = false
 	visible = false
+	can_recieve_damage = false
 	weapon_primary.visible = false
 	weapon_secondary.visible = false
 	hud.visible = false
@@ -28,6 +31,7 @@ func disable() -> void:
 func enable() -> void:
 	enabled = true
 	visible = true
+	can_recieve_damage = true
 	weapon_primary.visible = true
 	weapon_secondary.visible = false
 	hud.visible = true
@@ -72,8 +76,6 @@ func _update_velocity() -> void:
 
 	const SPEED_DIVIDER: int = 2
 	if speed_should_reduce: velocity /= SPEED_DIVIDER
-	
-	move_and_slide()
 
 func _cycle_consumables() -> void:
 	if not Input.is_action_just_pressed("consumable_cycle"): return
@@ -92,11 +94,20 @@ func toggle_euphoria() -> void:
 	else:
 		euphoria.activate()
 
+func do_dodge() -> void:
+	if not Input.is_action_just_pressed("dodge"): return
+	if not dodge.cooldown.is_stopped(): return
+	dodge.use()
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	velocity = direction * movement_speed * 50
+
 func _process_input(_delta: float) -> void:
 	_update_velocity()
 	_cycle_consumables()
 	use_consumable()
 	toggle_euphoria()
+	do_dodge()
+	move_and_slide()
 
 ## Gets the mouse position and changes the rotation of the character + the weapon to point at the mouse
 func _aim() -> Vector2:
