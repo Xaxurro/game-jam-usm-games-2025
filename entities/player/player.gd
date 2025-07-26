@@ -16,6 +16,7 @@ extends CharacterBody2D
 
 var enabled: bool = true
 var can_recieve_damage: bool = true
+var direction: Vector2 = Vector2.ZERO
 
 signal health_changed
 signal consumable_selected_changed
@@ -50,22 +51,21 @@ func _set_weapons_scale_y(new_scale: float) -> void:
 	weapon_secondary.get_node("Sprite").scale.y = new_scale
 
 func _update_velocity() -> void:
-	var input_direction: Vector2 = Vector2.ZERO
-
+	direction = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
-		input_direction.y += -1
+		direction.y += -1
 	if Input.is_action_pressed("move_down"):
-		input_direction.y += 1
+		direction.y += 1
 	if Input.is_action_pressed("move_left"):
-		input_direction.x += -1
+		direction.x += -1
 	if Input.is_action_pressed("move_right"):
-		input_direction.x += 1
+		direction.x += 1
 	
-	velocity = input_direction.normalized() * movement_speed
+	velocity = direction.normalized() * movement_speed
 	if euphoria.is_active:
 		velocity *= euphoria.movement_speed_multiplier
 	
-	if input_direction == Vector2.ZERO:
+	if direction == Vector2.ZERO:
 		animation_player.play("idle")
 	else:
 		animation_player.play("running")
@@ -98,11 +98,12 @@ func do_dodge() -> void:
 	if not Input.is_action_just_pressed("dodge"): return
 	if not dodge.cooldown.is_stopped(): return
 	dodge.use()
-	var direction = (get_global_mouse_position() - global_position).normalized()
-	velocity = direction * movement_speed * 50
+	direction = (get_global_mouse_position() - global_position).normalized()
+	velocity = direction * movement_speed * dodge.impulse_factor
 
 func _process_input(_delta: float) -> void:
-	_update_velocity()
+	if dodge.iframes.is_stopped(): _update_velocity()
+	else: velocity = direction * movement_speed * dodge.impulse_factor * dodge.iframes.time_left
 	_cycle_consumables()
 	use_consumable()
 	toggle_euphoria()
@@ -113,13 +114,13 @@ func _process_input(_delta: float) -> void:
 func _aim() -> Vector2:
 	# Rotate the weapon
 	var mouse_position: Vector2 = get_global_mouse_position()
-	var direction: Vector2 = mouse_position - global_position
-	var angle_rad: float = atan2(direction.y, direction.x)
+	var target_direction: Vector2 = mouse_position - global_position
+	var angle_rad: float = atan2(target_direction.y, target_direction.x)
 	_set_weapons_rotation(angle_rad)
 
 	const THRESHOLD: float = 0.1
 	# Aim left
-	if direction.x < -THRESHOLD:
+	if target_direction.x < -THRESHOLD:
 		character_sprite.scale.x = -1
 		_set_weapons_scale_y(-1)	# Without this the weapon looks inverted
 	# Aim right
@@ -127,7 +128,7 @@ func _aim() -> Vector2:
 		character_sprite.scale.x = 1
 		_set_weapons_scale_y(1)
 
-	return direction.normalized()
+	return target_direction.normalized()
 
 ## Shoots the weapon at the desired direction, swapping the weapon to the one shooting
 func _shoot_at(target_direction:Vector2) -> void:

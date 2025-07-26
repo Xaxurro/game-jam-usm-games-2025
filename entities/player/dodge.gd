@@ -3,9 +3,10 @@ extends Node
 
 @onready var cooldown: Timer = $Cooldown
 @onready var iframes: Timer = $IFrames
+@export var impulse_factor: float = 4
 
 func _on_timeout() -> void:
-	Player.can_recieve_damage  =true
+	Player.can_recieve_damage = true
 
 func _ready():
 	iframes.timeout.connect(_on_timeout)
