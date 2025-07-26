@@ -16,6 +16,7 @@ var weapons: Array[WeaponResource] = []
 @export var weapon_secondary: WeaponResource = load("res://weapons/resources/shotgun.tres")
 
 signal money_changed
+signal consumables_changed
 
 ###############
 # CONSUMABLES #
@@ -28,6 +29,7 @@ func add_consumable(new_consumable: ConsumableResource) -> void:
 		consumables[new_consumable.name] = new_consumable
 	
 	selected_consumable = new_consumable
+	consumables_changed.emit()
 
 func cycle_consumables() -> void:
 	if consumables.size() == 0: return
@@ -39,6 +41,7 @@ func cycle_consumables() -> void:
 	var current_index: int = consumables_keys.find(selected_consumable.name)
 	var new_index: int = (current_index + 1) % consumables_keys.size()
 	selected_consumable = consumables[consumables_keys[new_index]]
+	consumables_changed.emit()
 
 func remove_consumable() -> void:
 	var consumable_to_remove: ConsumableResource = consumables[selected_consumable.name]
@@ -47,6 +50,7 @@ func remove_consumable() -> void:
 		consumables.erase(consumable_to_remove.name)
 		selected_consumable = null
 		cycle_consumables()
+	else: consumables_changed.emit()
 
 func use_consumable() -> void:
 	if selected_consumable == null: return
@@ -72,8 +76,10 @@ func equip_weapon_primary(new_weapon: WeaponResource) -> void:
 
 func add_money(amount: int) -> void:
 	money += amount
+	money_changed.emit()
 
 func pay_money(amount: int) -> bool:
 	if amount > money: return false
 	money -= amount
+	money_changed.emit()
 	return true
