@@ -11,6 +11,15 @@ collision_layer = 2
 collision_mask = 2147483649
 motion_mode = 1
 script = ExtResource("1_wqcwe")
+health_current = null
+detection_range = null
+stop_distance = null
+speed = null
+acceleration = null
+shoot_distance = null
+shoot_cooldown = null
+money_on_death = null
+euphoria_on_death = null
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 

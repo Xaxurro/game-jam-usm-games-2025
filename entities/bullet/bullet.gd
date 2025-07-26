@@ -28,7 +28,8 @@ func _on_body_entered(body: Node2D) -> void:
 		Player.change_health(-damage)
 		queue_free()
 	if target == TARGETS.ENEMY and body.is_in_group("enemies"):
-		body.call("recieve_damage", damage)
+		var hit_direction = (body.global_position - global_position).normalized()
+		body.call("recieve_damage", damage, hit_direction)
 		queue_free()
 	if body.is_in_group("walls"):
 		queue_free()
