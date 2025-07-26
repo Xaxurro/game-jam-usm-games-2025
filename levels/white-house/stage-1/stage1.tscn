@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
-[ext_resource type="Script" path="res://levels/level.gd" id="1_de00k"]
+[ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_de00k"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
 [ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]
 [ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="7_31hdv"]

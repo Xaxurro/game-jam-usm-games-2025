@@ -391,9 +391,8 @@ stats = ExtResource("13_crgiq")
 position = Vector2(-1168, 442)
 stats = ExtResource("13_crgiq")
 
-[node name="MiniBoss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_ovjr4")]
+[node name="MiniBoss" parent="." instance=ExtResource("8_ovjr4")]
 position = Vector2(1853, -4)
-player = NodePath("")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-1938, 12)

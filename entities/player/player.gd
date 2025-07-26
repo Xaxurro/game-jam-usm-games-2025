@@ -118,11 +118,16 @@ func _aim() -> Vector2:
 
 	return direction.normalized()
 
+## Shoots the weapon at the desired direction, swapping the weapon to the one shooting
 func _shoot_at(target_direction:Vector2) -> void:
+	# Both cooldowns must be done to shoot again
+	if not weapon_primary.cooldown.is_stopped() or not weapon_secondary.cooldown.is_stopped(): return
+	# return to prevent shooting twice
 	if Input.is_action_pressed("shoot_primary_weapon"):
 		weapon_primary.visible = true
 		weapon_secondary.visible = false
 		weapon_primary.shoot_at(target_direction)
+		return
 	if Input.is_action_pressed("shoot_secondary_weapon"):
 		weapon_primary.visible = false
 		weapon_secondary.visible = true
