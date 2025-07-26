@@ -1,11 +1,11 @@
 class_name Inventory
 extends Resource
 
-# Key: StringName of Consumable
-# Value: Consumable
+# Key: StringName of ConsumableResource
+# Value: ConsumableResource
 var consumables: Dictionary = {}
 
-var selected_consumable: Consumable = null
+var selected_consumable: ConsumableResource = null
 
 var weapons: Array[WeaponResource] = []
 
@@ -15,11 +15,13 @@ var weapons: Array[WeaponResource] = []
 @export var weapon_primary: WeaponResource = load("res://weapons/resources/m60.tres")
 @export var weapon_secondary: WeaponResource = load("res://weapons/resources/shotgun.tres")
 
+signal money_changed
+
 ###############
 # CONSUMABLES #
 ###############
 
-func add_consumable(new_consumable: Consumable) -> void:
+func add_consumable(new_consumable: ConsumableResource) -> void:
 	if consumables.has(new_consumable.name):
 		consumables[new_consumable.name].count += new_consumable.count
 	else:
@@ -39,16 +41,16 @@ func cycle_consumables() -> void:
 	selected_consumable = consumables[consumables_keys[new_index]]
 
 func remove_consumable() -> void:
-	var consumable_to_remove: Consumable = consumables[selected_consumable.name]
+	var consumable_to_remove: ConsumableResource = consumables[selected_consumable.name]
 	consumable_to_remove.count -= 1
 	if consumable_to_remove.count == 0:
 		consumables.erase(consumable_to_remove.name)
 		selected_consumable = null
 		cycle_consumables()
 
-func use_consumable(player: Player) -> void:
+func use_consumable() -> void:
 	if selected_consumable == null: return
-	selected_consumable.effect(player)
+	selected_consumable.effect()
 	remove_consumable()
 
 ###########

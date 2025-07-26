@@ -1,8 +1,8 @@
 class_name Grenade
-extends Consumable
+extends ConsumableResource
 
 @export var damage: int
 
-func effect(player: Player) -> void:
+func effect() -> void:
 	print_rich("[color=red]EMPTY EFFECT[/color]")
 	pass

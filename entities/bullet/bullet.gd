@@ -24,8 +24,8 @@ func _ready() -> void:
 		set_collision_mask_value(2, false)
 
 func _on_body_entered(body: Node2D) -> void:
-	if target == TARGETS.PLAYER and body.is_in_group("player"):
-		body.call("recieve_damage", damage)
+	if target == TARGETS.PLAYER and body is Player:
+		Player.change_health(-damage)
 		queue_free()
 	if target == TARGETS.ENEMY and body.is_in_group("enemies"):
 		body.call("recieve_damage", damage)

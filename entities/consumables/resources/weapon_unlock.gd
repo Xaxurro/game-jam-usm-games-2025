@@ -1,4 +1,4 @@
-class_name Consumable
+class_name ConsumableResource
 extends Resource
 
 @export var name: StringName
@@ -6,6 +6,6 @@ extends Resource
 @export var price: int = 0
 @export var texture: Texture2D
 
-func effect(player: Player) -> void:
+func effect() -> void:
 	print_rich("[color=red]EMPTY EFFECT[/color]")
 	pass
