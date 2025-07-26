@@ -5,3 +5,4 @@ extends Node2D
 
 func _ready():
 	Player.global_position = player_spawn.global_position
+	Player.enable()

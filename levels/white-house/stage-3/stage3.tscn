@@ -1,15 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckhpd63gko42x"]
+[gd_scene load_steps=14 format=3 uid="uid://ckhpd63gko42x"]
 
 [ext_resource type="Texture2D" uid="uid://c3lrnqrn6p1ao" path="res://levels/white-house/stage-3/assets/Background stage 3.png" id="1_bjy5w"]
 [ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="1_eh350"]
+[ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_fp4dr"]
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="2_2pw0o"]
 [ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="2_bqfti"]
-[ext_resource type="PackedScene" uid="uid://bqmv8pqxkpm0c" path="res://entities/player/player.tscn" id="3_eplmt"]
-[ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="3_laxr3"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="4_2pw0o"]
 [ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="8_p6v43"]
 [ext_resource type="PackedScene" uid="uid://vidagoefobiy" path="res://levels/assets/props/concrete_walls/concrete_wall_front.tscn" id="9_fsgbb"]
-[ext_resource type="Resource" uid="uid://cwljolqksqhm4" path="res://weapons/resources/shotgun_enemy.tres" id="10_bb4lo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pw0o"]
 texture = ExtResource("1_bjy5w")
@@ -22,6 +20,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1980, -487, -305, -486
 [sub_resource type="Resource" id="Resource_fhowl"]
 script = ExtResource("2_bqfti")
 money_on_death = 100
+euphoria_on_death = 5
 health_current = 25
 speed = 175.0
 stop_distance = 120.0
@@ -34,6 +33,7 @@ metadata/_custom_type_script = "uid://bkuerueepudmd"
 [sub_resource type="Resource" id="Resource_3oqcx"]
 script = ExtResource("2_bqfti")
 money_on_death = 100
+euphoria_on_death = 5
 health_current = 30
 speed = 130.0
 stop_distance = 200.0
@@ -46,6 +46,7 @@ metadata/_custom_type_script = "uid://bkuerueepudmd"
 [sub_resource type="Resource" id="Resource_rwrb6"]
 script = ExtResource("2_bqfti")
 money_on_death = 100
+euphoria_on_death = 5
 health_current = 50
 speed = 100.0
 stop_distance = 275.0
@@ -56,6 +57,7 @@ detection_range = 500.0
 metadata/_custom_type_script = "uid://bkuerueepudmd"
 
 [node name="Stage3" type="Node2D"]
+script = ExtResource("1_fp4dr")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -2005.0
@@ -67,10 +69,6 @@ metadata/_edit_lock_ = true
 
 [node name="World Border" parent="." instance=ExtResource("2_2pw0o")]
 metadata/_edit_lock_ = true
-
-[node name="Player" parent="." instance=ExtResource("3_eplmt")]
-position = Vector2(-1949, -1)
-movement_speed = 600
 
 [node name="NextLevel" parent="." instance=ExtResource("4_2pw0o")]
 position = Vector2(1888, -11)
@@ -637,27 +635,22 @@ position = Vector2(-571, -274)
 [node name="FBI Agent2" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1853, -281)
 stats = SubResource("Resource_fhowl")
-weapon_resource = ExtResource("10_bb4lo")
 
 [node name="FBI Agent3" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1311, -319)
 stats = SubResource("Resource_fhowl")
-weapon_resource = ExtResource("10_bb4lo")
 
 [node name="FBI Agent20" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-181, -40)
 stats = SubResource("Resource_fhowl")
-weapon_resource = ExtResource("10_bb4lo")
 
 [node name="FBI Agent21" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-195, 30)
 stats = SubResource("Resource_fhowl")
-weapon_resource = ExtResource("10_bb4lo")
 
 [node name="FBI Agent5" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1447, 96)
 stats = SubResource("Resource_fhowl")
-weapon_resource = ExtResource("10_bb4lo")
 
 [node name="FBI Agent6" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1573, 332)
@@ -686,49 +679,42 @@ stats = SubResource("Resource_3oqcx")
 [node name="FBI Agent4" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1022, 5)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent9" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-619, -337)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent10" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(675, -61)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent11" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(673, 17)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent12" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(1530, -8)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent13" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(1474, -148)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent14" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(1479, 170)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent7" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-920, 372)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent8" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-421, -73)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
 
 [node name="FBI Agent22" parent="Enemies" instance=ExtResource("1_eh350")]
 position = Vector2(-1088, 344)
 stats = SubResource("Resource_rwrb6")
-weapon_resource = ExtResource("3_laxr3")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-1956, -1)
