@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6agu32w0od8k"]
+[gd_scene load_steps=3 format=3 uid="uid://b6agu32w0od8k"]
 
 [ext_resource type="Script" uid="uid://b3ldio523ypr0" path="res://entities/enemies/spawner.gd" id="1_5ltsi"]
+[ext_resource type="PackedScene" uid="uid://bdu3ivoi3fuix" path="res://entities/enemies/enemy.tscn" id="2_si6vm"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_5ltsi")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Enemy" parent="." instance=ExtResource("2_si6vm")]
