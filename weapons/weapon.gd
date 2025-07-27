@@ -1,7 +1,7 @@
 class_name Weapon
 extends Node2D
 
-const bulletScene: PackedScene = preload("res://entities/bullet/player/bullet.tscn")
+const bulletScene: PackedScene = preload("uid://c3yoxd22ehu6h")
 
 @export var weapon_resource: WeaponResource = preload("res://weapons/resources/m60.tres")
 

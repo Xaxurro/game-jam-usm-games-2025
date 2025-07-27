@@ -21,6 +21,19 @@ menu_music="*res://levels/assets/music/menu-music.tscn"
 Global="*res://levels/assets/global.gd"
 Player="*res://entities/player/player.tscn"
 
+[file_customization]
+
+folder_colors={
+"res://entities/bullet/": "yellow",
+"res://entities/consumables/": "green",
+"res://entities/enemies/": "orange",
+"res://entities/explosion/": "yellow",
+"res://entities/player/": "blue",
+"res://levels/": "purple",
+"res://ui/": "teal",
+"res://weapons/": "red"
+}
+
 [global_group]
 
 player=""

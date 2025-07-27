@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://sy8t720vk3tn"]
+
+[ext_resource type="Script" uid="uid://bl541tyrn7y1" path="res://entities/explosion/explosion.gd" id="1_x74ca"]
+[ext_resource type="Texture2D" uid="uid://b031nobhor6sn" path="res://entities/explosion/assets/explosion.png" id="1_yde0h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x74ca"]
+radius = 20.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_x74ca")
+metadata/_custom_type_script = "uid://bl541tyrn7y1"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x74ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -1.90735e-06)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("1_yde0h")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
