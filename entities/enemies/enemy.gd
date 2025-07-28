@@ -31,12 +31,12 @@ var has_seen_player: bool = false
 
 var knockback_velocity: Vector2 = Vector2.ZERO
 
-func initialize(new_sprite: AnimatedSprite2D) -> void:
-	sprite = new_sprite
+func initialize(cloned_sprite: AnimatedSprite2D) -> void:
+	sprite = cloned_sprite
 	if not sprite:
 		print('Recuerda agregar un Sprite ;3')
 	else:
-		sprite_holder.add_child(sprite)
+		sprite_holder.add_child(cloned_sprite)
 		sprite.position = Vector2.ZERO
 		sprite.z_index = 0
 	sprite_holder.z_index = 0
