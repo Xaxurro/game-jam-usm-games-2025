@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 menu_music="*res://levels/assets/music/menu-music.tscn"
 Global="*res://levels/assets/global.gd"
 Player="*res://entities/player/player.tscn"
+Constants="*res://constants.gd"
 
 [file_customization]
 

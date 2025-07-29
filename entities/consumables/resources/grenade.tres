@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_ja1qu")
 damage = 50
-area_scale = 1.5
+lifetime = 5.0
 name = &"grenade"
-count = null
+count = 100
 price = 3000
 texture = ExtResource("2_dvbdf")
 metadata/_custom_type_script = "uid://dgjtng00uys66"

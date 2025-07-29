@@ -17,7 +17,6 @@ func _explode() -> void:
 	queue_free()
 
 func _ready() -> void:
-	print(Player._aim())
 	linear_velocity = Player._aim() * speed
 	timer.wait_time = lifespan_seconds
 	timer.timeout.connect(_explode)

@@ -2,10 +2,6 @@ extends Enemy
 
 @export var stats: Stats = preload("res://entities/enemies/fbi-agents/stage-1/resources/normal.tres")
 
-@onready var raycast: RayCast2D = $RayCast2D
-@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-
-var shoot_timer: float = 0.0
 
 var last_known_player_position: Vector2 = Vector2.ZERO
 var has_seen_player: bool = false

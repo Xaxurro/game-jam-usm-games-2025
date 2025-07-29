@@ -41,6 +41,7 @@ _data = {
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("2_l8a67")
+metadata/_custom_type_script = "uid://cvj0e5stg6whj"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 hframes = 5
@@ -54,5 +55,6 @@ libraries = {
 }
 
 [node name="Cooldown" type="Timer" parent="."]
+one_shot = true
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]

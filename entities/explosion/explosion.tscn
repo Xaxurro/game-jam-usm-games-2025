@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b031nobhor6sn" path="res://entities/explosion/assets/explosion.png" id="1_yde0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x74ca"]
-radius = 20.0
+radius = 50.0
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 2147483651
 script = ExtResource("1_x74ca")
 metadata/_custom_type_script = "uid://bl541tyrn7y1"
 

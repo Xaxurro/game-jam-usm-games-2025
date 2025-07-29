@@ -7,6 +7,6 @@ extends ConsumableResource
 const grenade_bullet_scene: PackedScene = preload("uid://cr0efyqty4m3q")
 
 func effect() -> void:
-	var mouse_position: Vector2 = Player.get_global_mouse_position()
 	var grenade_instance: RigidBody2D = grenade_bullet_scene.instantiate()
-	Player.add_child(grenade_instance)
+	grenade_instance.global_position = Player.global_position
+	Player.get_parent().add_child(grenade_instance)

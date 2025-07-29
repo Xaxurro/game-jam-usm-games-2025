@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbdbvsllels52" path="res://entities/bullet/assets/grenade_bullet.png" id="2_17ljy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oktqt"]
-radius = 9.48683
+radius = 9.49
 
 [node name="Bullet" type="RigidBody2D"]
 z_index = 2

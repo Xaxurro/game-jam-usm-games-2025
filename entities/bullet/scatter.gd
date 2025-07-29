@@ -1,11 +1,12 @@
-class_name Bullet
-extends RigidBody2D
+class_name BulletScatter
+extends Bullet
 
 enum TYPE {
 	NORMAL,
 	EXPLOSIVE,
 	BULKY,
-	QUICK
+	QUICK,
+	SCATTER
 }
 
 enum TARGETS {
