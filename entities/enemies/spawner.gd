@@ -1,43 +1,35 @@
 extends Node2D
 
-@export var enemy_scene: PackedScene 
-@export var spawn_interval: float = 1.0
-@export var total_enemies_to_spawn: int = 5 
+@export var enemy_data: EnemyResource
+@export var spawn_interval: float = 3.0
+@export var max_enemies: int = 5
+@export var auto_start: bool = true
 
-var _spawned_count: int = 0
-var _timer: Timer 
+@onready var spawn_timer: Timer = $SpawnTimer
+@onready var enemy_template: CharacterBody2D = $Enemy
 
-func _ready() -> void:
-	if enemy_scene == null:
-		printerr("Error: 'enemy_scene' is not assigned in the Spawner!")
-		set_process(false) 
-		return
+var enemies_spawned: int = 0
+var enemy
 
-	_timer = Timer.new()
-	_timer.wait_time = spawn_interval
-	_timer.autostart = true 
-	_timer.one_shot = false 
-	_timer.timeout.connect(_on_timer_timeout)
+func _ready():
+	enemy = enemy_template.duplicate()
+	enemy_template.queue_free()
+	
+	spawn_timer.wait_time = spawn_interval
+	spawn_timer.timeout.connect(spawn_enemy)
+	
+	if auto_start:
+		spawn_timer.start()
 
-	add_child(_timer)
-
-	print("Spawner ready! Will spawn %d enemies every %f seconds." % [total_enemies_to_spawn, spawn_interval])
-
-
-func _on_timer_timeout() -> void:
-	if _spawned_count >= total_enemies_to_spawn:
-		_timer.stop() 
-		print("Spawner finished: All %d enemies spawned." % total_enemies_to_spawn)
-		return
-
-	spawn_enemy()
-	_spawned_count += 1
-
-
-func spawn_enemy() -> void:
-	var new_enemy = enemy_scene.instantiate()
-	new_enemy.global_position = global_position 
-
-	get_parent().add_child(new_enemy)
-
-	print("Spawned enemy #%d at %s" % [_spawned_count + 1, new_enemy.global_position])
+func spawn_enemy():
+	if enemies_spawned >= max_enemies:
+		spawn_timer.stop()
+	
+	var enemy_instance = enemy.duplicate()
+	enemy_instance.resource = enemy_data
+	
+	enemy_instance.position = global_position
+	enemy_instance.visible = true  
+	
+	get_tree().current_scene.add_child(enemy_instance)
+	enemies_spawned += 1

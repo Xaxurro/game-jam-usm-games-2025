@@ -1,6 +1,8 @@
 class_name Enemy
 extends CharacterBody2D
 
+@export var resource: EnemyResource
+
 @export var health_current: float = 30
 @export var detection_range: float = 300
 @export var stop_distance: float = 40
@@ -10,7 +12,7 @@ extends CharacterBody2D
 @export var shoot_cooldown: float = 1.5
 @export var money_on_death: int = 100
 @export var euphoria_on_death: int = 5
-@export var knockback_strength = 200 
+@export var knockback_strength = 200
 @export var knockback_decay: float = 20
 @export var weapon_resource: WeaponResource
 
@@ -23,19 +25,18 @@ extends CharacterBody2D
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
-
 var shoot_timer: float = 0.0
 var last_known_player_position: Vector2 = Vector2.ZERO
 var has_seen_player: bool = false
 
 var knockback_velocity: Vector2 = Vector2.ZERO
 
-func initialize(new_sprite: AnimatedSprite2D) -> void:
-	sprite = new_sprite
+func initialize(cloned_sprite: AnimatedSprite2D) -> void:
+	sprite = cloned_sprite
 	if not sprite:
 		print('Recuerda agregar un Sprite ;3')
 	else:
-		sprite_holder.add_child(sprite)
+		sprite_holder.add_child(cloned_sprite)
 		sprite.position = Vector2.ZERO
 		sprite.z_index = 0
 	sprite_holder.z_index = 0
@@ -45,8 +46,26 @@ func initialize(new_sprite: AnimatedSprite2D) -> void:
 	
 
 func _ready() -> void:
-	weapon.set_resource(weapon_resource)
+	if resource:
+		_set_resource_data()
+	else:
+		weapon.set_resource(weapon_resource)
+	sprite.show_behind_parent = true
 	setup_navigation()
+
+func _set_resource_data() -> void:
+	health_current = resource.health_current
+	detection_range = resource.detection_range
+	stop_distance = resource.stop_distance
+	speed = resource.speed
+	acceleration = resource.acceleration
+	shoot_distance = resource.shoot_distance
+	shoot_cooldown = resource.shoot_cooldown
+	money_on_death = resource.money_on_death
+	euphoria_on_death = resource.euphoria_on_death
+	knockback_strength = resource.knockback_strength
+	knockback_decay = resource.knockback_decay
+	weapon.set_resource(resource.weapon_resource)
 
 func _physics_process(delta: float) -> void:
 	var sees_player = can_detect_player()
