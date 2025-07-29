@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://b2wberq425aji" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Script" uid="uid://cn8wdifpu4b54" path="res://entities/player/inventory.gd" id="2_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://byuwd6c5cbe28" path="res://entities/player/assets/player.png" id="2_bls4j"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="4_fkugw"]
+[ext_resource type="PackedScene" uid="uid://beidq25oof1g7" path="res://weapons/scenes/m_60.tscn" id="4_26q78"]
+[ext_resource type="PackedScene" uid="uid://cypjelxnfxw0q" path="res://weapons/scenes/shotgun.tscn" id="5_26q78"]
 [ext_resource type="PackedScene" uid="uid://dk58jcqv3gnat" path="res://ui/hud/hud.tscn" id="5_fkugw"]
-[ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="6_qiwj3"]
 [ext_resource type="Script" uid="uid://nrukgjc4u8rv" path="res://entities/player/euphoria.gd" id="7_qiwj3"]
 [ext_resource type="Script" uid="uid://x5hxyvq2ccsd" path="res://entities/player/dodge.gd" id="8_26q78"]
 
@@ -82,8 +82,8 @@ _data = {
 &"running": SubResource("Animation_fkugw")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bls4j"]
-size = Vector2(10, 31)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26q78"]
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -109,12 +109,13 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_bls4j")
+shape = SubResource("CapsuleShape2D_26q78")
 
-[node name="WeaponPrimary" parent="." instance=ExtResource("4_fkugw")]
+[node name="WeaponPrimary" parent="." instance=ExtResource("4_26q78")]
+should_do_recoil = true
+max_recoil_offset = 1.0
 
-[node name="WeaponSecondary" parent="." instance=ExtResource("4_fkugw")]
-weapon_resource = ExtResource("6_qiwj3")
+[node name="WeaponSecondary" parent="." instance=ExtResource("5_26q78")]
 
 [node name="Hud" parent="." instance=ExtResource("5_fkugw")]
 visible = false

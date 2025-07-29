@@ -38,8 +38,8 @@ func enable() -> void:
 	hud.visible = true
 
 func _ready() -> void:
-	weapon_primary.weapon_resource.is_enemy = false
-	weapon_secondary.weapon_resource.is_enemy = false
+	weapon_primary.is_enemy = false
+	weapon_secondary.is_enemy = false
 	disable()
 
 func _set_weapons_rotation(new_rotation: float) -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdu3ivoi3fuix"]
 
 [ext_resource type="Script" uid="uid://csh3e5xxonx04" path="res://entities/enemies/enemy.gd" id="1_wqcwe"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="3_5lf1o"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="3_5lf1o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqcwe"]
 radius = 5.0

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6hodrrqghhm3" path="res://entities/enemies/bosses/president/president.gd" id="1_8vbhx"]
 [ext_resource type="Texture2D" uid="uid://30abiphvepqh" path="res://entities/enemies/bosses/president/assets/President.png" id="2_ka4dl"]
 [ext_resource type="AudioStream" uid="uid://gkd58g5sw26c" path="res://entities/enemies/bosses/president/assets/audiomass-output.mp3" id="2_tc74m"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="2_wld45"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="2_wld45"]
 [ext_resource type="Resource" uid="uid://ncd4lbwy03u6" path="res://weapons/resources/minigun.tres" id="4_8vbhx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vbhx"]

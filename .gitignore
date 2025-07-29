@@ -1,8 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-levels/_dev_room/dev-room.tscn
-levels/_dev_room/dev-room-2.tscn
-levels/_dev_room/dev-room.tscn
-levels/_dev_room/dev-room.tscn
-levels/_dev_room/dev-room.tscn
+levels/_dev_room/*.tscn

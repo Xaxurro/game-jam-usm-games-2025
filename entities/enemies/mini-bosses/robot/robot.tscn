@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://eqeot6756rok" path="res://entities/enemies/mini-bosses/robot/assets/robot.png" id="1_7swb0"]
 [ext_resource type="Script" uid="uid://dwmnc752lp8h3" path="res://entities/enemies/mini-bosses/robot/robot.gd" id="1_pt2eh"]
-[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/weapon.tscn" id="3_1wp67"]
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="3_1wp67"]
 [ext_resource type="Resource" uid="uid://c8csi5dgksg1" path="res://weapons/resources/blaster.tres" id="4_30ho6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kckci"]
