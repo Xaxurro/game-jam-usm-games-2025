@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ikjda")
-health_current = 100.0
+health_current = 20.0
 detection_range = 400.0
 stop_distance = 40.0
 speed = 100.0

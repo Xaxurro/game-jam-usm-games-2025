@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://d10gncjaf5j0r"]
+
+[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="1_lumeg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p16j1"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2wt8"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a5gj"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xof3x"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmhk1"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcjv8"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im46n"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7g72"]
+atlas = ExtResource("1_lumeg")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p16j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2wt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a5gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xof3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmhk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcjv8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im46n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7g72")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]

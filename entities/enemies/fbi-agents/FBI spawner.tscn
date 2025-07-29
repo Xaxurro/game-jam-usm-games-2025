@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs8r0uat3ty8a"]
+
+[ext_resource type="Script" uid="uid://b3ldio523ypr0" path="res://entities/enemies/spawner.gd" id="1_1irjk"]
+[ext_resource type="PackedScene" uid="uid://bdu3ivoi3fuix" path="res://entities/enemies/enemy.tscn" id="2_vqc7t"]
+[ext_resource type="Resource" uid="uid://dk8sjjtepnkna" path="res://entities/enemies/resources/m60.tres" id="3_gy6rp"]
+[ext_resource type="SpriteFrames" uid="uid://d10gncjaf5j0r" path="res://entities/enemies/fbi-agents/assets/sprites/sprite.tres" id="4_1a0e0"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_1irjk")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_vqc7t")]
+resource = ExtResource("3_gy6rp")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+sprite_frames = ExtResource("4_1a0e0")
+animation = &"idle"
+autoplay = "idle"

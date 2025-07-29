@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://dk8sjjtepnkna"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://dk8sjjtepnkna"]
 
 [ext_resource type="Script" uid="uid://dei7ijpoewb6o" path="res://entities/enemies/resources/enemy_resource.gd" id="1_kqoef"]
+[ext_resource type="Resource" uid="uid://btodv3lj2lsiy" path="res://weapons/resources/m60.tres" id="2_w750v"]
 
 [resource]
 script = ExtResource("1_kqoef")
@@ -15,4 +16,5 @@ money_on_death = 100
 euphoria_on_death = 5
 knockback_strength = 200.0
 knockback_decay = 20.0
+weapon_resource = ExtResource("2_w750v")
 metadata/_custom_type_script = "uid://dei7ijpoewb6o"
