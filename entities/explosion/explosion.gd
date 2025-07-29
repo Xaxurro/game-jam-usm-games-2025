@@ -13,6 +13,7 @@ func _deal_damage() -> void:
 			Player.change_health(-damage)
 			continue
 		node.call("recieve_damage", damage, global_position - node.global_position)
+	queue_free()
 
 func _ready():
 	lifetime.timeout.connect(_deal_damage)

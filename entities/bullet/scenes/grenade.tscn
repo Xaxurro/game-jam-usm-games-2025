@@ -1,19 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cr0efyqty4m3q"]
 
-[ext_resource type="Script" uid="uid://uk1baqqmqlhc" path="res://entities/bullet/grenade.gd" id="1_oghk8"]
-[ext_resource type="Texture2D" uid="uid://cbdbvsllels52" path="res://entities/bullet/assets/grenade_bullet.png" id="2_oghk8"]
+[ext_resource type="Script" uid="uid://uk1baqqmqlhc" path="res://entities/bullet/grenade.gd" id="1_mnnet"]
+[ext_resource type="Texture2D" uid="uid://cbdbvsllels52" path="res://entities/bullet/assets/grenade_bullet.png" id="2_17ljy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oktqt"]
-radius = 20.0
+radius = 9.48683
 
 [node name="Bullet" type="RigidBody2D"]
 z_index = 2
-collision_layer = 1073741824
-collision_mask = 2147483651
+collision_layer = 3
+collision_mask = 2147483648
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_oghk8")
+script = ExtResource("1_mnnet")
+speed = 250.0
 metadata/_custom_type_script = "uid://uk1baqqmqlhc"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -21,7 +22,8 @@ shape = SubResource("CircleShape2D_oktqt")
 debug_color = Color(1, 1, 0, 0.419608)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_oghk8")
+position = Vector2(0, -1)
+texture = ExtResource("2_17ljy")
 
 [node name="Lifetime" type="Timer" parent="."]
 one_shot = true

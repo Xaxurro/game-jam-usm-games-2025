@@ -1,13 +1,17 @@
 class_name Bullet
 extends RigidBody2D
 
+enum TYPE {
+	NORMAL
+}
+
 enum TARGETS {
 	PLAYER,
 	ENEMY
 }
 
 @export var speed: float = 1000
-@export var damage: int = 10
+@export var damage: float = 10
 @export var lifespan_seconds: float = 5.0
 @export var target: TARGETS = TARGETS.ENEMY
 

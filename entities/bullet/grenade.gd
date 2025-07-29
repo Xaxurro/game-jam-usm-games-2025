@@ -5,7 +5,7 @@ extends RigidBody2D
 
 @export var speed: float = 10
 @export var damage: int = 10
-@export var lifespan_seconds: float = 1.0
+@export var lifespan_seconds: float = 0.10
 
 const EXPLOSION_SCENE: PackedScene = preload("uid://sy8t720vk3tn")
 
@@ -17,6 +17,7 @@ func _explode() -> void:
 	queue_free()
 
 func _ready() -> void:
-	linear_velocity = Player.get_global_mouse_position().normalized() * speed
+	print(Player._aim())
+	linear_velocity = Player._aim() * speed
 	timer.wait_time = lifespan_seconds
 	timer.timeout.connect(_explode)
