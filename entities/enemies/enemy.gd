@@ -166,8 +166,10 @@ func _aim_at_player() -> void:
 	weapon.sprite.rotation = angle
 	if direction.x < 0:
 		sprite.flip_h = true
+		_set_weapons_scale_y(-1)# Without this the weapon looks inverted
 	else:
 		sprite.flip_h = false
+		_set_weapons_scale_y(1)# Without this the weapon looks inverted
 
 ## Recibir daño con knockback
 func recieve_damage(damage_received: int, hit_direction: Vector2) -> void:
@@ -183,3 +185,11 @@ func die() -> void:
 	Player.inventory.add_money(money_on_death)
 	Player.euphoria.add_meter(euphoria_on_death)
 	queue_free()
+	
+func _set_weapons_rotation(new_rotation: float) -> void:
+	weapon.get_node("Sprite").rotation = new_rotation
+	weapon.get_node("Sprite").rotation = new_rotation
+
+func _set_weapons_scale_y(new_scale: float) -> void:
+	weapon.get_node("Sprite").scale.y = new_scale
+	weapon.get_node("Sprite").scale.y = new_scale

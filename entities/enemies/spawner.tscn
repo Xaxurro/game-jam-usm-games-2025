@@ -8,6 +8,7 @@
 script = ExtResource("1_5ltsi")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.001
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_si6vm")]
 resource = ExtResource("3_q2wt8")
