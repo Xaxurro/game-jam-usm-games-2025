@@ -13,7 +13,6 @@ var enemy
 
 func _ready():
 	enemy = enemy_template.duplicate()
-	enemy_template.queue_free()
 	
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(spawn_enemy)

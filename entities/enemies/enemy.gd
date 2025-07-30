@@ -20,6 +20,7 @@ extends CharacterBody2D
 ## 'idle' y 'walking'
 @export var sprite: AnimatedSprite2D
 @onready var sprite_holder: Node2D = $SpriteHolder
+@onready var weapon_holder: Node2D = $WeaponHolder
 
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
@@ -49,6 +50,7 @@ func _ready() -> void:
 	_set_resource_data()
 	sprite.show_behind_parent = true
 	setup_navigation()
+	
 
 func _set_resource_data() -> void:
 	health_current = resource.health_current
@@ -63,7 +65,8 @@ func _set_resource_data() -> void:
 	knockback_strength = resource.knockback_strength
 	knockback_decay = resource.knockback_decay
 	weapon = load(Constants.SCENES_PATHS.weapon[weapon_type]).instantiate()
-	add_child(weapon)
+	weapon_holder.add_child(weapon)
+	weapon.position = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	var sees_player = can_detect_player()
