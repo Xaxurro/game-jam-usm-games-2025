@@ -1,6 +1,13 @@
 class_name Weapon
 extends Node2D
 
+enum TYPE {
+	M60,
+	SHOTGUN,
+	MINIGUN,
+	BLASTER
+}
+
 @onready var sprite: Sprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cooldown: Timer = $Cooldown
@@ -24,7 +31,7 @@ func _ready() -> void:
 	cooldown.wait_time = firerate_in_seconds
 
 func instantiate_bullet(target_direction: Vector2) -> Bullet:
-	var bullet_node: Bullet = load(Constants.SCENES_PATHS[bullet_type]).instantiate()
+	var bullet_node: Bullet = load(Constants.SCENES_PATHS.bullet[bullet_type]).instantiate()
 	bullet_node.initial_direction = target_direction
 	bullet_node.damage = damage
 	if get_parent() is Player and Player.euphoria.is_active:

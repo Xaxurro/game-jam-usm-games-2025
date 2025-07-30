@@ -18,8 +18,7 @@ func _ready():
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(spawn_enemy)
 	
-	if auto_start:
-		spawn_timer.start()
+	spawn_timer.start()
 
 func spawn_enemy():
 	if enemies_spawned >= max_enemies:

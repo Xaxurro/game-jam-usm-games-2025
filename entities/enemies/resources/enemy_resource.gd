@@ -12,4 +12,4 @@ class_name EnemyResource
 @export var euphoria_on_death: int = 5
 @export var knockback_strength: float = 200
 @export var knockback_decay: float = 20
-@export var weapon_resource: Resource
+@export var weapon_type: Weapon.TYPE

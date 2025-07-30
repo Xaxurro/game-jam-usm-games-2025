@@ -8,12 +8,11 @@
 script = ExtResource("1_5ltsi")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_si6vm")]
 resource = ExtResource("3_q2wt8")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-animation = &"idle"
+animation = &""
 autoplay = "idle"

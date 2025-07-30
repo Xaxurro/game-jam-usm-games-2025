@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccdgqkjy6537i" path="res://weapons/assets/sprite-sheets/m60.png" id="2_ejyjr"]
 [ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="3_yu1v2"]
 
-[node name="M60" instance=ExtResource("1_vb2rn")]
+[node name="Weapon" instance=ExtResource("1_vb2rn")]
 firerate_in_seconds = 0.25
 should_do_recoil = false
 

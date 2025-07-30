@@ -14,27 +14,27 @@ extends CharacterBody2D
 @export var euphoria_on_death: int = 5
 @export var knockback_strength = 200
 @export var knockback_decay: float = 20
-@export var weapon_resource: WeaponResource
+@export var weapon_type: Weapon.TYPE = Weapon.TYPE.M60
 
 ## Para asignarle un Sprite debes crear un nodo con la animación del sprite y crearle dos animaciones 
 ## 'idle' y 'walking'
 @export var sprite: AnimatedSprite2D
 @onready var sprite_holder: Node2D = $SpriteHolder
 
-@onready var weapon: Weapon = $Weapon
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var shoot_timer: float = 0.0
 var last_known_player_position: Vector2 = Vector2.ZERO
 var has_seen_player: bool = false
+var weapon: Weapon
 
 var knockback_velocity: Vector2 = Vector2.ZERO
 
 func initialize(cloned_sprite: AnimatedSprite2D) -> void:
 	sprite = cloned_sprite
 	if not sprite:
-		print('Recuerda agregar un Sprite ;3')
+		push_error('Recuerda agregar un Sprite ;3')
 	else:
 		sprite_holder.add_child(cloned_sprite)
 		sprite.position = Vector2.ZERO
@@ -46,10 +46,7 @@ func initialize(cloned_sprite: AnimatedSprite2D) -> void:
 	
 
 func _ready() -> void:
-	if resource:
-		_set_resource_data()
-	else:
-		weapon.set_resource(weapon_resource)
+	_set_resource_data()
 	sprite.show_behind_parent = true
 	setup_navigation()
 
@@ -65,7 +62,8 @@ func _set_resource_data() -> void:
 	euphoria_on_death = resource.euphoria_on_death
 	knockback_strength = resource.knockback_strength
 	knockback_decay = resource.knockback_decay
-	weapon.set_resource(resource.weapon_resource)
+	weapon = load(Constants.SCENES_PATHS.weapon[weapon_type]).instantiate()
+	add_child(weapon)
 
 func _physics_process(delta: float) -> void:
 	var sees_player = can_detect_player()
