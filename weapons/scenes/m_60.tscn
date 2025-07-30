@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="3_yu1v2"]
 
 [node name="Weapon" instance=ExtResource("1_vb2rn")]
+bullet_type = 1
 firerate_in_seconds = 0.25
 should_do_recoil = false
 

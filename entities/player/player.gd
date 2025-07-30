@@ -8,7 +8,6 @@ extends CharacterBody2D
 @onready var weapon_primary: Weapon = $WeaponPrimary
 @onready var weapon_secondary: Weapon = $WeaponSecondary
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var hud: CanvasLayer = $Hud
 @onready var euphoria: Euphoria = $Euphoria
 @onready var dodge: Dodge = $Dodge
 
@@ -27,7 +26,7 @@ func disable() -> void:
 	can_recieve_damage = false
 	weapon_primary.visible = false
 	weapon_secondary.visible = false
-	hud.visible = false
+	Hud.visible = false
 
 func enable() -> void:
 	enabled = true
@@ -35,7 +34,7 @@ func enable() -> void:
 	can_recieve_damage = true
 	weapon_primary.visible = true
 	weapon_secondary.visible = false
-	hud.visible = true
+	Hud.visible = true
 
 func _ready() -> void:
 	weapon_primary.is_enemy = false
