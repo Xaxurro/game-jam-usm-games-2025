@@ -13,6 +13,8 @@ var stages: Array[String] = [
 ]
 
 var entered: bool = false
+var level_clear: bool = false
+
 
 func extract_path(next_path: String) -> String:
 	var trimmed_path = next_path.trim_prefix("res://")
@@ -22,9 +24,9 @@ func extract_path(next_path: String) -> String:
 	return "res://" 
 
 func _ready() -> void:
+		
 	##UI element
 	next_level_text_label.visible = entered
-	
 	##Pathin for next level
 	next_path = Global.full_path
 	check = get_tree().current_scene.scene_file_path
@@ -35,7 +37,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	##Next level Logic
-	if entered and Input.is_action_just_pressed("interaction"):
+	if entered and level_clear and Input.is_action_just_pressed("interaction")	:
 		##Vamos recoriendo la lista con un index global para que no se pierdan entre stages
 		if Global.stage_index < stages.size():
 			var next_scene_path_in_array: String = stages[Global.stage_index]
@@ -51,11 +53,20 @@ func _process(_delta: float) -> void:
 			
 			get_tree().change_scene_to_file(scene_to_load)
 
+##Simplea ass code aHH
+func _check_enemies() -> void:
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	##print(enemies.size())
+	if enemies.size() == 0:
+		level_clear = true
+		
+
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"):
 		entered = true
+		_check_enemies()
 		_next_level_text()
-
+		
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"):

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var enemy_data: EnemyResource
-@export var spawn_interval: float = 3.0
+@export var spawn_interval: float = 0
 @export var max_enemies: int = 5
 @export var auto_start: bool = true
 
@@ -13,10 +13,10 @@ var enemy
 
 func _ready():
 	enemy = enemy_template.duplicate()
+	enemy_template.queue_free()
 	
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(spawn_enemy)
-	
 	spawn_timer.start()
 
 func spawn_enemy():
