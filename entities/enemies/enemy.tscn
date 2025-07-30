@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://csh3e5xxonx04" path="res://entities/enemies/enemy.gd" id="1_wqcwe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqcwe"]
-radius = 5.0
+radius = 4.0
 height = 20.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
