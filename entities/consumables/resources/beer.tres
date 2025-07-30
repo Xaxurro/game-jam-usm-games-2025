@@ -7,7 +7,7 @@
 script = ExtResource("1_tvlro")
 health_amount = 25
 name = &"beer"
-count = 1
+count = 10
 price = 1500
 texture = ExtResource("2_j8cgb")
 metadata/_custom_type_script = "uid://3l343fsnf5jn"

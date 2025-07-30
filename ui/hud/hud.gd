@@ -1,9 +1,10 @@
 extends Node
 
-@onready var health_bar: TextureProgressBar = $HContainer/VContainer/HealthBar
-@onready var euphoria_bar: TextureProgressBar = $HContainer/VContainer/EuphoriaBar
-@onready var consumable_selected: TextureRect = $HContainer/VContainer/HContainer/ConsumableSelected
-@onready var money: Label = $HContainer/Panel/Money
+@onready var health_bar: TextureProgressBar = $HContainer/BarsContainer/HealthBar
+@onready var euphoria_bar: TextureProgressBar = $HContainer/BarsContainer/EuphoriaBar
+@onready var money: Label = $HContainer/ResourcesContainer/Money
+@onready var consumable_selected: TextureRect = $HContainer/ResourcesContainer/ConsumableContainer/Icon
+@onready var consumable_selected_label: Label = $HContainer/ResourcesContainer/ConsumableContainer/Label
 
 func _update_health_bar() -> void:
 	health_bar.value = Player.health_current * 100 / Player.health_max
@@ -13,16 +14,15 @@ func _update_euphoria_bar() -> void:
 
 func _update_consumable_selected() -> void:
 	var consumable: ConsumableResource = Player.inventory.selected_consumable
-	var label: Label = consumable_selected.get_node("Label")
 	if consumable == null:
 		consumable_selected.texture = null
-		label.text = ""
+		consumable_selected_label.text = ""
 		return
 	consumable_selected.texture = consumable.texture
-	label.text = "%s x %d" % [consumable.name, consumable.count]
+	consumable_selected_label.text = "%s x %d" % [consumable.name, consumable.count]
 
 func _update_money() -> void:
-	money.text = "$%d" % Player.inventory.money
+	money.text = "Money: $%d" % Player.inventory.money
 
 func _connect_signals() -> void:
 	Player.health_changed.connect(_update_health_bar)

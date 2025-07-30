@@ -32,7 +32,9 @@ func add_consumable(new_consumable: ConsumableResource) -> void:
 	consumables_changed.emit()
 
 func cycle_consumables() -> void:
-	if consumables.size() == 0: return
+	if consumables.size() == 0:
+		consumables_changed.emit()
+		return
 
 	var consumables_keys: Array = consumables.keys()
 	if selected_consumable == null:
@@ -46,6 +48,7 @@ func cycle_consumables() -> void:
 func remove_consumable() -> void:
 	var consumable_to_remove: ConsumableResource = consumables[selected_consumable.name]
 	consumable_to_remove.count -= 1
+	print("removing consumable: %s, count after removal: %s" % [consumable_to_remove.name, consumable_to_remove.count])
 	if consumable_to_remove.count == 0:
 		consumables.erase(consumable_to_remove.name)
 		selected_consumable = null

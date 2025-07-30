@@ -8,7 +8,7 @@ extends Node2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var enemy_template: CharacterBody2D = $Enemy
 
-var enemies_spawned: int = 0
+var enemies_spawned: int = 1
 var enemy
 
 func _ready():

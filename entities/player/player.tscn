@@ -111,6 +111,7 @@ position = Vector2(-1, 0.5)
 shape = SubResource("CapsuleShape2D_26q78")
 
 [node name="WeaponPrimary" parent="." instance=ExtResource("4_26q78")]
+bullet_type = 0
 should_do_recoil = true
 max_recoil_offset = 1.0
 
