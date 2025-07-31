@@ -1,5 +1,6 @@
 extends Node2D
 
+## Test
 @export var enemy_data: EnemyResource
 @export var spawn_interval: float = 0
 @export var max_enemies: int = 5
