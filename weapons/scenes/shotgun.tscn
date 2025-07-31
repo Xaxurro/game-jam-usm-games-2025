@@ -11,7 +11,7 @@ firerate_in_seconds = 1.0
 texture = ExtResource("2_7ji63")
 
 [node name="Muzzle" parent="Sprite" index="0"]
-position = Vector2(11, -2)
+position = Vector2(16, -2)
 
 [node name="SoundPlayer" parent="." index="3"]
 stream = ExtResource("3_7ji63")

@@ -14,7 +14,7 @@ extends CharacterBody2D
 @export var euphoria_on_death: int = 5
 @export var knockback_strength = 200
 @export var knockback_decay: float = 20
-@export var weapon_type: Weapon.TYPE = Weapon.TYPE.M60
+@export var weapon_type: Weapon.TYPE
 
 ## Para asignarle un Sprite debes crear un nodo con la animación del sprite y crearle dos animaciones 
 ## 'idle' y 'walking'
@@ -64,7 +64,7 @@ func _set_resource_data() -> void:
 	euphoria_on_death = resource.euphoria_on_death
 	knockback_strength = resource.knockback_strength
 	knockback_decay = resource.knockback_decay
-	weapon = load(Constants.SCENES_PATHS.weapon[weapon_type]).instantiate()
+	weapon = load(Constants.SCENES_PATHS.weapon[resource.weapon_type]).instantiate()
 	weapon_holder.add_child(weapon)
 	weapon.position = Vector2.ZERO
 
