@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfnr4t37q60a"]
+
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="1_e780s"]
+[ext_resource type="Texture2D" uid="uid://cuv6yoi86j8mp" path="res://weapons/assets/sprite-sheets/miniboss_robot.png" id="2_8u5qa"]
+
+[node name="Weapon" instance=ExtResource("1_e780s")]
+bullet_type = 3
+damage = 45.0
+firerate_in_seconds = 3.0
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_8u5qa")
