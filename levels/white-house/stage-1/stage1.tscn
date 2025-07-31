@@ -1,19 +1,16 @@
-[gd_scene load_steps=29 format=3 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=89 format=3 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Texture2D" uid="uid://dw8i4t0j8gsbq" path="res://levels/white-house/stage-1/assets/background.png" id="1_2o78u"]
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_de00k"]
 [ext_resource type="Texture2D" uid="uid://dr2qbjd6j6g8n" path="res://levels/white-house/stage-1/assets/crashed-truck.png" id="2_pucyt"]
 [ext_resource type="Texture2D" uid="uid://1anvsd1a161g" path="res://levels/white-house/stage-1/assets/SummerTrees.png" id="4_82x6i"]
-[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="7_31hdv"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="7_u4p5x"]
 [ext_resource type="PackedScene" uid="uid://bd8fjrdw1uju7" path="res://levels/assets/props/fountain.tscn" id="8_pbntd"]
-[ext_resource type="Resource" uid="uid://dmo72ost8l5f4" path="res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres" id="9_1o0ha"]
 [ext_resource type="PackedScene" uid="uid://clmhmcgg1wyep" path="res://levels/assets/props/police-cars/police_car_2.tscn" id="9_ax4j5"]
 [ext_resource type="PackedScene" uid="uid://tpugr832uqud" path="res://levels/assets/props/concrete_walls/concrete_wall_corner.tscn" id="9_h4y1x"]
 [ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="9_x7cji"]
 [ext_resource type="PackedScene" uid="uid://l1k3x1yinbj6" path="res://levels/assets/props/police-cars/police_car_3.tscn" id="10_de00k"]
 [ext_resource type="PackedScene" uid="uid://bj02v0b6qdl4p" path="res://levels/assets/props/police-cars/police_car_4.tscn" id="10_w65hh"]
-[ext_resource type="Script" uid="uid://bkuerueepudmd" path="res://entities/enemies/fbi-agents/stage-1/resources/stats.gd" id="10_x5w8c"]
 [ext_resource type="PackedScene" uid="uid://wk8iy5f5lyh8" path="res://levels/assets/props/police-cars/police_car_6.tscn" id="11_ewufq"]
 [ext_resource type="PackedScene" uid="uid://svckxnokf88d" path="res://levels/assets/props/police-cars/police_car_7.tscn" id="12_teoa5"]
 [ext_resource type="PackedScene" uid="uid://bjjnrbkvpk3lo" path="res://levels/assets/props/police-cars/police_car_8.tscn" id="13_jrtpp"]
@@ -68,18 +65,197 @@ vertices = PackedVector2Array(194, 193, 146, 193, -1481, 189, -1481, -119, -977,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 16, 15), PackedInt32Array(22, 21, 15), PackedInt32Array(23, 22, 15), PackedInt32Array(24, 17, 16), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(27, 24, 16, 28), PackedInt32Array(29, 26, 25), PackedInt32Array(30, 31, 29, 25, 32), PackedInt32Array(23, 15, 33, 34), PackedInt32Array(35, 31, 36, 37, 38), PackedInt32Array(8, 39, 0, 40, 9), PackedInt32Array(41, 6, 5, 42), PackedInt32Array(43, 44, 45, 46), PackedInt32Array(45, 35, 38, 7), PackedInt32Array(47, 48, 49), PackedInt32Array(49, 50, 51), PackedInt32Array(52, 15, 20), PackedInt32Array(12, 11, 53, 54), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(1, 21, 22, 59), PackedInt32Array(2, 1, 59), PackedInt32Array(2, 59, 34), PackedInt32Array(2, 34, 33, 60), PackedInt32Array(61, 62, 63, 64), PackedInt32Array(61, 64, 65), PackedInt32Array(61, 65, 66), PackedInt32Array(61, 66, 67, 68), PackedInt32Array(13, 68, 67, 47), PackedInt32Array(61, 68, 54), PackedInt32Array(61, 54, 53, 41, 42), PackedInt32Array(61, 42, 69), PackedInt32Array(70, 71, 36), PackedInt32Array(7, 72, 73), PackedInt32Array(73, 74, 46), PackedInt32Array(2, 60, 52, 20, 75), PackedInt32Array(75, 20, 61, 76), PackedInt32Array(3, 76, 61, 69, 4), PackedInt32Array(0, 6, 11, 77), PackedInt32Array(67, 44, 43, 47), PackedInt32Array(13, 47, 49), PackedInt32Array(13, 49, 51), PackedInt32Array(13, 51, 14), PackedInt32Array(58, 28, 16), PackedInt32Array(78, 55, 58, 16, 0), PackedInt32Array(37, 36, 78, 0, 39), PackedInt32Array(31, 30, 70), PackedInt32Array(73, 46, 45), PackedInt32Array(31, 70, 36), PackedInt32Array(77, 40, 0), PackedInt32Array(10, 77, 11), PackedInt32Array(38, 8, 7), PackedInt32Array(45, 7, 73)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2007, -705, 1944, -704, 1944, -349, 1909, -320, 1886, -291, 1859, -250, 1834, -195, 1816, -118, 1810, -54, 1811, 3, 1818, 58, 1831, 115, 1849, 159, 1860, 180, 1884, 223, 1913, 252, 1943, 277, 1945, 706, -2005, 705)])
 
+[sub_resource type="Resource" id="Resource_x5w8c"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_pbntd"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ax4j5"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_de00k"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_6p3h6"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_w65hh"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ewufq"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_teoa5"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_jrtpp"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_26ylr"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_nqd34"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_c3qam"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ccw5d"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_6k8tj"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_1nep3"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_4xu6k"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_7l8ib"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_sqxjg"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_82hbd"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ypbf0"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_e0x6q"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_rs86d"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_88std"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_b1sf4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_0fuo2"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_4lt1h"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_8u6rr"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_kru0i"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_p73fw"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_bvwwl"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_u32mr"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_vli1s"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_dv2jr"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_7asos"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ycxfa"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_elces"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_xutfd"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_eysk4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_l2df2"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_iptls"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_wmhpl"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_ps4xk"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_p3xd2"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_wigqp"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_7ps01"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_i6l7u"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_8bpkd"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_xodfn"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_e0t62"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
 [sub_resource type="Resource" id="Resource_h4y1x"]
-script = ExtResource("10_x5w8c")
-money_on_death = 100
-euphoria_on_death = 5
-health_current = 75
-speed = 60.0
-stop_distance = 120.0
-shoot_distance = 150.0
-shoot_cooldown = 0.5
-acceleration = 500.0
-detection_range = 200.0
 metadata/_custom_type_script = "uid://bkuerueepudmd"
+
+[sub_resource type="Resource" id="Resource_0yt7l"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_y2va0"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_1xill"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_parq4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_yh0hs"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_6bor5"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_3kxvq"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_rbjwg"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_tligo"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_5lmbh"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_leth8"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_11ca4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_vyd8c"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_hyle6"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
 
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_de00k")
@@ -365,209 +541,209 @@ scale = Vector2(2, -2)
 
 [node name="GroupEasy" type="Node2D" parent="Enemies"]
 
-[node name="FBI Agent" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy"]
 position = Vector2(-1197, -280)
 
 [node name="GroupEasy2" type="Node2D" parent="Enemies"]
 position = Vector2(5, 628)
 
-[node name="FBI Agent" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy2"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy2"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy2"]
 position = Vector2(-1197, -280)
 
 [node name="GroupEasy3" type="Node2D" parent="Enemies"]
 position = Vector2(1054, -4)
 
-[node name="FBI Agent" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy3"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy3"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy3"]
 position = Vector2(-1197, -280)
 
 [node name="GroupEasy4" type="Node2D" parent="Enemies"]
 position = Vector2(1059, 624)
 
-[node name="FBI Agent" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy4"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy4"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy4"]
 position = Vector2(-1197, -280)
 
 [node name="GroupEasy5" type="Node2D" parent="Enemies"]
 position = Vector2(2273, -2)
 
-[node name="FBI Agent" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy5"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy5"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy5"]
 position = Vector2(-1197, -280)
 
 [node name="GroupEasy6" type="Node2D" parent="Enemies"]
 position = Vector2(2278, 626)
 
-[node name="FBI Agent" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupEasy6"]
 position = Vector2(-1214, -280)
 
-[node name="FBI Agent2" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupEasy6"]
 position = Vector2(-1206, -312)
 
-[node name="FBI Agent3" parent="Enemies/GroupEasy6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupEasy6"]
 position = Vector2(-1197, -280)
 
 [node name="GroupMedium" type="Node2D" parent="Enemies"]
 position = Vector2(-908, 21)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium"]
+stats = SubResource("Resource_ypbf0")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium"]
 position = Vector2(27, 20)
 
 [node name="GroupMedium2" type="Node2D" parent="Enemies"]
 position = Vector2(-703, -438)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium2"]
+stats = SubResource("Resource_0fuo2")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium2"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium2"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium2"]
 position = Vector2(27, 20)
 
 [node name="GroupMedium3" type="Node2D" parent="Enemies"]
 position = Vector2(-685, 317)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium3"]
+stats = SubResource("Resource_bvwwl")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium3"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium3"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium3"]
 position = Vector2(27, 20)
 
 [node name="GroupMedium4" type="Node2D" parent="Enemies"]
 position = Vector2(413, -342)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium4"]
+stats = SubResource("Resource_ycxfa")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium4"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium4"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium4" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium4"]
 position = Vector2(27, 20)
 
 [node name="GroupMedium5" type="Node2D" parent="Enemies"]
 position = Vector2(439, 24)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium5"]
+stats = SubResource("Resource_iptls")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium5"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium5"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium5" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium5"]
 position = Vector2(27, 20)
 
 [node name="GroupMedium6" type="Node2D" parent="Enemies"]
 position = Vector2(436, 325)
 
-[node name="FBI Agent" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
-stats = ExtResource("9_1o0ha")
+[node name="FBI Agent" parent="Enemies/GroupMedium6"]
+stats = SubResource("Resource_7ps01")
 
-[node name="FBI Agent2" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupMedium6"]
 position = Vector2(-1, -35)
 
-[node name="FBI Agent3" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupMedium6"]
 position = Vector2(-26, 20)
 
-[node name="FBI Agent4" parent="Enemies/GroupMedium6" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent4" parent="Enemies/GroupMedium6"]
 position = Vector2(27, 20)
 
 [node name="GroupHard" type="Node2D" parent="Enemies"]
 position = Vector2(-92, 57)
 
-[node name="FBI Agent" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupHard"]
 position = Vector2(0, -40)
 stats = SubResource("Resource_h4y1x")
 
-[node name="FBI Agent2" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupHard"]
 position = Vector2(26, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_y2va0")
 
-[node name="FBI Agent3" parent="Enemies/GroupHard" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupHard"]
 position = Vector2(-27, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_parq4")
 
 [node name="GroupHard2" type="Node2D" parent="Enemies"]
 position = Vector2(-5, -114)
 
-[node name="FBI Agent" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupHard2"]
 position = Vector2(0, -40)
 stats = SubResource("Resource_h4y1x")
 
-[node name="FBI Agent2" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupHard2"]
 position = Vector2(26, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_3kxvq")
 
-[node name="FBI Agent3" parent="Enemies/GroupHard2" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupHard2"]
 position = Vector2(-27, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_tligo")
 
 [node name="GroupHard3" type="Node2D" parent="Enemies"]
 position = Vector2(91, 43)
 
-[node name="FBI Agent" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent" parent="Enemies/GroupHard3"]
 position = Vector2(0, -40)
 stats = SubResource("Resource_h4y1x")
 
-[node name="FBI Agent2" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent2" parent="Enemies/GroupHard3"]
 position = Vector2(26, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_11ca4")
 
-[node name="FBI Agent3" parent="Enemies/GroupHard3" instance=ExtResource("7_31hdv")]
+[node name="FBI Agent3" parent="Enemies/GroupHard3"]
 position = Vector2(-27, 13)
-stats = ExtResource("9_1o0ha")
+stats = SubResource("Resource_hyle6")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-1838, 35)

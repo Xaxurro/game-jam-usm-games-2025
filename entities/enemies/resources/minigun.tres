@@ -15,4 +15,5 @@ money_on_death = 100
 euphoria_on_death = 5
 knockback_strength = 200.0
 knockback_decay = 20.0
+weapon_type = 0
 metadata/_custom_type_script = "uid://dei7ijpoewb6o"
