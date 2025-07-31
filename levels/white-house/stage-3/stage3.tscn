@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckhpd63gko42x"]
+[gd_scene load_steps=12 format=3 uid="uid://ckhpd63gko42x"]
 
 [ext_resource type="Texture2D" uid="uid://c3lrnqrn6p1ao" path="res://levels/white-house/stage-3/assets/Background stage 3.png" id="1_bjy5w"]
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_fp4dr"]
@@ -664,88 +664,10 @@ position = Vector2(-571, -274)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="FBI Agent2" parent="Enemies"]
-position = Vector2(-1853, -281)
-stats = SubResource("Resource_fhowl")
 
-[node name="FBI Agent3" parent="Enemies"]
-position = Vector2(-1311, -319)
-stats = SubResource("Resource_fhowl")
-
-[node name="FBI Agent20" parent="Enemies"]
-position = Vector2(-181, -40)
-stats = SubResource("Resource_fhowl")
-
-[node name="FBI Agent21" parent="Enemies"]
-position = Vector2(-195, 30)
-stats = SubResource("Resource_fhowl")
-
-[node name="FBI Agent5" parent="Enemies"]
-position = Vector2(-1447, 96)
-stats = SubResource("Resource_fhowl")
-
-[node name="FBI Agent6" parent="Enemies"]
-position = Vector2(-1573, 332)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent15" parent="Enemies"]
-position = Vector2(-1105, -152)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent16" parent="Enemies"]
-position = Vector2(-740, -140)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent17" parent="Enemies"]
-position = Vector2(-575, 239)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent18" parent="Enemies"]
-position = Vector2(-1517, -69)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent19" parent="Enemies"]
-position = Vector2(1032, -7)
-stats = SubResource("Resource_3oqcx")
-
-[node name="FBI Agent4" parent="Enemies"]
-position = Vector2(-1022, 5)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent9" parent="Enemies"]
-position = Vector2(-619, -337)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent10" parent="Enemies"]
-position = Vector2(675, -61)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent11" parent="Enemies"]
-position = Vector2(673, 17)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent12" parent="Enemies"]
-position = Vector2(1530, -8)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent13" parent="Enemies"]
-position = Vector2(1474, -148)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent14" parent="Enemies"]
-position = Vector2(1479, 170)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent7" parent="Enemies"]
-position = Vector2(-920, 372)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent8" parent="Enemies"]
-position = Vector2(-421, -73)
-stats = SubResource("Resource_rwrb6")
-
-[node name="FBI Agent22" parent="Enemies"]
 position = Vector2(-1088, 344)
 stats = SubResource("Resource_rwrb6")
+script = null
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-1956, -1)
