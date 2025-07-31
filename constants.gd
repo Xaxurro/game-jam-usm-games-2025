@@ -9,5 +9,6 @@ const SCENES_PATHS: Dictionary = {
 	},
 	'weapon': {
 		Weapon.TYPE.M60: 'uid://beidq25oof1g7',
+		Weapon.TYPE.SNIPER: 'uid://ctfnr4t37q60a',
 	}
 }

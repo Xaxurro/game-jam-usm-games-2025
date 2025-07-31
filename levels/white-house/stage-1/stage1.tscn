@@ -8,6 +8,48 @@
 [ext_resource type="PackedScene" uid="uid://cs8r0uat3ty8a" path="res://entities/enemies/fbi-agents/FBI spawner.tscn" id="15_h4y1x"]
 [ext_resource type="Resource" uid="uid://dk8sjjtepnkna" path="res://entities/enemies/resources/m60.tres" id="16_ax4j5"]
 
+[sub_resource type="Resource" id="Resource_0yt7l"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_y2va0"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_1xill"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_parq4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_yh0hs"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_6bor5"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_3kxvq"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_rbjwg"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_tligo"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_5lmbh"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_leth8"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_11ca4"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_vyd8c"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn"
+
+[sub_resource type="Resource" id="Resource_hyle6"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_de00k")
 
