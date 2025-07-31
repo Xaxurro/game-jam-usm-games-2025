@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://bwq04y7avn0n5"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://bwq04y7avn0n5"]
 
 [ext_resource type="Script" uid="uid://dei7ijpoewb6o" path="res://entities/enemies/resources/enemy_resource.gd" id="1_ikjda"]
-[ext_resource type="Resource" uid="uid://dum6kkdjvyvj8" path="res://weapons/resources/shotgun.tres" id="2_1bi0g"]
 
 [resource]
 script = ExtResource("1_ikjda")
@@ -16,4 +15,4 @@ money_on_death = 100
 euphoria_on_death = 5
 knockback_strength = 200.0
 knockback_decay = 20.0
-weapon_resource = ExtResource("2_1bi0g")
+weapon_type = 1
