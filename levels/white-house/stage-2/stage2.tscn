@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=36 format=3 uid="uid://cex8u8s2h0ktb"]
 
 [ext_resource type="PackedScene" uid="uid://b5ja6xe6awo7b" path="res://levels/assets/world_border.tscn" id="1_nhjyu"]
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_vy5qb"]
@@ -6,15 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
 [ext_resource type="PackedScene" uid="uid://cqkigyvuoh42s" path="res://levels/assets/props/shelf.tscn" id="3_vy5qb"]
 [ext_resource type="PackedScene" uid="uid://nvodxfpxt80h" path="res://levels/assets/props/table.tscn" id="4_8dqml"]
-[ext_resource type="PackedScene" uid="uid://cfy6w8utvrpvg" path="res://entities/enemies/fbi-agents/stage-1/fbi-agent.tscn" id="5_gvagb"]
 [ext_resource type="PackedScene" uid="uid://d1wdkrw81fgnk" path="res://levels/assets/props/concrete_walls/concrete_wall_side.tscn" id="5_u4arq"]
 [ext_resource type="PackedScene" uid="uid://vidagoefobiy" path="res://levels/assets/props/concrete_walls/concrete_wall_front.tscn" id="6_bkoqm"]
 [ext_resource type="PackedScene" uid="uid://tpugr832uqud" path="res://levels/assets/props/concrete_walls/concrete_wall_corner.tscn" id="7_mr6vr"]
 [ext_resource type="PackedScene" uid="uid://bm47syms8f0ny" path="res://levels/assets/props/pot.tscn" id="8_omc48"]
 [ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="8_ovjr4"]
-[ext_resource type="Resource" uid="uid://dmo72ost8l5f4" path="res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres" id="13_8dqml"]
-[ext_resource type="Resource" uid="uid://c6nr5oae5q7gr" path="res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres" id="13_crgiq"]
-[ext_resource type="Resource" uid="uid://uevakrr645at" path="res://entities/enemies/fbi-agents/stage-1/resources/tank.tres" id="14_utqdd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16vje"]
 texture = ExtResource("1_xosbv")
@@ -23,6 +19,72 @@ texture = ExtResource("1_xosbv")
 vertices = PackedVector2Array(-995.062, 202, -673.539, 42, -615, 41, -607, 41, -607, 229.102, -634.688, 245.094, 1962, 465, 1024.96, 465, 1218, 423, 1282, 423, 1182, 423, -994, -286, -761, -261.891, -788.688, -245.906, -1466, -266, -1034.95, -286, -682.688, 275.094, -682.156, 276, -844, 276, -575.992, 250.461, -580.297, 243, -573, 243, -729.992, -240.539, -733.719, -247, -727, -247, 1961.05, -488, 1962, -276.961, 1718, -377, 1718, -410, 1024.97, -488, 1682, -410, -1035.95, -487, -1152, -330, -1152, -390, -1974, -487, -1208, -390, 1182, 390, 1024.33, 293.352, 1025.02, -82, -1466, -116, -1035.02, -223, -1034.5, -10.4766, -1466, 120, -1466, -180, 1718, 423, 1718, 390, 1218, -377, 1282, -377, 1682, 390, -1035.05, 263, -1034.49, 374.289, -1154, 358, -1154, 298, -1466, 334, -1210, 298, -1210, 358, -1974, 465.969, -1466, 270, -1035.02, 202, -1466, 184, 784, 1.04688, 784, 41, 724, 40, 724, 1.10156, -634.188, 245.938, -658.688, 260.094, -658.188, 260.938, 525.961, -488, 983.039, -488, 983.961, -243.047, 784, -244.047, 525.633, -399.961, 525.094, -256.961, 525.031, -243.938, 724, -242.953, 784, -242, 782.461, -242, 724, -203, 784.508, -203.047, -675.438, 0, -994.961, 0, -994.07, -198, -788, -198, 38, -192, 38, 0.390625, -75, -0.0390625, -234.023, -488, -788.188, -245.047, -809.07, -233, -1004, -233, 264, 41.0234, 483, 40.5234, 483, 233, 982.977, 41, 982.023, 466, 43.9766, 466, 43.0234, 41, 203, 41, -275.977, -487, -275.023, 0, -615, 0, -788, -205.898, -753.992, -225.539, -136, 0, -234.977, 0, 524, -143, 524, -203, 984.117, -82, 1682, -377, 1618, -377, 1618, -410, 1582, -410, 1682, 423, 1618, 423, 1618, 390, 1582, 390, 1182, -377, 723, 0, 524, 0, 524, -82, 484, -82, 484, 0, 264, 0, 72, -192, 3, 253.547, 3, 465, -995, 465, -656, 311, -994, -487, -761, -347, -1004, -223, -1534, -266, -1534, -180, -1534, -116, -1534, 120, -573, 41, -136, 41, 484, -488, 484, -143, 517, 233, 517, 40.4375, 713.023, 40, 203, 1.03906, 72, 0.53125, -75, 42, 2.03906, 42, -994.07, 42, -1034.93, 464.023, -1534, 334, -1534, 270, -754.477, -226.398, -623.992, 280.461, -624.477, 279.602, -599.992, 265.461, -600.477, 264.602, 983.109, 0.0390625, 723, 1.07812, 983.156, -202.039, 984.172, -143, -1208, -330, -1466, -330, -844, 311, -995, 263, -727, -347, -656, 298.938, 1218, 390, 1023.97, -143, 1582, 423, 1518, 390, -1534, -330, -1534, 184, 1582, -377, 1518, -377, 1518, -410, 1482, -410, 1482, -377, 1418, -377, 1418, -410, 1382, -410, 1382, -377, 1318, -377, 1318, -410, 1282, -410, 1218, -410, 1182, -410, 1518, 423, 1482, 390, 1482, 423, 1418, 390, 1418, 423, 1382, 390, 1382, 423, 1318, 390, 1318, 423, 1282, 390)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 8, 7), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(16, 17, 18, 0), PackedInt32Array(19, 20, 21), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 25, 28, 30), PackedInt32Array(31, 15, 32, 33), PackedInt32Array(34, 31, 33, 35), PackedInt32Array(36, 10, 7, 37, 38), PackedInt32Array(39, 40, 41, 42), PackedInt32Array(40, 39, 43), PackedInt32Array(26, 6, 44, 45), PackedInt32Array(46, 47, 26, 45, 48), PackedInt32Array(49, 50, 51, 52), PackedInt32Array(53, 54, 55, 56), PackedInt32Array(54, 53, 57, 58), PackedInt32Array(59, 41, 58, 57), PackedInt32Array(41, 59, 42), PackedInt32Array(60, 61, 62, 63), PackedInt32Array(5, 64, 65, 0), PackedInt32Array(65, 66, 16, 0), PackedInt32Array(67, 68, 69, 70, 71), PackedInt32Array(72, 71, 70), PackedInt32Array(73, 72, 70, 74), PackedInt32Array(74, 70, 75, 76), PackedInt32Array(77, 74, 76, 78), PackedInt32Array(79, 80, 81, 82), PackedInt32Array(83, 84, 85, 86), PackedInt32Array(14, 13, 87, 88, 89), PackedInt32Array(90, 91, 92), PackedInt32Array(61, 93, 94), PackedInt32Array(92, 95, 96, 97, 90), PackedInt32Array(98, 99, 100, 82, 101, 102), PackedInt32Array(103, 104, 86, 85), PackedInt32Array(105, 106, 77, 107), PackedInt32Array(30, 108, 109, 110), PackedInt32Array(29, 30, 110), PackedInt32Array(29, 110, 111), PackedInt32Array(48, 112, 113, 114), PackedInt32Array(46, 48, 114), PackedInt32Array(46, 114, 115, 116), PackedInt32Array(117, 118, 119, 107), PackedInt32Array(120, 121, 122, 123), PackedInt32Array(124, 125, 126, 127), PackedInt32Array(11, 128, 98, 129), PackedInt32Array(89, 130, 40, 14), PackedInt32Array(131, 14, 40, 43, 132), PackedInt32Array(133, 39, 42, 134), PackedInt32Array(21, 135, 136), PackedInt32Array(86, 137, 138, 123), PackedInt32Array(94, 139, 140, 141, 62, 61), PackedInt32Array(142, 143, 123, 122), PackedInt32Array(144, 145, 124), PackedInt32Array(0, 146, 1), PackedInt32Array(51, 50, 147, 56, 55), PackedInt32Array(148, 53, 56), PackedInt32Array(148, 56, 34, 149), PackedInt32Array(102, 150, 22, 98), PackedInt32Array(151, 152, 153, 124), PackedInt32Array(124, 153, 154, 19, 136, 144), PackedInt32Array(100, 2, 1, 79), PackedInt32Array(117, 107, 155, 60, 63, 156), PackedInt32Array(78, 157, 158, 107, 77), PackedInt32Array(34, 35, 159, 160), PackedInt32Array(58, 0, 18, 161, 162), PackedInt32Array(100, 79, 82), PackedInt32Array(98, 22, 24), PackedInt32Array(98, 24, 163), PackedInt32Array(127, 164, 151, 124), PackedInt32Array(139, 94, 95, 92), PackedInt32Array(122, 90, 97, 142), PackedInt32Array(165, 36, 38, 166, 29, 116), PackedInt32Array(19, 21, 136), PackedInt32Array(116, 115, 167, 168), PackedInt32Array(108, 27, 26), PackedInt32Array(159, 32, 15, 14), PackedInt32Array(109, 108, 26), PackedInt32Array(98, 163, 129), PackedInt32Array(11, 129, 12), PackedInt32Array(159, 14, 160), PackedInt32Array(34, 160, 169), PackedInt32Array(34, 169, 131), PackedInt32Array(34, 131, 132), PackedInt32Array(34, 132, 133), PackedInt32Array(34, 133, 134), PackedInt32Array(34, 134, 170), PackedInt32Array(149, 34, 170), PackedInt32Array(57, 149, 170, 59), PackedInt32Array(52, 54, 58, 49), PackedInt32Array(162, 49, 58), PackedInt32Array(126, 162, 161), PackedInt32Array(126, 161, 127), PackedInt32Array(85, 144, 136, 103), PackedInt32Array(123, 83, 86), PackedInt32Array(120, 123, 138), PackedInt32Array(120, 138, 105, 119), PackedInt32Array(107, 119, 105), PackedInt32Array(38, 107, 158, 166), PackedInt32Array(171, 109, 26), PackedInt32Array(171, 26, 172), PackedInt32Array(111, 171, 172, 173), PackedInt32Array(29, 111, 173), PackedInt32Array(29, 173, 174), PackedInt32Array(175, 172, 26), PackedInt32Array(175, 26, 176), PackedInt32Array(174, 175, 176, 177), PackedInt32Array(29, 174, 177), PackedInt32Array(29, 177, 178), PackedInt32Array(179, 176, 26), PackedInt32Array(179, 26, 180), PackedInt32Array(178, 179, 180, 181), PackedInt32Array(29, 178, 181), PackedInt32Array(29, 181, 182), PackedInt32Array(112, 44, 6), PackedInt32Array(47, 180, 26), PackedInt32Array(182, 47, 46, 183), PackedInt32Array(29, 182, 183), PackedInt32Array(29, 183, 184), PackedInt32Array(29, 184, 116), PackedInt32Array(113, 112, 6), PackedInt32Array(167, 113, 6), PackedInt32Array(167, 6, 185), PackedInt32Array(167, 185, 168), PackedInt32Array(116, 168, 186), PackedInt32Array(116, 186, 187, 188), PackedInt32Array(187, 185, 6), PackedInt32Array(187, 6, 189), PackedInt32Array(187, 189, 188), PackedInt32Array(116, 188, 190), PackedInt32Array(116, 190, 191, 192), PackedInt32Array(191, 189, 6), PackedInt32Array(191, 6, 193), PackedInt32Array(191, 193, 192), PackedInt32Array(116, 192, 194), PackedInt32Array(165, 116, 194, 9), PackedInt32Array(8, 165, 9), PackedInt32Array(6, 9, 193)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1984, -497, -1025, -498, -1025, -296, -1004, -296, -1004, -498, -266, -498, -265, 10, -605, 10, -605, 31, -146, 31, -146, 10, -245, 10, -246, -498, 494, -499, 494, -154, 514, -154, 514, -213, 714, -213, 713, -233, 515, -233, 516, -499, 993, -499, 994, -233, 793, -232, 794, -213, 993, -212, 994, -153, 1014, -153, 1015, -498, 1972, -498, 1972, 475, 1014, 475, 1015, -72, 994, -72, 993, 10, 794, 11, 794, 31, 993, 31, 992, 476, 33, 476, 33, 31, 193, 31, 193, 11, -65, 10, -65, 32, 12, 32, 14, 475, -1005, 475, -1005, 273, -1025, 273, -1024, 474, -1984, 476), PackedVector2Array(-1005, 192, -1004, 31, -734.068, 31, -685, 31, -685, 11, -862.816, 10.4444, -1005, 10, -1004, -213, -1025, -213, -1024, 192), PackedVector2Array(274, 30, 714, 30, 714, 11, 514, 10, 514, -71, 495, -71, 495, 10, 275, 11)])
+
+[sub_resource type="Resource" id="Resource_8xp15"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_b1aep"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_2b4po"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_vy11p"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_updjx"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_vy5qb"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_8dqml"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_u4arq"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
+
+[sub_resource type="Resource" id="Resource_bkoqm"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_mr6vr"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_omc48"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_vj2a3"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_crgiq"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_utqdd"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
+
+[sub_resource type="Resource" id="Resource_bfps3"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_tm8kn"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_ul5uc"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_snnlw"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_pk4nu"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_xya84"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_57wf7"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
+
+[sub_resource type="Resource" id="Resource_vfcxc"]
+metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
 
 [node name="Stage2" type="Node2D"]
 script = ExtResource("1_vy5qb")
@@ -303,93 +365,313 @@ position = Vector2(2034, -12)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="FBI Agent" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1326, 230)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_8xp15")
+script = null
 
-[node name="FBI Agent16" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent16" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-460, -388)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_b1aep")
+script = null
 
-[node name="FBI Agent17" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent17" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1061, -5)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_2b4po")
+script = null
 
-[node name="FBI Agent18" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent18" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-593, 417)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_vy11p")
+script = null
 
-[node name="FBI Agent19" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent19" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-77, -463)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_updjx")
+script = null
 
-[node name="FBI Agent20" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent20" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(235, 387)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_vy5qb")
+script = null
 
-[node name="FBI Agent21" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent21" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(774, -104)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_8dqml")
+script = null
 
-[node name="FBI Agent22" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent22" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(774, -104)
-stats = ExtResource("13_8dqml")
+stats = SubResource("Resource_u4arq")
+script = null
 
-[node name="FBI Agent10" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent10" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1302, 0)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_bkoqm")
+script = null
 
-[node name="FBI Agent11" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent11" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-331, -80)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_mr6vr")
+script = null
 
-[node name="FBI Agent12" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent12" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-51, 427)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_omc48")
+script = null
 
-[node name="FBI Agent13" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent13" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(408, -448)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_vj2a3")
+script = null
 
-[node name="FBI Agent14" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent14" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(932, 418)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_crgiq")
+script = null
 
-[node name="FBI Agent15" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent15" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(1559, -7)
-stats = ExtResource("14_utqdd")
+stats = SubResource("Resource_utqdd")
+script = null
 
-[node name="FBI Agent2" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent2" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1342, -227)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_bfps3")
+script = null
 
-[node name="FBI Agent3" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent3" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1180, -439)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_tm8kn")
+script = null
 
-[node name="FBI Agent5" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent5" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-902, -86)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_ul5uc")
+script = null
 
-[node name="FBI Agent6" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent6" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-442, 74)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_snnlw")
+script = null
 
-[node name="FBI Agent7" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent7" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(109, -31)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_pk4nu")
+script = null
 
-[node name="FBI Agent8" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent8" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(564, 70)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_xya84")
+script = null
 
-[node name="FBI Agent9" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent9" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(759, -384)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_57wf7")
+script = null
 
-[node name="FBI Agent4" parent="Enemies" instance=ExtResource("5_gvagb")]
+[node name="FBI Agent4" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-1168, 442)
-stats = ExtResource("13_crgiq")
+stats = SubResource("Resource_vfcxc")
+script = null
 
 [node name="MiniBoss" parent="." instance=ExtResource("8_ovjr4")]
 position = Vector2(1853, -4)
