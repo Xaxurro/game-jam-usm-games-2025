@@ -50,7 +50,6 @@ radius = 0.01
 neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
-debug_enabled = true
 
 [node name="Weapon" parent="." groups=["enemies"] instance=ExtResource("4_8vbhx")]
 position = Vector2(0, 5)
