@@ -6,7 +6,8 @@ enum TYPE {
 	SHOTGUN,
 	MINIGUN,
 	BLASTER,
-	SNIPER
+	SNIPER,
+	PRESIDENT,
 }
 
 @onready var sprite: Sprite2D = $Sprite

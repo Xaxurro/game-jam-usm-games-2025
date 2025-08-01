@@ -43,4 +43,4 @@ func _on_body_entered(body: Node2D) -> void:
 		var hit_direction = (body.global_position - global_position).normalized()
 		body.call("recieve_damage", damage, hit_direction)
 		queue_free()
-	
+		return
