@@ -38,7 +38,7 @@ func instantiate_bullet(target_direction: Vector2) -> Bullet:
 	if get_parent() is Player and Player.euphoria.is_active:
 		bullet_node.damage *= Player.euphoria.damage_multiplier
 
-	if not get_parent() is Player:
+	if is_enemy:
 		bullet_node.target = bullet_node.TARGETS.PLAYER
 
 	# Spawn the bullet at the front of the barrel of the shotgun

@@ -14,12 +14,15 @@ func _update_euphoria_bar() -> void:
 
 func _update_consumable_selected() -> void:
 	var consumable: ConsumableResource = Player.inventory.selected_consumable
+	print("consumable updated!")
 	if consumable == null:
 		consumable_selected.texture = null
 		consumable_selected_label.text = ""
 		return
 	consumable_selected.texture = consumable.texture
-	consumable_selected_label.text = "%s x %d" % [consumable.name, consumable.count]
+	print(consumable.name)
+	print(Player.inventory.consumables[consumable])
+	consumable_selected_label.text = "%s x %d" % [consumable.name, Player.inventory.consumables[consumable]]
 
 func _update_money() -> void:
 	money.text = "Money: $%d" % Player.inventory.money

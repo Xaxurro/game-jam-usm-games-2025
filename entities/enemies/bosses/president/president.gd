@@ -168,7 +168,7 @@ func _aim_at_player() -> void:
 	if weapon_sprite:
 		weapon_sprite.scale.y = -1 if sprite.flip_h else 1
 
-func recieve_damage(damage_recieved: int) -> void:
-	health_current -= damage_recieved
+func recieve_damage(damage_received: int, hit_direction: Vector2) -> void:
+	health_current -= damage_received
 	if health_current <= 0:
 		queue_free()

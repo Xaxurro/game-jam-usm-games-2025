@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqcwe"]
 radius = 4.0
-height = 20.0
+height = 18.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
@@ -23,7 +23,6 @@ radius = 0.01
 neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
-debug_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wqcwe")

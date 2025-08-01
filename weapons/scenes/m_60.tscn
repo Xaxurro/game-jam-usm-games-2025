@@ -12,7 +12,7 @@ should_do_recoil = false
 texture = ExtResource("2_ejyjr")
 
 [node name="Muzzle" parent="Sprite" index="0"]
-position = Vector2(13, -1)
+position = Vector2(16, -1)
 
 [node name="SoundPlayer" parent="." index="3"]
 stream = ExtResource("3_yu1v2")
