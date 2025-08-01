@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg5ewdjeu7kmq"]
+
+[ext_resource type="Script" uid="uid://bu08bsfu54pjf" path="res://entities/enemies/bullet_spawner.gd" id="1_g6umj"]
+
+[node name="BulletSpawner" type="Node2D" groups=["enemies"]]
+script = ExtResource("1_g6umj")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.001
+
+[node name="Rotater" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

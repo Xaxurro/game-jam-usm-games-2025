@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctsbmu76vjvr3"
+path="res://.godot/imported/final level type shi take4(1).mp3-7effd186407e7c3f2367cbb63d9e738e.mp3str"
+
+[deps]
+
+source_file="res://levels/white-house/stage-4/assets/final level type shi take4(1).mp3"
+dest_files=["res://.godot/imported/final level type shi take4(1).mp3-7effd186407e7c3f2367cbb63d9e738e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

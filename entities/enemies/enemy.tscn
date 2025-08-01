@@ -17,6 +17,7 @@ script = ExtResource("1_wqcwe")
 [node name="WeaponHolder" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 0.01
