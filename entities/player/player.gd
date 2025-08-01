@@ -149,7 +149,7 @@ func change_health(amount: float) -> void:
 	if amount < 0 and health_current == 0: return
 	health_current = clampf(health_current + amount, 0, health_max)
 	health_changed.emit()
-	if health_current == 0:
+	if health_current <= 0:
 		kill()
 
 func _physics_process(delta: float) -> void:
@@ -162,4 +162,11 @@ func _physics_process(delta: float) -> void:
 
 func kill() -> void:
 	Global.stage_index = 0
-	get_tree().change_scene_to_file("res://levels/menu/main_menu.tscn")
+	Player.disable()
+	_restart_stats()
+	get_tree().change_scene_to_file("uid://q1fideuiytwd")
+
+func _restart_stats() -> void:
+	health_current = 200
+	health_changed.emit()
+	euphoria.meter_current = 0
