@@ -69,7 +69,7 @@ func _process(_delta: float) -> void:
 			_attack_shoot()
 	return
 
-func recieve_damage(damage: int) -> void:
+func recieve_damage(damage: int, _direction: Vector2) -> void:
 	health -= damage
 	if health <= 0:
 		queue_free()
@@ -81,4 +81,4 @@ func _on_cooldown_timeout() -> void:
 
 func _on_rush_collision_body_entered(body:Node2D) -> void:
 	if body is Player:
-		player.recieve_damage(damage_contact)
+		Player.change_health(-damage_contact)

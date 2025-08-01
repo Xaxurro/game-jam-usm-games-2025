@@ -28,7 +28,7 @@ position = Vector2(2034, -12)
 position = Vector2(1853, -4)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-1938, 12)
+position = Vector2(-2057, 1)
 
 [node name="Spawner" parent="." instance=ExtResource("5_81vw2")]
 position = Vector2(-609, -131)

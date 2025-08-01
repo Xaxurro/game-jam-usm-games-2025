@@ -1,8 +1,8 @@
 class_name Inventory
 extends Resource
 
-# Key: StringName of ConsumableResource
-# Value: ConsumableResource
+# Key: ConsumableResource
+# Value: Count
 var consumables: Dictionary = {}
 
 var selected_consumable: ConsumableResource = null
@@ -22,11 +22,11 @@ signal consumables_changed
 # CONSUMABLES #
 ###############
 
-func add_consumable(new_consumable: ConsumableResource) -> void:
-	if consumables.has(new_consumable.name):
-		consumables[new_consumable.name].count += new_consumable.count
+func add_consumable(new_consumable: ConsumableResource, count : int) -> void:
+	if consumables.has(new_consumable):
+		consumables[new_consumable] +=  count
 	else:
-		consumables[new_consumable.name] = new_consumable
+		consumables[new_consumable] = count
 	
 	selected_consumable = new_consumable
 	consumables_changed.emit()
@@ -38,19 +38,17 @@ func cycle_consumables() -> void:
 
 	var consumables_keys: Array = consumables.keys()
 	if selected_consumable == null:
-		selected_consumable = consumables[consumables_keys[0]]
+		selected_consumable = consumables_keys[0]
 	
-	var current_index: int = consumables_keys.find(selected_consumable.name)
+	var current_index: int = consumables_keys.find(selected_consumable)
 	var new_index: int = (current_index + 1) % consumables_keys.size()
-	selected_consumable = consumables[consumables_keys[new_index]]
+	selected_consumable = consumables_keys[new_index]
 	consumables_changed.emit()
 
 func remove_consumable() -> void:
-	var consumable_to_remove: ConsumableResource = consumables[selected_consumable.name]
-	consumable_to_remove.count -= 1
-	print("removing consumable: %s, count after removal: %s" % [consumable_to_remove.name, consumable_to_remove.count])
-	if consumable_to_remove.count == 0:
-		consumables.erase(consumable_to_remove.name)
+	consumables[selected_consumable] -= 1
+	if consumables[selected_consumable] == 0:
+		consumables.erase(selected_consumable)
 		selected_consumable = null
 		cycle_consumables()
 	else: consumables_changed.emit()
@@ -59,6 +57,7 @@ func use_consumable() -> void:
 	if selected_consumable == null: return
 	selected_consumable.effect()
 	remove_consumable()
+	consumables_changed.emit()
 
 ###########
 # WEAPONS #

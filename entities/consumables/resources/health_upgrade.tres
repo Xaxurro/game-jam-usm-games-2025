@@ -5,9 +5,7 @@
 
 [resource]
 script = ExtResource("1_8ss1a")
-added_health = 10
-name = &"Unnamed Consumable"
-count = 1
-price = 5000
+added_health = 50
+name = &"Burger"
 texture = ExtResource("2_f5oha")
 metadata/_custom_type_script = "uid://31amrnli60ev"
