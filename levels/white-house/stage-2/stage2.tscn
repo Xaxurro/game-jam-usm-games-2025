@@ -23,13 +23,11 @@ tile_set = ExtResource("4_nhjyu")
 [node name="NextLevel" parent="." instance=ExtResource("3_v8uua")]
 position = Vector2(2034, -12)
 
-[node name="Enemies" type="Node2D" parent="."]
-
 [node name="MiniBoss" parent="." instance=ExtResource("8_ovjr4")]
 position = Vector2(1853, -4)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-1938, 12)
+position = Vector2(-2050, 0)
 
 [node name="Spawner" parent="." instance=ExtResource("5_81vw2")]
 position = Vector2(-609, -131)

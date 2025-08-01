@@ -4,6 +4,7 @@ extends Node2D
 @export var enemy_data: EnemyResource
 @export var spawn_interval: float = 0
 @export var max_enemies: int = 5
+@export var dispersion: int = 5
 @export var auto_start: bool = true
 
 @onready var spawn_timer: Timer = $SpawnTimer
@@ -28,8 +29,8 @@ func spawn_enemy():
 	enemy_instance.resource = enemy_data
 	
 	enemy_instance.global_position = global_position
-	enemy_instance.global_position.x += randi_range(-1, 1)
-	enemy_instance.global_position.y += randi_range(-1, 1)
+	enemy_instance.global_position.x += randi_range(-dispersion, dispersion)
+	enemy_instance.global_position.y += randi_range(-dispersion, dispersion)
 	enemy_instance.visible = true  
 	
 	get_tree().current_scene.add_child(enemy_instance)
