@@ -36,7 +36,7 @@ var last_known_player_position: Vector2 = Vector2.ZERO
 var has_seen_player: bool = false
 
 var phase: int = 1
-var rotation_change_timer: float = 10.0
+var rotation_change_timer: float = 7.0
 
 func _ready() -> void:
 	max_health = health_current
@@ -51,6 +51,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	update_phase()
+	if not player:
+		queue_free()	
 	var sees_player = can_detect_player()
 	shoot_timer -= delta
 
@@ -79,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	if phase == 2:
 		rotation_change_timer -= delta
 		if rotation_change_timer <= 0:
-			rotation_change_timer = 10.0
+			rotation_change_timer = 7.0
 			bullet_spawner.reverse_rotation()
 	elif phase == 3:
 		rotation_change_timer -= delta
@@ -96,17 +98,25 @@ func setup_navigation() -> void:
 	nav_agent.target_desired_distance = stop_distance
 
 func can_detect_player() -> bool:
+	if not is_instance_valid(player) or not player.is_in_group("player"):
+		player = get_player()
+		if not player:
+			return false
+
 	var distance = global_position.distance_to(player.global_position)
 	if distance > detection_range:
 		return false
+
 	var direction = (player.global_position - global_position).normalized()
 	raycast.target_position = direction * detection_range
 	raycast.force_raycast_update()
+
 	var collider = raycast.get_collider()
 	if collider and collider.is_in_group("player"):
 		last_known_player_position = player.global_position
 		has_seen_player = true
 		return true
+
 	return false
 
 func update_movement_and_navigation(distance: float, delta: float, target_position: Vector2) -> void:
@@ -190,7 +200,7 @@ func update_phase() -> void:
 	elif health_percent > 0.0:
 		phase = 3
 		bullet_spawner.increase_spawn_points(6)
-		bullet_spawner.rotate_speed = 40
+		bullet_spawner.rotate_speed = 30
 
 func handle_spawner_behavior(delta: float) -> void:
 	var shoot_timer_node = bullet_spawner.get_node("ShootTimer")

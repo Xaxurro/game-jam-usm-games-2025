@@ -107,6 +107,9 @@ func setup_navigation() -> void:
 
 ## Detección y raycasting
 func can_detect_player() -> bool:
+	if not Player:
+		print('a')
+		
 	var distance = global_position.distance_to(Player.global_position)
 	if distance > detection_range:
 		return false
