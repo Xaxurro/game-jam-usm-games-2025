@@ -1,80 +1,13 @@
-
-[gd_scene load_steps=8 format=4 uid="uid://cex8u8s2h0ktb"]
+[gd_scene load_steps=9 format=4 uid="uid://cex8u8s2h0ktb"]
 
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_vy5qb"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="3_v8uua"]
-
 [ext_resource type="TileSet" uid="uid://dob1begjxuiyn" path="res://levels/assets/tile_set.tres" id="4_nhjyu"]
 [ext_resource type="PackedScene" uid="uid://cs8r0uat3ty8a" path="res://entities/enemies/fbi-agents/FBI spawner.tscn" id="5_81vw2"]
 [ext_resource type="Resource" uid="uid://dk8sjjtepnkna" path="res://entities/enemies/resources/m60.tres" id="6_ovjr4"]
 [ext_resource type="Resource" uid="uid://fd36f7jru83g" path="res://entities/enemies/resources/Sniper.tres" id="7_gvagb"]
+[ext_resource type="Resource" uid="uid://bwq04y7avn0n5" path="res://entities/enemies/resources/shotgun.tres" id="8_gvagb"]
 [ext_resource type="PackedScene" uid="uid://brnnngfjq2rxb" path="res://entities/enemies/mini-bosses/robot/robot.tscn" id="8_ovjr4"]
-
-[sub_resource type="Resource" id="Resource_8xp15"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_b1aep"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_2b4po"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_vy11p"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_updjx"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_vy5qb"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_8dqml"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_u4arq"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/shotgun.tres"
-
-[sub_resource type="Resource" id="Resource_bkoqm"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_mr6vr"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_omc48"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_vj2a3"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_crgiq"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_utqdd"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/tank.tres"
-
-[sub_resource type="Resource" id="Resource_bfps3"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_tm8kn"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_ul5uc"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_snnlw"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_pk4nu"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_xya84"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_57wf7"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
-
-[sub_resource type="Resource" id="Resource_vfcxc"]
-metadata/__load_path__ = "res://entities/enemies/fbi-agents/stage-1/resources/long_shooter.tres"
 
 [node name="Stage2" type="Node2D"]
 script = ExtResource("1_vy5qb")
@@ -101,11 +34,139 @@ position = Vector2(-1938, 12)
 [node name="Spawner" parent="." instance=ExtResource("5_81vw2")]
 position = Vector2(-609, -131)
 enemy_data = ExtResource("6_ovjr4")
+max_enemies = 3
 
 [node name="Spawner2" parent="." instance=ExtResource("5_81vw2")]
-position = Vector2(262, 428)
+position = Vector2(-243, 750)
 enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
 
 [node name="Spawner3" parent="." instance=ExtResource("5_81vw2")]
 position = Vector2(-491, 169)
 enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner4" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-1116, -67)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner5" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-1288, 107)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner6" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-810, 651)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 2
+
+[node name="Spawner7" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(117, 602)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 2
+
+[node name="Spawner8" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(120, 699)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 2
+
+[node name="Spawner9" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(1055, -68)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner10" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(1025, -25)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner11" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(1061, 27)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner12" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(150, -115)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 3
+
+[node name="Spawner13" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(605, 82)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 3
+
+[node name="Spawner14" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(153, 342)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 4
+
+[node name="Spawner15" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-123, 419)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 3
+
+[node name="Spawner16" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-134, -473)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner17" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-9, -302)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner18" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(553, 668)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner19" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(1716, -327)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner20" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(1680, 293)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner21" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(256, -428)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner22" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(469, -338)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner23" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(530, -897)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner24" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(532, -731)
+enemy_data = ExtResource("7_gvagb")
+max_enemies = 1
+
+[node name="Spawner25" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-248, -787)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
+
+[node name="Spawner26" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-568, -632)
+enemy_data = ExtResource("8_gvagb")
+max_enemies = 3
+
+[node name="Spawner27" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(-339, -905)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 3
+
+[node name="Spawner28" parent="." instance=ExtResource("5_81vw2")]
+position = Vector2(534, 328)
+enemy_data = ExtResource("6_ovjr4")
+max_enemies = 2
