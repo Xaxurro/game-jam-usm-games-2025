@@ -10,7 +10,7 @@ extends Node2D
 @onready var enemy_template: CharacterBody2D = $Enemy
 
 var enemies_spawned: int = 1
-var enemy
+var enemy: Enemy
 
 func _ready():
 	enemy = enemy_template.duplicate()
@@ -24,10 +24,12 @@ func spawn_enemy():
 	if enemies_spawned >= max_enemies:
 		spawn_timer.stop()
 	
-	var enemy_instance = enemy.duplicate()
+	var enemy_instance: Enemy = enemy.duplicate()
 	enemy_instance.resource = enemy_data
 	
-	enemy_instance.position = global_position
+	enemy_instance.global_position = global_position
+	enemy_instance.global_position.x += randi_range(-1, 1)
+	enemy_instance.global_position.y += randi_range(-1, 1)
 	enemy_instance.visible = true  
 	
 	get_tree().current_scene.add_child(enemy_instance)

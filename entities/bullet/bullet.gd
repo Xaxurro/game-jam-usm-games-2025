@@ -32,7 +32,7 @@ func _ready() -> void:
 	timer.start()
 
 func _on_body_entered(body: Node2D) -> void:
-	if target == TARGETS.PLAYER and body is Player and Player.can_recieve_damage:
+	if target == TARGETS.PLAYER and body == Player and Player.can_recieve_damage:
 		Player.change_health(-damage)
 		queue_free()
 		return
