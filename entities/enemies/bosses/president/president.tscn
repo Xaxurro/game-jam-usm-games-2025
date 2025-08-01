@@ -29,8 +29,13 @@ height = 28.0
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_8vbhx")
+health_current = 800
+speed = 125.0
+stop_distance = 200.0
+shoot_distance = 1200.0
+detection_range = 1200.0
 
-[node name="WindupSound" type="AudioStreamPlayer2D" parent="."]
+[node name="WindupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tc74m")
 volume_db = 20.0
 
@@ -56,3 +61,4 @@ position = Vector2(0, 5)
 max_recoil_offset = 5.0
 
 [node name="BulletSpawner" parent="." instance=ExtResource("5_ka4dl")]
+shooter_timer_wait_time = 0.1

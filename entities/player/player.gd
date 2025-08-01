@@ -162,11 +162,11 @@ func _physics_process(delta: float) -> void:
 
 func kill() -> void:
 	Global.stage_index = 0
-	Player.disable()
-	_restart_stats()
+	disable()
+	restart_stats()
 	get_tree().change_scene_to_file("uid://q1fideuiytwd")
 
-func _restart_stats() -> void:
+func restart_stats() -> void:
 	health_current = 200
 	health_changed.emit()
 	euphoria.meter_current = 0

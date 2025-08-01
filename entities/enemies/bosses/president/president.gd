@@ -17,7 +17,7 @@ extends CharacterBody2D
 @onready var weapon_sprite: Sprite2D = $Weapon/Sprite
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var windup_sound: AudioStreamPlayer2D = $WindupSound
+@onready var windup_sound: AudioStreamPlayer = $WindupSound
 @onready var bullet_spawner: Node2D = $BulletSpawner
 
 var player: Node2D = null
@@ -184,11 +184,13 @@ func _aim_at_player() -> void:
 	if weapon_sprite:
 		weapon_sprite.scale.y = -1 if sprite.flip_h else 1
 
-func recieve_damage(damage_received: int, hit_direction: Vector2) -> void:
+func recieve_damage(damage_received: int, _hit_direction: Vector2) -> void:
 	health_current -= damage_received
 	update_phase()
 	if health_current <= 0:
-		queue_free()
+		Player.disable()
+		Player.restart_stats()
+		get_tree().change_scene_to_file("uid://q1fideuiytwd")
 
 func update_phase() -> void:
 	var health_percent = float(health_current) / float(max_health)

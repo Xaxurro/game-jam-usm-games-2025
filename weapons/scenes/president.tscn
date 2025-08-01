@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5tmj11egpb7n"]
 
 [ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="1_buoos"]
-[ext_resource type="Texture2D" uid="uid://cghj54wr8o361" path="res://entities/enemies/bosses/president/assets/presidentWeapon.png" id="2_buoos"]
+[ext_resource type="Texture2D" uid="uid://cghj54wr8o361" path="res://weapons/assets/sprite-sheets/presidentWeapon.png" id="2_buoos"]
 [ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="3_gdb57"]
 
 [node name="Weapon" instance=ExtResource("1_buoos")]
