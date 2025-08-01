@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_iyxim")
-health_current = 100.0
+health_current = 75.0
 detection_range = 300.0
 stop_distance = 300.0
 speed = 30.0
@@ -15,5 +15,5 @@ money_on_death = 100
 euphoria_on_death = 5
 knockback_strength = 0.0
 knockback_decay = 20.0
-weapon_type = 0
+weapon_type = 2
 metadata/_custom_type_script = "uid://dei7ijpoewb6o"

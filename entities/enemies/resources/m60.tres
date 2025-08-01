@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_kqoef")
-health_current = 80.0
+health_current = 50.0
 detection_range = 500.0
 stop_distance = 200.0
 speed = 80.0

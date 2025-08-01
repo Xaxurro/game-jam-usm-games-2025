@@ -4,15 +4,15 @@
 
 [resource]
 script = ExtResource("1_ikjda")
-health_current = 50.0
+health_current = 25.0
 detection_range = 350.0
 stop_distance = 80.0
 speed = 120.0
 acceleration = 400.0
-shoot_distance = 200.0
+shoot_distance = 120.0
 shoot_cooldown = 1.5
 money_on_death = 100
 euphoria_on_death = 5
 knockback_strength = 200.0
 knockback_decay = 20.0
-weapon_type = 0
+weapon_type = 1

@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="3_4mg2b"]
 
 [node name="Weapon" instance=ExtResource("1_o28b2")]
+firerate_in_seconds = 0.3
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_3260k")
