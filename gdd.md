@@ -94,6 +94,16 @@ Las armas tienen rango infinito y municion infinita, las balas que disparan desa
 Además de las armas, el jugador dispondrá de habilidades especiales que se activan con un *cooldown*.
 Solo se puede llevar una habilidad activa por nivel.
 
+### Euforia
+Esta habilidad se carga al matar enemigos, llenara la "Barra de Euforia" la cual al estar llena le permitira al jugador usar esta habilidad activa.
+Al activarse, el jugador recibe varios buffs:
+-   **Aumento de daño**
+-   **Regeneracion de vida**
+-   **Aumento de velocidad de movimiento**
+-   **Las balas cambian por fuegos artificiales(?)**
+
+Aparte, habra un cambio de musica, y se aplicara un filtro rojo
+
 ### Fuegos Artificiales
 -   **Descripción:** Dispara un único proyectil con un gran radio de explosión y un daño considerable.
 
@@ -239,6 +249,9 @@ El jugador puede cambiar el consumible activo en cualquier momento. Si no hay co
 ## 5.5. Consumibles
 -   **Usar Consumible:** Q
 -   **Cambiar Consumible:** R
+
+## 5.6. Habilidades
+-   **Usar habilidad activa:** Tabulador
 
 ---
 

@@ -17,8 +17,27 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-menu_music="*res://levels/assets/music/menu-music.tscn"
 Global="*res://levels/assets/global.gd"
+Constants="*res://constants.gd"
+Hud="*res://ui/hud/hud.tscn"
+Player="*res://entities/player/player.tscn"
+
+[dotnet]
+
+project/assembly_name="American Freedom"
+
+[file_customization]
+
+folder_colors={
+"res://entities/bullet/": "yellow",
+"res://entities/consumables/": "green",
+"res://entities/enemies/": "orange",
+"res://entities/explosion/": "yellow",
+"res://entities/player/": "blue",
+"res://levels/": "purple",
+"res://ui/": "teal",
+"res://weapons/": "red"
+}
 
 [global_group]
 
@@ -81,6 +100,11 @@ consumable_cycle={
 consumable_use={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+euphoria_toggle={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

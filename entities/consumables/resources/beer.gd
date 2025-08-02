@@ -1,7 +1,7 @@
 class_name Beer
-extends Consumable
+extends ConsumableResource
 
 @export var health_amount: int = 25
 
-func effect(player: Player) -> void:
-	player.heal(health_amount)
+func effect() -> void:
+	Player.change_health(health_amount)

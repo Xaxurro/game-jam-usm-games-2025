@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpruki11oem18"]
+
+[ext_resource type="Script" uid="uid://cvj0e5stg6whj" path="res://weapons/weapon.gd" id="2_l8a67"]
+
+[sub_resource type="Animation" id="Animation_2pbsc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qi637"]
+resource_name = "shoot"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xp7pl"]
+_data = {
+&"RESET": SubResource("Animation_2pbsc"),
+&"shoot": SubResource("Animation_qi637")
+}
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("2_l8a67")
+metadata/_custom_type_script = "uid://cvj0e5stg6whj"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+hframes = 5
+
+[node name="Muzzle" type="Marker2D" parent="Sprite"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_xp7pl")
+}
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]

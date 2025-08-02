@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjyq60gnfxljm"]
+
+[ext_resource type="PackedScene" uid="uid://bpruki11oem18" path="res://weapons/scenes/_base_weapon.tscn" id="1_o28b2"]
+[ext_resource type="Texture2D" uid="uid://bifi1m3g75jy1" path="res://weapons/assets/sprite-sheets/minigun.png" id="2_3260k"]
+[ext_resource type="AudioStream" uid="uid://di0hnlcet4wnl" path="res://weapons/assets/audio/shotgun-shoot.ogg" id="3_4mg2b"]
+
+[node name="Weapon" instance=ExtResource("1_o28b2")]
+firerate_in_seconds = 0.3
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_3260k")
+
+[node name="Muzzle" parent="Sprite" index="0"]
+position = Vector2(16, -2)
+
+[node name="SoundPlayer" parent="." index="3"]
+stream = ExtResource("3_4mg2b")

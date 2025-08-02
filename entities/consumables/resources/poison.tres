@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Poison" load_steps=3 format=3 uid="uid://hihf5djvco4p"]
+
+[ext_resource type="Script" uid="uid://cgsmoxpux4i8u" path="res://entities/consumables/resources/poison.gd" id="1_4p0vc"]
+[ext_resource type="Texture2D" uid="uid://0n6vcn2y7etu" path="res://entities/consumables/assets/beer.png" id="2_s6npo"]
+
+[resource]
+script = ExtResource("1_4p0vc")
+health_amount = -25
+name = &"Poison"
+count = 30
+price = 0
+texture = ExtResource("2_s6npo")
+metadata/_custom_type_script = "uid://cgsmoxpux4i8u"

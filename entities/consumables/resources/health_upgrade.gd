@@ -1,9 +1,9 @@
 class_name HealthUpgrade
-extends Consumable
+extends ConsumableResource
 
 @export var added_health: int = 10
 
-func effect(player: Player) -> void:
-	if player.health_max < 150:
-		player.health_max += added_health
+func effect() -> void:
+	if Player.health_max < 150:
+		Player.health_max += added_health
 	pass

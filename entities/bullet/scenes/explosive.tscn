@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://kj17fun8sorp"]
+
+[ext_resource type="Script" uid="uid://da03v1wqyl4i8" path="res://entities/bullet/bullet_explosive.gd" id="1_8asqa"]
+[ext_resource type="Texture2D" uid="uid://d4gph8i3g82m" path="res://entities/bullet/assets/bullet_player.png" id="1_ntprx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntprx"]
+radius = 5.0
+height = 10.0
+
+[node name="Explosive" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_8asqa")
+lifespan_seconds = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ntprx")
+debug_color = Color(1, 1, 0, 0.419608)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ntprx")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

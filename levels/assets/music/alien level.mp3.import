@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cceklto2uoajr"
+path="res://.godot/imported/alien level.mp3-8d8434c7e680b100508110fd4c6a81a6.mp3str"
+
+[deps]
+
+source_file="res://levels/assets/music/alien level.mp3"
+dest_files=["res://.godot/imported/alien level.mp3-8d8434c7e680b100508110fd4c6a81a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

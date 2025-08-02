@@ -1,13 +1,20 @@
 class_name Bullet
 extends RigidBody2D
 
+enum TYPE {
+	NORMAL,
+	EXPLOSIVE,
+	BULKY,
+	QUICK
+}
+
 enum TARGETS {
 	PLAYER,
 	ENEMY
 }
 
 @export var speed: float = 1000
-@export var damage: int = 10
+@export var damage: float = 10
 @export var lifespan_seconds: float = 5.0
 @export var target: TARGETS = TARGETS.ENEMY
 
@@ -22,14 +29,18 @@ func _ready() -> void:
 		set_collision_mask_value(1, false)
 	if target == TARGETS.PLAYER:
 		set_collision_mask_value(2, false)
+	timer.start()
 
 func _on_body_entered(body: Node2D) -> void:
-	if target == TARGETS.PLAYER and body.is_in_group("player"):
-		body.call("recieve_damage", damage)
+	if target == TARGETS.PLAYER and body == Player and Player.can_recieve_damage:
+		Player.change_health(-damage)
 		queue_free()
-	if target == TARGETS.ENEMY and body.is_in_group("enemies"):
-		body.call("recieve_damage", damage)
-		queue_free()
+		return
 	if body.is_in_group("walls"):
 		queue_free()
-	pass
+		return
+	if target == TARGETS.ENEMY and body != Player:
+		var hit_direction = (body.global_position - global_position).normalized()
+		body.call("recieve_damage", damage, hit_direction)
+		queue_free()
+		return

@@ -1,98 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdu3ivoi3fuix"]
+[gd_scene load_steps=3 format=3 uid="uid://bdu3ivoi3fuix"]
 
-[ext_resource type="Texture2D" uid="uid://dxlxeboa826rm" path="res://entities/enemies/fbi-agents/assets/sprites/secret_service_2.png" id="2_5lf1o"]
+[ext_resource type="Script" uid="uid://csh3e5xxonx04" path="res://entities/enemies/enemy.gd" id="1_wqcwe"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twhep"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqcwe"]
+radius = 4.0
+height = 18.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lenvy"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0vd3o"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tiw8"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uan1m"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q223v"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ncurx"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7yfn"]
-atlas = ExtResource("2_5lf1o")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_twyc1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twhep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lenvy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0vd3o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6tiw8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uan1m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q223v")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ncurx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7yfn")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4yt1"]
-size = Vector2(10, 25)
-
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 2147483649
 motion_mode = 1
+script = ExtResource("1_wqcwe")
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_twyc1")
-animation = &"idle"
-autoplay = "idle"
+[node name="SpriteHolder" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.5)
-shape = SubResource("RectangleShape2D_w4yt1")
+[node name="WeaponHolder" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 0.01
 neighbor_distance = 0.1
 avoidance_layers = 0
 avoidance_mask = 0
-debug_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wqcwe")

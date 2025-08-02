@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr22husngufwl"
+path="res://.godot/imported/final level type shi take4.wav-b069372f31a7d242168cfc1c7902e763.sample"
+
+[deps]
+
+source_file="res://levels/assets/music/final level type shi take4.wav"
+dest_files=["res://.godot/imported/final level type shi take4.wav-b069372f31a7d242168cfc1c7902e763.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
