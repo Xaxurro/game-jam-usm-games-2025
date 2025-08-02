@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-menu_music="*res://levels/assets/music/menu-music.tscn"
 Global="*res://levels/assets/global.gd"
 Constants="*res://constants.gd"
 Hud="*res://ui/hud/hud.tscn"

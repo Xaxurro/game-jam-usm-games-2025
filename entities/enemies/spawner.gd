@@ -31,6 +31,7 @@ func spawn_enemy():
 	enemy_instance.global_position = global_position
 	enemy_instance.global_position.x += randi_range(-dispersion, dispersion)
 	enemy_instance.global_position.y += randi_range(-dispersion, dispersion)
+	enemy_instance.resource.stop_distance += randi_range(-dispersion, dispersion)
 	enemy_instance.visible = true  
 	
 	get_tree().current_scene.add_child(enemy_instance)

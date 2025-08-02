@@ -164,6 +164,7 @@ func kill() -> void:
 	Global.stage_index = 0
 	disable()
 	restart_stats()
+	Constants.reset_bgm()
 	get_tree().change_scene_to_file("uid://q1fideuiytwd")
 
 func restart_stats() -> void:

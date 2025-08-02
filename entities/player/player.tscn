@@ -137,6 +137,7 @@ color = Color(0.878431, 0.105882, 0.141176, 0.431373)
 
 [node name="Dodge" type="Node" parent="."]
 script = ExtResource("8_26q78")
+impulse_factor = 6.0
 
 [node name="Cooldown" type="Timer" parent="Dodge"]
 one_shot = true

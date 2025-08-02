@@ -1,5 +1,19 @@
 extends Node
 
+var bgm: AudioStreamPlayer = AudioStreamPlayer.new()
+
+func reset_bgm() -> void:
+	bgm.stream = load(MUSIC_PATHS.menu)
+	add_child(bgm)
+	bgm.play()
+
+func _ready():
+	reset_bgm()
+
+const MUSIC_PATHS: Dictionary = {
+	'menu': 'uid://cn5acd6ev8v5e'
+}
+
 const SCENES_PATHS: Dictionary = {
 	'bullet': {
 		Bullet.TYPE.NORMAL: 'uid://c3yoxd22ehu6h',
