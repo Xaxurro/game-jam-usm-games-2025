@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bqjalplvqjepi"]
+[gd_scene load_steps=10 format=4 uid="uid://bqjalplvqjepi"]
 
 [ext_resource type="Script" uid="uid://7wcethxonl5x" path="res://levels/level.gd" id="1_de00k"]
 [ext_resource type="TileSet" uid="uid://dob1begjxuiyn" path="res://levels/assets/tile_set.tres" id="2_xngfr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bwq04y7avn0n5" path="res://entities/enemies/resources/shotgun.tres" id="6_pucyt"]
 [ext_resource type="PackedScene" uid="uid://c2yenqo73y7l3" path="res://levels/assets/next_level_template.tscn" id="7_u4p5x"]
 [ext_resource type="Resource" uid="uid://ba8jav4jcm4xv" path="res://entities/enemies/resources/minigun.tres" id="7_yqug8"]
+[ext_resource type="Texture2D" uid="uid://b86joigryfskl" path="res://levels/assets/controls.png" id="9_nq2ak"]
 [ext_resource type="PackedScene" uid="uid://cs8r0uat3ty8a" path="res://entities/enemies/fbi-agents/FBI spawner.tscn" id="15_h4y1x"]
 [ext_resource type="Resource" uid="uid://dk8sjjtepnkna" path="res://entities/enemies/resources/m60.tres" id="16_ax4j5"]
 
@@ -61,3 +62,9 @@ max_enemies = 1
 position = Vector2(1508, -42)
 enemy_data = ExtResource("16_ax4j5")
 max_enemies = 3
+
+[node name="Controls" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.764706)
+position = Vector2(130, -106)
+scale = Vector2(1.79, 2)
+texture = ExtResource("9_nq2ak")
