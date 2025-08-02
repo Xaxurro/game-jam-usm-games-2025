@@ -65,6 +65,6 @@ max_enemies = 3
 
 [node name="Controls" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.764706)
-position = Vector2(130, -106)
+position = Vector2(117, -103)
 scale = Vector2(1.79, 2)
 texture = ExtResource("9_nq2ak")
