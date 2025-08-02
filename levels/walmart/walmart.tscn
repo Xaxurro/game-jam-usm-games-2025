@@ -78,6 +78,7 @@ position = Vector2(180, -128)
 position = Vector2(75, -80)
 
 [node name="Beer" parent="Consumables" instance=ExtResource("3_be8ht")]
+count = 3
 price = 1000
 
 [node name="Beer2" parent="Consumables" instance=ExtResource("3_be8ht")]
